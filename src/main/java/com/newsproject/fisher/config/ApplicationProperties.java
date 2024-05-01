@@ -3,7 +3,7 @@ package com.newsproject.fisher.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * Properties specific to Newsapp.
+ * Properties specific to Newsproject.
  * <p>
  * Properties are configured in the {@code application.yml} file.
  * See {@link tech.jhipster.config.JHipsterProperties} for a good example.

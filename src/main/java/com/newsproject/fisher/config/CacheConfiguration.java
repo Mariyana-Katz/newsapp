@@ -50,6 +50,13 @@ public class CacheConfiguration {
             createCache(cm, com.newsproject.fisher.domain.User.class.getName());
             createCache(cm, com.newsproject.fisher.domain.Authority.class.getName());
             createCache(cm, com.newsproject.fisher.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.newsproject.fisher.domain.Comment.class.getName());
+            createCache(cm, com.newsproject.fisher.domain.Article.class.getName());
+            createCache(cm, com.newsproject.fisher.domain.Article.class.getName() + ".likedBies");
+            createCache(cm, com.newsproject.fisher.domain.Article.class.getName() + ".bookMarkedBies");
+            createCache(cm, com.newsproject.fisher.domain.Article.class.getName() + ".users");
+            createCache(cm, com.newsproject.fisher.domain.Bookmarks.class.getName());
+            createCache(cm, com.newsproject.fisher.domain.Likes.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
