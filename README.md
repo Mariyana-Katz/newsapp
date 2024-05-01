@@ -1,4 +1,4 @@
-# newsapp
+# newsproject
 
 This application was generated using JHipster 8.3.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v8.3.0](https://www.jhipster.tech/documentation-archive/v8.3.0).
 
@@ -91,7 +91,7 @@ For further instructions on how to develop with JHipster, have a look at [Using 
 
 ### Packaging as jar
 
-To build the final jar and optimize the newsapp application for production, run:
+To build the final jar and optimize the newsproject application for production, run:
 
 ```
 ./mvnw -Pprod clean verify
@@ -235,3 +235,5 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [Jest]: https://facebook.github.io/jest/
 [Leaflet]: https://leafletjs.com/
 [DefinitelyTyped]: https://definitelytyped.org/
+
+# newsapp
