@@ -1,0 +1,83 @@
+application {
+  config {
+    baseName newsproject,
+    packageName com.newsproject.fisher,
+    applicationType monolith,
+    prodDatabaseType postgresql,
+  }
+  entities *
+  }
+
+entity Comment {
+   id Long,
+   commentText String,
+   createdAt Instant,
+   likes Long
+}
+
+entity Article {
+ id Long,
+ sourceName String,
+ category Category,
+ author String,
+ title String,
+ shortDescription String,
+ url String,
+ urlToImage String,
+ published Date,
+ content String,
+ likes Long
+}
+
+entity Bookmarks {
+	articleId Long,
+    userId Long
+}
+
+entity Likes {
+	articleId Long,
+    userId Long,
+    commentId Long,
+    likeCount Long
+}
+
+enum Category {
+ HEADLINES
+ NATIONAL
+ WORLD
+ POLITICS
+ BUSINESS
+ ARTSANDCULTURE
+ TECHNOLOGY
+ SCIENCE
+ FOOD
+ CLIMATE
+ HEALTH
+}
+
+relationship ManyToMany {
+    Article{likedBy} to User{likedArticles} with builtInEntity 
+}
+
+relationship ManyToMany {
+    Article{bookMarkedBy} to User{bookMarkedArticle} with builtInEntity 
+}
+
+relationship ManyToMany {
+    Article{user} to User{comment} with builtInEntity 
+}
+
+relationship ManyToOne {
+    Comment{user} to User with builtInEntity
+}
+
+relationship ManyToOne {
+     Bookmarks{bookmarkedBy} to User with builtInEntity
+}
+
+relationship ManyToOne {
+     Likes{likedBy} to User with builtInEntity
+}
+relationship ManyToOne {
+    Likes{likedComment} to Comment
+}
