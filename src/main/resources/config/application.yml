@@ -90,7 +90,7 @@ management:
 
 spring:
   application:
-    name: newsapp
+    name: newsproject
   profiles:
     # The commented value for `active` can be replaced with valid Spring profiles to load.
     # Otherwise, it will be filled in by maven when building the JAR file
@@ -139,13 +139,13 @@ spring:
       enabled: true
   task:
     execution:
-      thread-name-prefix: newsapp-task-
+      thread-name-prefix: newsproject-task-
       pool:
         core-size: 2
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: newsapp-scheduling-
+      thread-name-prefix: newsproject-scheduling-
       pool:
         size: 2
   thymeleaf:
@@ -176,7 +176,7 @@ info:
 
 jhipster:
   clientApp:
-    name: 'newsappApp'
+    name: 'newsprojectApp'
   # By default CORS is disabled. Uncomment to enable.
   # cors:
   #   allowed-origins: "http://localhost:8100,http://localhost:9000"
@@ -186,12 +186,12 @@ jhipster:
   #   allow-credentials: true
   #   max-age: 1800
   mail:
-    from: newsapp@localhost
+    from: newsproject@localhost
   api-docs:
     default-include-pattern: /api/**
     management-include-pattern: /management/**
-    title: Newsapp API
-    description: Newsapp API documentation
+    title: Newsproject API
+    description: Newsproject API documentation
     version: 0.0.1
     terms-of-service-url:
     contact-name:
