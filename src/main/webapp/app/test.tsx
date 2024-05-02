@@ -8,7 +8,7 @@ const Test = () => {
     const elements = [];
     for (let i = 0; i < n; i++) {
       elements.push(<h1 key={i}>This is a test</h1>);
-    } 
+    }
     setH1Elements(elements);
   }
   return (
