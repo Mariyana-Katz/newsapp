@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.newsproject.fisher.domain.Article;
 import com.newsproject.fisher.repository.ArticleRepository;
+import com.newsproject.fisher.web.rest.ArticleResource;
 import java.io.IOException;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -40,30 +41,51 @@ public class ApiService {
         return response.getBody();
     }
 
-    public void saveArticlesFromJson(String jsonInput) {
-        ObjectMapper mapper = new ObjectMapper();
+    public Article testingSave() {
+        ArticleResource testing = new ArticleResource(this.articleRepository);
+        Article article = new Article();
+
         try {
-            JsonNode root = mapper.readTree(jsonInput);
-            JsonNode articlesNode = root.path("articles");
+            article.setSourceName("Testing");
+            article.setAuthor("ME");
+            article.setTitle("Is this working Book Title");
+            article.setShortDescription("pls work i beg");
+            article.setUrl("https://www.youtube.com/");
+            article.setContent("Asan was here, akdfskjadslkfhlkvhk kjshkjhghfkhkaj");
+            article.setLikes(7L);
 
-            for (JsonNode node : articlesNode) {
-                Article article = new Article();
-                article.setSourceName(node.path("source").path("name").asText(null));
-                article.setAuthor(node.path("author").asText(null));
-                article.setTitle(node.path("title").asText(null));
-                article.setShortDescription(node.path("description").asText(null));
-                article.setUrl(node.path("url").asText(null));
-                article.setUrlToImage(node.path("urlToImage").asText(null));
-                String publishedAt = node.path("publishedAt").asText(null);
-                article.setPublished(Instant.parse(publishedAt));
-                article.setContent(node.path("content").asText(null));
-
-                articleRepository.save(article);
-            }
+            testing.createArticle(article);
+            System.out.println("Successful");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println("no");
         }
+        return article;
     }
+
+    //    public void saveArticlesFromJson(String jsonInput) {
+    //        ObjectMapper mapper = new ObjectMapper();
+    //        try {
+    //            JsonNode root = mapper.readTree(jsonInput);
+    //            JsonNode articlesNode = root.path("articles");
+    //
+    //            for (JsonNode node : articlesNode) {
+    //                Article article = new Article();
+    //                article.setSourceName(node.path("source").path("name").asText(null));
+    //                article.setAuthor(node.path("author").asText(null));
+    //                article.setTitle(node.path("title").asText(null));
+    //                article.setShortDescription(node.path("description").asText(null));
+    //                article.setUrl(node.path("url").asText(null));
+    //                article.setUrlToImage(node.path("urlToImage").asText(null));
+    //                String publishedAt = node.path("publishedAt").asText(null);
+    //                article.setPublished(Instant.parse(publishedAt));
+    //                article.setContent(node.path("content").asText(null));
+    //
+    //                articleRepository.save(article);
+    //            }
+    //        } catch (Exception e) {
+    //            e.printStackTrace();
+    //        }
+    //    }
 
     public List<Article> getAllArticles() {
         return articleRepository.findAll();

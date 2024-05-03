@@ -1,6 +1,7 @@
 package com.newsproject.fisher.service.ApiTest;
 
 import com.newsproject.fisher.NewsprojectApp;
+import com.newsproject.fisher.domain.Article;
 import com.newsproject.fisher.repository.ArticleRepository;
 import com.newsproject.fisher.service.ApiService;
 import com.newsproject.fisher.service.Config;
@@ -15,12 +16,16 @@ public class ApiServiceTest {
     @Autowired
     private ApiService apiService;
 
-    @MockBean
     private ArticleRepository articleRepository;
 
     @Test
     public void apiPrintToConsoleTest() {
         System.out.println(apiService.getArticlesInList());
+    }
+
+    @Test
+    public void testingSave() {
+        apiService.testingSave();
     }
     //    @Test
     //    public void getAllArticlesTest(){
