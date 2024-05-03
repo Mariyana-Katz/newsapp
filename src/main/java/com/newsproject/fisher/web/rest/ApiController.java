@@ -15,7 +15,7 @@ public class ApiController {
 
     @GetMapping("/testing")
     public List<Article> mainPage() {
-        apiService.getArticlesInList();
+        apiService.saveArticlesFromJson(apiService.getArticlesInList());
 
         return apiService.getAllArticles();
     }

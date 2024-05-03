@@ -1,4 +1,4 @@
-package com.newsproject.fisher.config;
+package com.newsproject.fisher.service;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

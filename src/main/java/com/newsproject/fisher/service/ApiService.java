@@ -1,11 +1,15 @@
 package com.newsproject.fisher.service;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.newsproject.fisher.domain.Article;
 import com.newsproject.fisher.repository.ArticleRepository;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +23,7 @@ public class ApiService {
 
     private String apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=";
 
-    private final RestTemplate restTemplate;
+    private RestTemplate restTemplate;
 
     private ArticleRepository articleRepository;
 
@@ -29,27 +33,36 @@ public class ApiService {
         this.articleRepository = articleRepository;
     }
 
-    public List<Article> getArticlesInList() {
+    public String getArticlesInList() {
         String url = apiURL + apiKey;
 
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
-        String responseBody = response.getBody();
+        return response.getBody();
+    }
 
-        List<Article> articles = new ArrayList<>();
-
+    public void saveArticlesFromJson(String jsonInput) {
+        ObjectMapper mapper = new ObjectMapper();
         try {
-            ObjectMapper objectMapper = new ObjectMapper();
+            JsonNode root = mapper.readTree(jsonInput);
+            JsonNode articlesNode = root.path("articles");
 
-            Article[] articleArray = objectMapper.readValue(responseBody, Article[].class);
+            for (JsonNode node : articlesNode) {
+                Article article = new Article();
+                article.setSourceName(node.path("source").path("name").asText(null));
+                article.setAuthor(node.path("author").asText(null));
+                article.setTitle(node.path("title").asText(null));
+                article.setShortDescription(node.path("description").asText(null));
+                article.setUrl(node.path("url").asText(null));
+                article.setUrlToImage(node.path("urlToImage").asText(null));
+                String publishedAt = node.path("publishedAt").asText(null);
+                article.setPublished(Instant.parse(publishedAt));
+                article.setContent(node.path("content").asText(null));
 
-            for (Article article : articleArray) {
-                System.out.println(article);
-                articles.add(articleRepository.save(article));
+                articleRepository.save(article);
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return articles;
     }
 
     public List<Article> getAllArticles() {
