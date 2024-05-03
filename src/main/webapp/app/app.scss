@@ -6,7 +6,6 @@
 @import 'bootswatch/dist/simplex/bootswatch';
 @import 'src/main/webapp/app/modules/articlecomponents/standardarticlebox.scss';
 
-@import 'src/main/webapp/app/shared/layout/header/navbar.scss';
 body {
   margin: 0;
   font-family: monospace;
@@ -326,4 +325,28 @@ http://stackoverflow.com/questions/23436430/bootstrap-3-input-group-100-width */
 
 .logo {
   color: #b972bd;
+}
+
+.headline-image {
+  width: 57%;
+  float: inline-end;
+}
+
+.headline-story {
+}
+
+.headline-text {
+  top: 0;
+  width: 45%;
+  padding-right: 5%;
+  padding-top: 1.5%;
+  font-weight: bold;
+}
+
+.headline-story-text {
+  position: absolute;
+  bottom: 0;
+  width: 45%;
+  padding-right: 7%;
+  line-height: 30px;
 }

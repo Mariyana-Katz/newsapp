@@ -1,14 +1,12 @@
-// Navbar.tsx
 import React from 'react';
-
 import { Link } from 'react-router-dom';
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          NewsApp
+          Top Stories
         </Link>
         <button
           className="navbar-toggler"
@@ -38,7 +36,36 @@ const Navbar: React.FC = () => {
                 Business
               </Link>
             </li>
-            {/* Add other navbar items using Link */}
+            <li className="nav-item">
+              <Link className="nav-link" to="/Technology">
+                Technology
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Science">
+                Science
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Arts & Culture">
+                Arts & Culture
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Politics">
+                Politics
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Climate">
+                Climate
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Food">
+                Food
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
