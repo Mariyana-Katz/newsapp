@@ -15,6 +15,7 @@ import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
 import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
 import Test from './test';
+import StandardArticleBox from './modules/articlecomponents/standardarticlebox';
 
 const loading = <div>loading ...</div>;
 
@@ -32,6 +33,7 @@ const AppRoutes = () => {
     <div className="view-routes">
       <ErrorBoundaryRoutes>
         <Route index element={<Home />} />
+        <Route path="sab" element={<StandardArticleBox />} />
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Logout />} />
         <Route path="test" element={<Test />}></Route>
