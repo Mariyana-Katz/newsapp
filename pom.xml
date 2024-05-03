@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.newsproject.fisher</groupId>
-    <artifactId>newsapp</artifactId>
+    <artifactId>newsproject</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Newsapp</name>
-    <description>Description for Newsapp</description>
+    <name>Newsproject</name>
+    <description>Description for Newsproject</description>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -31,7 +31,7 @@
         <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <start-class>com.newsproject.fisher.NewsappApp</start-class>
+        <start-class>com.newsproject.fisher.NewsprojectApp</start-class>
         <argLine>-Djava.security.egd=file:/dev/./urandom -Xmx1G</argLine>
         <m2e.apt.activation>jdt_apt</m2e.apt.activation>
         <run.addResources>false</run.addResources>
@@ -414,7 +414,7 @@
                             </platforms>
                         </from>
                         <to>
-                            <image>newsapp:latest</image>
+                            <image>newsproject:latest</image>
                         </to>
                         <container>
                             <entrypoint>
@@ -840,8 +840,8 @@
                 <profile.test>testdev</profile.test>
                 <liquibase-plugin.hibernate-dialect>org.hibernate.dialect.H2Dialect</liquibase-plugin.hibernate-dialect>
                 <liquibase-plugin.driver>org.h2.Driver</liquibase-plugin.driver>
-                <liquibase-plugin.url>jdbc:h2:file:${project.build.directory}/h2db/db/newsapp</liquibase-plugin.url>
-                <liquibase-plugin.username>newsapp</liquibase-plugin.username>
+                <liquibase-plugin.url>jdbc:h2:file:${project.build.directory}/h2db/db/newsproject</liquibase-plugin.url>
+                <liquibase-plugin.username>newsproject</liquibase-plugin.username>
                 <liquibase-plugin.password/>
             </properties>
             <dependencies>
@@ -967,8 +967,8 @@
                 <profile.test>testprod</profile.test>
                 <liquibase-plugin.hibernate-dialect>org.hibernate.dialect.PostgreSQLDialect</liquibase-plugin.hibernate-dialect>
                 <liquibase-plugin.driver>org.postgresql.Driver</liquibase-plugin.driver>
-                <liquibase-plugin.url>jdbc:postgresql://localhost:5432/newsapp</liquibase-plugin.url>
-                <liquibase-plugin.username>newsapp</liquibase-plugin.username>
+                <liquibase-plugin.url>jdbc:postgresql://localhost:5432/newsproject</liquibase-plugin.url>
+                <liquibase-plugin.username>newsproject</liquibase-plugin.username>
                 <liquibase-plugin.password/>
             </properties>
             <build>

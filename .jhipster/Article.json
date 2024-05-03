@@ -1,0 +1,81 @@
+{
+  "annotations": {
+    "changelogDate": "20240501152008"
+  },
+  "applications": ["newsproject"],
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "sourceName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "Category",
+      "fieldValues": "HEADLINES,NATIONAL,WORLD,POLITICS,BUSINESS,ARTSANDCULTURE,TECHNOLOGY,SCIENCE,FOOD,CLIMATE,HEALTH"
+    },
+    {
+      "fieldName": "author",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "shortDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "url",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "urlToImage",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "published",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "content",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "likes",
+      "fieldType": "Long"
+    }
+  ],
+  "name": "Article",
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "likedArticles",
+      "relationshipName": "likedBy",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "bookMarkedArticle",
+      "relationshipName": "bookMarkedBy",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "comment",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many",
+      "relationshipWithBuiltInEntity": true
+    }
+  ],
+  "searchEngine": "no"
+}

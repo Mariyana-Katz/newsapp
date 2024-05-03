@@ -1,6 +1,6 @@
 {
-  "name": "Newsapp",
-  "short_name": "Newsapp",
+  "name": "Newsproject",
+  "short_name": "Newsproject",
   "icons": [
     {
       "src": "./content/images/jhipster_family_member_2_head-192.png",

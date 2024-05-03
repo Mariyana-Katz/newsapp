@@ -1,0 +1,27 @@
+{
+  "annotations": {
+    "changelogDate": "20240501152009"
+  },
+  "applications": ["newsproject"],
+  "fields": [
+    {
+      "fieldName": "articleId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "Long"
+    }
+  ],
+  "name": "Bookmarks",
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "relationshipName": "bookmarkedBy",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipWithBuiltInEntity": true
+    }
+  ],
+  "searchEngine": "no"
+}
