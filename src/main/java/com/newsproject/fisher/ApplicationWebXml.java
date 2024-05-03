@@ -10,6 +10,8 @@ import tech.jhipster.config.DefaultProfileUtil;
  */
 public class ApplicationWebXml extends SpringBootServletInitializer {
 
+    //abc
+
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         // set a default to use when no profile is configured.

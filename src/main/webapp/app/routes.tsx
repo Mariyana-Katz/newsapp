@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
+import Navbar from 'app/shared/layout/header/navbar';
 import Login from 'app/modules/login/login';
 import Register from 'app/modules/account/register/register';
 import Activate from 'app/modules/account/activate/activate';
@@ -29,7 +30,8 @@ const Admin = Loadable({
   loader: () => import(/* webpackChunkName: "administration" */ 'app/modules/administration'),
   loading: () => loading,
 });
-const AppRoutes = () => {
+
+const AppRoutes: React.FC = () => {
   return (
     <div className="view-routes">
       <ErrorBoundaryRoutes>
