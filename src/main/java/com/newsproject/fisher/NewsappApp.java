@@ -22,7 +22,8 @@ import tech.jhipster.config.JHipsterConstants;
 @SpringBootApplication
 @EnableConfigurationProperties({ LiquibaseProperties.class, ApplicationProperties.class })
 public class NewsappApp {
-//an
+
+    //an
     private static final Logger log = LoggerFactory.getLogger(NewsappApp.class);
 
     private final Environment env;
