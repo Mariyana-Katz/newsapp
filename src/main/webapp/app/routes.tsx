@@ -16,6 +16,7 @@ import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
 import Test from './test';
 import StandardArticleBox from './modules/articlecomponents/standardarticlebox';
+import SearchBar from './modules/searchBar/searchBar';
 
 const loading = <div>loading ...</div>;
 
@@ -36,6 +37,7 @@ const AppRoutes = () => {
         <Route path="sab" element={<StandardArticleBox />} />
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Logout />} />
+        <Route path="searchpage" element={<SearchBar />} />
         <Route path="test" element={<Test />}></Route>
         <Route path="account">
           <Route

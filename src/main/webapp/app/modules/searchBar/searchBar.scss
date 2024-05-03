@@ -1,0 +1,29 @@
+.searchInputs {
+  float: right;
+  margin-top: 105px;
+  position: relative;
+  display: inline-block; /* Ensure the search bar wraps around its contents */
+}
+
+.searchInputs .input {
+  border-color: rgb(146, 153, 156);
+  border-width: 1px;
+  background-color: white;
+  border-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: 18px;
+  padding: 15px;
+  height: 50px;
+  width: 300px;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 0;
+  right: 60;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 15px; /* Add padding to adjust the position of the icon */
+}
