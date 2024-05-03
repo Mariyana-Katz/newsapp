@@ -1,49 +1,76 @@
 import React from 'react';
-import { CardGroup, Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
-const NavbarTest = () => {
+const Navbar = () => {
   return (
-    <CardGroup>
-      <Card>
-        <CardImg alt="Card image cap" src="https://picsum.photos/318/180" top width="100%" />
-        <CardBody>
-          <CardTitle tag="h5">Card title</CardTitle>
-          <CardSubtitle className="mb-2 text-muted" tag="h6">
-            Card subtitle
-          </CardSubtitle>
-          <CardText>
-            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-          </CardText>
-          <Button>Button</Button>
-        </CardBody>
-      </Card>
-      <Card>
-        <CardImg alt="Card image cap" src="https://picsum.photos/318/180" top width="100%" />
-        <CardBody>
-          <CardTitle tag="h5">Card title</CardTitle>
-          <CardSubtitle className="mb-2 text-muted" tag="h6">
-            Card subtitle
-          </CardSubtitle>
-          <CardText>This card has supporting text below as a natural lead-in to additional content.</CardText>
-          <Button>Button</Button>
-        </CardBody>
-      </Card>
-      <Card>
-        <CardImg alt="Card image cap" src="https://picsum.photos/318/180" top width="100%" />
-        <CardBody>
-          <CardTitle tag="h5">Card title</CardTitle>
-          <CardSubtitle className="mb-2 text-muted" tag="h6">
-            Card subtitle
-          </CardSubtitle>
-          <CardText>
-            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content
-            than the first to show that equal height action.
-          </CardText>
-          <Button>Button</Button>
-        </CardBody>
-      </Card>
-    </CardGroup>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/">
+          Top Stories
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link className="nav-link" to="/World">
+                World
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/National">
+                National
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Business">
+                Business
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Technology">
+                Technology
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Science">
+                Science
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Arts & Culture">
+                Arts & Culture
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Politics">
+                Politics
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Climate">
+                Climate
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Food">
+                Food
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 };
 
-export default NavbarTest;
+export default Navbar;
