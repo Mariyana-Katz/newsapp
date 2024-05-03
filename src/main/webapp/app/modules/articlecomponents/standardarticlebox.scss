@@ -1,0 +1,31 @@
+.article-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  height: 250px;
+  border-color: rgb(197, 197, 197);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+.article-image {
+  position: absolute;
+  right: 0;
+  padding: 10px 35px 20px 10px; /* Adjusted padding to maintain ratios */
+  width: 35%;
+}
+
+@media screen and (max-width: 1200px) {
+  .article-box {
+    width: 100%; /* Change width to 100% when screen size is smaller */
+  }
+
+  .article-image {
+    padding: 5px; /* Adjusted padding for smaller screen */
+    width: 30%; /* Adjusted width for smaller screen */
+    height: 80%;
+  }
+}
