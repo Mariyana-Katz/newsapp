@@ -29,46 +29,84 @@ const Admin = Loadable({
 });
 const AppRoutes = () => {
   return (
-    <div className="view-routes">
-      <ErrorBoundaryRoutes>
-        <Route index element={<Home />} />
-        <Route path="login" element={<Login />} />
-        <Route path="logout" element={<Logout />} />
-        <Route path="test" element={<Test />}></Route>
-        <Route path="account">
+    <div>
+      {/* Navbar */}
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/">
+            Your Brand
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className="nav-link" href="/login">
+                  Login
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/register">
+                  Register
+                </a>
+              </li>
+              {/* Add other navbar items as needed */}
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      {/* Routes */}
+      <div className="view-routes">
+        <ErrorBoundaryRoutes>
+          <Route index element={<Home />} />
+          <Route path="login" element={<Login />} />
+          <Route path="logout" element={<Logout />} />
+          <Route path="test" element={<Test />}></Route>
+          <Route path="account">
+            <Route
+              path="*"
+              element={
+                <PrivateRoute hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]}>
+                  <Account />
+                </PrivateRoute>
+              }
+            />
+            <Route path="register" element={<Register />} />
+            <Route path="activate" element={<Activate />} />
+            <Route path="reset">
+              <Route path="request" element={<PasswordResetInit />} />
+              <Route path="finish" element={<PasswordResetFinish />} />
+            </Route>
+          </Route>
           <Route
-            path="*"
+            path="admin/*"
             element={
-              <PrivateRoute hasAnyAuthorities={[AUTHORITIES.ADMIN, AUTHORITIES.USER]}>
-                <Account />
+              <PrivateRoute hasAnyAuthorities={[AUTHORITIES.ADMIN]}>
+                <Admin />
               </PrivateRoute>
             }
           />
-          <Route path="register" element={<Register />} />
-          <Route path="activate" element={<Activate />} />
-          <Route path="reset">
-            <Route path="request" element={<PasswordResetInit />} />
-            <Route path="finish" element={<PasswordResetFinish />} />
-          </Route>
-        </Route>
-        <Route
-          path="admin/*"
-          element={
-            <PrivateRoute hasAnyAuthorities={[AUTHORITIES.ADMIN]}>
-              <Admin />
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="*"
-          element={
-            <PrivateRoute hasAnyAuthorities={[AUTHORITIES.USER]}>
-              <EntitiesRoutes />
-            </PrivateRoute>
-          }
-        />
-        <Route path="*" element={<PageNotFound />} />
-      </ErrorBoundaryRoutes>
+          <Route
+            path="*"
+            element={
+              <PrivateRoute hasAnyAuthorities={[AUTHORITIES.USER]}>
+                <EntitiesRoutes />
+              </PrivateRoute>
+            }
+          />
+          <Route path="*" element={<PageNotFound />} />
+        </ErrorBoundaryRoutes>
+      </div>
     </div>
   );
 };
