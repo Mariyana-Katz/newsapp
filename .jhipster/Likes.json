@@ -1,0 +1,41 @@
+{
+  "annotations": {
+    "changelogDate": "20240501152010"
+  },
+  "applications": ["newsproject"],
+  "fields": [
+    {
+      "fieldName": "articleId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "commentId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "likeCount",
+      "fieldType": "Long"
+    }
+  ],
+  "name": "Likes",
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "relationshipName": "likedBy",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityName": "comment",
+      "relationshipName": "likedComment",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

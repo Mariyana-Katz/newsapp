@@ -1,0 +1,49 @@
+.article-box {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: flex-start; /* Align items at the start of the container */
+  // align-items: center;
+  width: 1200px;
+  height: 250px;
+  border-color: rgb(197, 197, 197);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+.article-image {
+  position: absolute;
+  right: 0;
+  padding: 10px 35px 20px 10px;
+  width: 35%;
+}
+
+.article-headline,
+.article-short-text {
+  display: block;
+  width: 65%;
+  float: left;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.article-short-text {
+  padding-top: 40px;
+  bottom: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .article-box {
+    width: 100%; /* Change width to 100% when screen size is smaller */
+    align-items: center; /* Adjust alignment for smaller screens */
+    height: auto; /* Allow height to adjust based on content */
+    padding: 10px; /* Add padding to maintain spacing */
+  }
+
+  .article-image {
+    padding: 5px; /* Adjusted padding for smaller screen */
+    width: 30%; /* Adjusted width for smaller screen */
+    height: auto; /* Allow height to adjust based on content */
+  }
+}
