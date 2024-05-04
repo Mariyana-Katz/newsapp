@@ -10,13 +10,19 @@
   border-width: 1px;
   border-style: solid;
   border-radius: 10px;
+  margin: 10px;
 }
 
 .article-image {
   position: absolute;
   right: 0;
-  padding: 10px 35px 20px 10px;
-  width: 35%;
+  width: 30%;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+img:hover {
+  box-shadow: 0 0 2px 2px rgb(139, 139, 144);
 }
 
 .article-headline,
@@ -24,26 +30,39 @@
   display: block;
   width: 65%;
   float: left;
-  padding-top: 10px;
-  padding-left: 10px;
+  padding-top: 15px;
+  margin-left: 15px;
 }
 
 .article-short-text {
-  padding-top: 40px;
-  bottom: 0;
+  padding-top: 20px;
 }
 
 @media screen and (max-width: 1200px) {
   .article-box {
-    width: 100%; /* Change width to 100% when screen size is smaller */
-    align-items: center; /* Adjust alignment for smaller screens */
-    height: auto; /* Allow height to adjust based on content */
-    padding: 10px; /* Add padding to maintain spacing */
+    width: 70%;
+    align-items: center;
+    height: auto;
+    padding: 10px;
   }
 
   .article-image {
-    padding: 5px; /* Adjusted padding for smaller screen */
-    width: 30%; /* Adjusted width for smaller screen */
-    height: auto; /* Allow height to adjust based on content */
+    width: 95%;
+    height: auto;
+    position: relative; /* Change position back to relative for responsiveness */
+    margin-top: 0; /* Reset margin-top */
+    margin-right: 0; /* Reset margin-right */
+  }
+
+  img:hover {
+    box-shadow: 0 0 2px 2px rgb(139, 139, 144);
+  }
+
+  .article-headline,
+  .article-short-text {
+    width: 100%; /* Make headline and text take full width */
+    float: none; /* Remove float */
+    margin-left: 0; /* Reset margin-left */
+    padding: 10px 0; /* Adjust padding for smaller screens */
   }
 }
