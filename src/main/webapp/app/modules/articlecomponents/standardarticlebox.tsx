@@ -24,6 +24,26 @@ const StandardArticleBox = () => {
         <img src={articleImage} alt="" className="article-image" />
         <p className="article-short-text">{articleShortText}</p>
       </div>
+      <div className="article-box">
+        <h3 className="article-headline">{articleHeadline}</h3>
+        <img src={articleImage} alt="" className="article-image" />
+        <p className="article-short-text">{articleShortText}</p>
+      </div>
+      <div className="article-box">
+        <h3 className="article-headline">{articleHeadline}</h3>
+        <img src={articleImage} alt="" className="article-image" />
+        <p className="article-short-text">{articleShortText}</p>
+      </div>
+      <div className="article-box">
+        <h3 className="article-headline">{articleHeadline}</h3>
+        <img src={articleImage} alt="" className="article-image" />
+        <p className="article-short-text">{articleShortText}</p>
+      </div>
+      <div className="article-box">
+        <h3 className="article-headline">{articleHeadline}</h3>
+        <img src={articleImage} alt="" className="article-image" />
+        <p className="article-short-text">{articleShortText}</p>
+      </div>
     </div>
   );
 };
