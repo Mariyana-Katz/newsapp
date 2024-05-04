@@ -1,28 +1,40 @@
 .searchInputs {
-  float: right;
   margin-top: 105px;
   position: relative;
   display: inline-block; /* Ensure the search bar wraps around its contents */
 }
 
 .searchInputs .input {
-  border-color: rgb(146, 153, 156);
-  border-width: 1px;
+  margin-top: 105px;
+  position: relative;
   background-color: white;
+  border: 0;
   border-radius: 2px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  display: inline-block; /* Ensure the search bar wraps around its contents */
+  border: 2px solid black;
   font-size: 18px;
   padding: 15px;
   height: 50px;
-  width: 300px;
+  width: 500px;
 }
 
 .searchIcon {
   position: absolute;
   top: 0;
-  right: 60;
-  height: 100%;
+  right: 0;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  padding-right: 15px; /* Add padding to adjust the position of the icon */
+}
+
+.PageviewIcon {
+  position: absolute;
+  top: 0;
+  left: 0; /* Position the icon on the left side */
+  height: 50px;
   display: flex;
   align-items: center;
   padding-right: 15px; /* Add padding to adjust the position of the icon */

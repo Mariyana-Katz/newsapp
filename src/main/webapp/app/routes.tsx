@@ -34,6 +34,7 @@ const Admin = Loadable({
 const AppRoutes: React.FC = () => {
   return (
     <div className="view-routes">
+      <Navbar />
       <ErrorBoundaryRoutes>
         <Route index element={<Home />} />
         <Route path="sab" element={<StandardArticleBox />} />
