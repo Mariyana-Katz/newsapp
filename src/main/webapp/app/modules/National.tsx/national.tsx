@@ -3,7 +3,7 @@ import './national.scss';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Container, Row, Col, CardImg, CardBody, Card, CardText, CardHeader } from 'reactstrap';
 import StandardArticleBox from '../articlecomponents/standardarticlebox';
-export const National = () => {
+export const World = () => {
   return (
     //Container encapsulating the WHOLE THING
     //Card is a formatt(Structure)
@@ -20,12 +20,12 @@ export const National = () => {
                 top
                 width="100%"
                 src="https://cdn.pixabay.com/photo/2017/05/19/22/36/statue-of-liberty-2327760_1280.jpg"
-                className="national-headline"
+                className="world-headline"
               />
             </Col>
             <Col xs="12" md="6"></Col>
           </Row>
-          <CardText className="nationa-body">
+          <CardText className="world-body">
             National news covers significant events, developments, and issues within a particular country. It encompasses a wide range of
             topics including politics, economy, society, culture, and more. National news provides citizens with important information about
             their country, helping them stay informed about current affairs, government policies, social trends, and events that impact
@@ -38,4 +38,4 @@ export const National = () => {
   );
 };
 
-export default National;
+export default World;
