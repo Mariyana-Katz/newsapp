@@ -22,7 +22,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={navbarStyles}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          Top Stories
+          TOP STORIES
         </Link>
         <button
           className="navbar-toggler"
@@ -38,48 +38,48 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/World">
-                <PublicIcon /> World
+              <Link className="nav-link" to="/World" style={navbarStyles}>
+                <PublicIcon /> WORLD
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/National">
-                <NewspaperRoundedIcon /> National
+                <NewspaperRoundedIcon /> NATIONAL
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Business">
-                <BusinessRoundedIcon /> Business
+                <BusinessRoundedIcon /> BUSINESS
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Technology">
-                <SettingsSuggestRoundedIcon /> Technology
+                <SettingsSuggestRoundedIcon /> TECHNOLOGY
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Science">
-                <ScienceSharpIcon /> Science
+                <ScienceSharpIcon /> SCIENCE
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Arts & Culture">
-                <Diversity2SharpIcon /> Culture
+                <Diversity2SharpIcon /> CULTURE
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Politics">
-                <PeopleRoundedIcon /> Politics
+                <PeopleRoundedIcon /> POLITICS
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Climate">
-                <CloudRoundedIcon /> Climate
+                <CloudRoundedIcon /> CLIMATE
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Search">
-                <SearchRoundedIcon /> Search
+                <SearchRoundedIcon /> SEARCH
               </Link>
             </li>
           </ul>
