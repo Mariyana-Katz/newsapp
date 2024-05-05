@@ -12,9 +12,11 @@ import org.springframework.stereotype.Repository;
 
 /**
  * Spring Data JPA repository for the {@link User} entity.
+ *
  */
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
+    //m
     String USERS_BY_LOGIN_CACHE = "usersByLogin";
 
     String USERS_BY_EMAIL_CACHE = "usersByEmail";
