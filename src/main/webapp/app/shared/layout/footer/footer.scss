@@ -12,7 +12,7 @@ footer {
   background-color: $light-gray;
   color: $light-text;
   font-family: $font-family;
-  padding: 10px 20px; // Adjust padding as needed
+  padding: 0px 5px; // Adjust padding as needed
 }
 
 // Dark mode styles
@@ -42,4 +42,7 @@ p {
 }
 .footer-links {
   margin-left: 10px; // Adjust margin as needed
+}
+.footer-space {
+  margin-right: 20px; // Adjust margin as needed
 }

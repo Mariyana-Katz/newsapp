@@ -12,7 +12,7 @@ const App: React.FC = () => {
               {' '}
               {/* Add left margin to indent */}
               <h3>About Us</h3>
-              <p>This is a brief description of your website or company.</p>
+              <p>This is a brief description of the website.</p>
             </div>
           </div>
           <div className="col-md-6">
