@@ -1,4 +1,5 @@
 import React from 'react';
+import './navbar.scss';
 import PublicIcon from '@mui/icons-material/Public';
 import NewspaperRoundedIcon from '@mui/icons-material/NewspaperRounded';
 import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
@@ -38,7 +39,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/World" style={navbarStyles}>
+              <Link className="nav-link" to="/World">
                 <PublicIcon /> WORLD
               </Link>
             </li>

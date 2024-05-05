@@ -1,3 +1,45 @@
-.footer {
-  height: 50px;
+// Define colors
+$light-gray: #f8f9fa;
+$dark-gray: #333333;
+$light-text: #333333;
+$dark-text: #f8f9fa;
+
+// Define font styles
+$font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// Footer styles
+footer {
+  background-color: $light-gray;
+  color: $light-text;
+  font-family: $font-family;
+  padding: 10px 20px; // Adjust padding as needed
+}
+
+// Dark mode styles
+.dark-mode {
+  background-color: $dark-gray;
+  color: $dark-text;
+}
+
+// Footer section styles
+.about-us,
+.contact-us,
+.copyright {
+  margin-bottom: 20px; // Adjust margin between sections
+}
+
+// Heading styles
+h3 {
+  font-size: 18px; // Adjust heading size
+  font-weight: bold;
+  margin-bottom: 10px; // Adjust margin below headings
+}
+
+// Paragraph styles
+p {
+  font-size: 14px; // Adjust paragraph size
+  line-height: 1.5; // Adjust line height
+}
+.footer-links {
+  margin-left: 10px; // Adjust margin as needed
 }
