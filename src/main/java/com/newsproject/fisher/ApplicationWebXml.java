@@ -9,6 +9,7 @@ import tech.jhipster.config.DefaultProfileUtil;
  * This will be invoked only when the application is deployed to a Servlet container like Tomcat, JBoss etc.
  */
 public class ApplicationWebXml extends SpringBootServletInitializer {
+
     //abc
 
     @Override

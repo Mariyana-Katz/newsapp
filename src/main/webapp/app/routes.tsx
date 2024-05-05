@@ -18,6 +18,7 @@ import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
 import Test from './test';
 import StandardArticleBox from 'app/modules/articlecomponents/standardarticlebox';
+import Search from './modules/search/search';
 
 const loading = <div>loading ...</div>;
 
@@ -33,7 +34,7 @@ const Admin = Loadable({
 
 const AppRoutes = () => {
   return (
-    <div>
+    <div className="view-routes">
       <Navbar />
       <div className="view-routes">
         <ErrorBoundaryRoutes>
@@ -43,6 +44,7 @@ const AppRoutes = () => {
           <Route path="login" element={<Login />} />
           <Route path="national" element={<National />} />
           <Route path="logout" element={<Logout />} />
+          <Route path="search" element={<Search />} />
           <Route path="test" element={<Test />}></Route>
           <Route path="account">
             <Route

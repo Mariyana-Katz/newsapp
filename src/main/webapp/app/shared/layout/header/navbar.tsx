@@ -17,11 +17,11 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   // Apply font-family inline
   const navbarStyles = {
-    fontFamily: 'Times New Roman, Times, serif',
+    // fontFamily: 'Times New Roman, Times, serif',
   };
   return (
     //Navigation Bar Structure: -- with dark background,  a container fluid to contain the navigation links.
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={navbarStyles}>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           TOP STORIES
