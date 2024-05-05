@@ -1,3 +1,4 @@
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 $header-color: #fff;
 $header-color-secondary: #bbb;
 $header-color-hover: darken($header-color, 20%);
@@ -47,6 +48,7 @@ Navbar styles
 }
 
 .navbar-version {
+  font: 1em font-serif;
   font-size: 0.65em;
   color: $header-color-secondary;
   padding: 0 0 0 10px;
@@ -68,12 +70,27 @@ Navbar styles
 
 .brand-title {
   font-size: 1.25rem;
-  margin-left: 0.25rem;
+  margin-left: 0.5rem;
   color: black;
   &:hover {
     color: $header-color-hover;
     text-decoration: none;
   }
+}
+/* Update your global CSS file (e.g., header.scss) */
+// .navbar,
+// .navbar-brand,
+// .navbar-nav .nav-link {
+//   font-family: 'Times New Roman', Times, serif;
+// }
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem; /* Adjust font size as needed */
+}
+
+.navbar-nav .nav-link {
+  font-size: 1rem; /* Adjust font size as needed */
 }
 
 .loading-bar {

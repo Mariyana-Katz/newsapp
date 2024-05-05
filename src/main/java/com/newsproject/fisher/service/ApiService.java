@@ -25,69 +25,62 @@ public class ApiService {
     private String apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=";
 
     private RestTemplate restTemplate;
+    //makes http req and handles responses
 
-    private ArticleRepository articleRepository;
+    private ObjectMapper objectMapper;
+
+    //part of Jackson library, parsing json data to java obj, vice versa
 
     @Autowired
-    public ApiService(RestTemplate restTemplate, ArticleRepository articleRepository) {
+    public ApiService(RestTemplate restTemplate, ObjectMapper objectMapper) {
         this.restTemplate = restTemplate;
-        this.articleRepository = articleRepository;
+        this.objectMapper = objectMapper;
     }
 
-    public String getArticlesInList() {
-        String url = apiURL + apiKey;
+    //constructor injection bc of early failure detection, fail at startup, not runtime
 
-        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
-        return response.getBody();
-    }
-
-    public Article testingSave() {
-        ArticleResource testing = new ArticleResource(this.articleRepository);
-        Article article = new Article();
-
+    public List<Article> fetchDataFromExternalApi() {
+        String resourceUrl = apiURL + apiKey;
         try {
-            article.setSourceName("Testing");
-            article.setAuthor("ME");
-            article.setTitle("Is this working Book Title");
-            article.setShortDescription("pls work i beg");
-            article.setUrl("https://www.youtube.com/");
-            article.setContent("Asan was here, akdfskjadslkfhlkvhk kjshkjhghfkhkaj");
-            article.setLikes(7L);
-
-            testing.createArticle(article);
-            System.out.println("Successful");
+            ResponseEntity<String> response = restTemplate.getForEntity(resourceUrl, String.class);
+            //gets http response body, expect it to be a string
+            JsonNode root = objectMapper.readTree(response.getBody());
+            //get the entire json, including what is not need in fron of []
+            JsonNode articlesNode = root.path("articles");
+            //only get the data that is in articles:[]
+            if (!articlesNode.isMissingNode()) {
+                //if articles exists
+                return objectMapper.convertValue(articlesNode, new TypeReference<List<Article>>() {});
+                //converts json array to list of article objects
+            }
+            return List.of();
+            //return an empty list if "articles" is missing
         } catch (Exception e) {
-            System.err.println("no");
+            // Log the exception and handle it as needed
+            System.err.println("Failed to fetch data from newsAPI: " + e.getMessage());
+            return List.of();
+            //return an empty list in case of an exception
         }
-        return article;
     }
-
-    //    public void saveArticlesFromJson(String jsonInput) {
-    //        ObjectMapper mapper = new ObjectMapper();
-    //        try {
-    //            JsonNode root = mapper.readTree(jsonInput);
-    //            JsonNode articlesNode = root.path("articles");
-    //
-    //            for (JsonNode node : articlesNode) {
-    //                Article article = new Article();
-    //                article.setSourceName(node.path("source").path("name").asText(null));
-    //                article.setAuthor(node.path("author").asText(null));
-    //                article.setTitle(node.path("title").asText(null));
-    //                article.setShortDescription(node.path("description").asText(null));
-    //                article.setUrl(node.path("url").asText(null));
-    //                article.setUrlToImage(node.path("urlToImage").asText(null));
-    //                String publishedAt = node.path("publishedAt").asText(null);
-    //                article.setPublished(Instant.parse(publishedAt));
-    //                article.setContent(node.path("content").asText(null));
-    //
-    //                articleRepository.save(article);
-    //            }
-    //        } catch (Exception e) {
-    //            e.printStackTrace();
-    //        }
+    //    public String fetchDataFromExternalApi() {
+    //        RestTemplate restTemplate = new RestTemplate();
+    //        String resourceUrl = apiURL + apiKey; // Replace with your API URL
+    //        ResponseEntity<String> response = restTemplate.getForEntity(resourceUrl, String.class);
+    //        return response.getBody();
     //    }
 
-    public List<Article> getAllArticles() {
-        return articleRepository.findAll();
-    }
+    //    public List<Article> getArticlesInList() {
+    //        String url = apiURL + apiKey;
+    //
+    //        ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
+    //        if (responseEntity.getStatusCode().is2xxSuccessful()) {
+    //            return responseEntity.getBody();
+    //        } else {
+    //            // Request to News API failed
+    //            System.err.println("Failed to fetch articles from the News API. Status code: " + responseEntity.getStatusCodeValue());
+    //            return null;
+    //        }
+    //
+    //    }
+
 }
