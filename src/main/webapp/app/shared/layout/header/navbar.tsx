@@ -20,6 +20,7 @@ const Navbar = () => {
     fontFamily: 'Times New Roman, Times, serif',
   };
   return (
+    //Navigation Bar Structure: -- with dark background,  a container fluid to contain the navigation links.
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={navbarStyles}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
@@ -74,8 +75,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Climate">
-                <CloudRoundedIcon /> CLIMATE
+              <Link className="nav-link" to="/Weather">
+                <CloudRoundedIcon /> WEATHER
               </Link>
             </li>
             <li className="nav-item">
