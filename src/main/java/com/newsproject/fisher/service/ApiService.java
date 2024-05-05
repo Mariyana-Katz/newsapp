@@ -62,6 +62,19 @@ public class ApiService {
             //return an empty list in case of an exception
         }
     }
+
+    public List<Article> filteringArticles(List<Article> articles) {
+        List<Article> newFiteredArticles = new ArrayList<>();
+
+        for (Article article : articles) {
+            if (article.getUrl() != null && !article.getUrl().equals("https://removed.com")) {
+                //if the url is not null or is not https://removed.com
+                //maybe also article.getContent != null as well
+                newFiteredArticles.add(article);
+            }
+        }
+        return newFiteredArticles;
+    }
     //    public String fetchDataFromExternalApi() {
     //        RestTemplate restTemplate = new RestTemplate();
     //        String resourceUrl = apiURL + apiKey; // Replace with your API URL
