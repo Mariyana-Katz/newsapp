@@ -17,7 +17,7 @@ import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
 import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
 import Test from './test';
-import StandardArticleBox from './modules/articlecomponents/standardarticlebox';
+import StandardArticleBox from 'app/modules/articlecomponents/standardarticlebox';
 
 const loading = <div>loading ...</div>;
 
@@ -31,13 +31,14 @@ const Admin = Loadable({
   loading: () => loading,
 });
 
-const AppRoutes: React.FC = () => {
+const AppRoutes = () => {
   return (
     <div>
       <Navbar />
       <div className="view-routes">
         <ErrorBoundaryRoutes>
           <Route index element={<Home />} />
+          <Route path="Navbar" element={<Navbar />} />
           <Route path="sab" element={<StandardArticleBox />} />
           <Route path="login" element={<Login />} />
           <Route path="national" element={<National />} />

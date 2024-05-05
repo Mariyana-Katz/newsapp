@@ -1,12 +1,30 @@
 import React from 'react';
+import './navbar.scss';
+import PublicIcon from '@mui/icons-material/Public';
+import NewspaperRoundedIcon from '@mui/icons-material/NewspaperRounded';
+import BusinessRoundedIcon from '@mui/icons-material/BusinessRounded';
+import SettingsSuggestRoundedIcon from '@mui/icons-material/SettingsSuggestRounded';
+import ScienceSharpIcon from '@mui/icons-material/ScienceSharp';
+import Diversity2SharpIcon from '@mui/icons-material/Diversity2Sharp';
+import PeopleRoundedIcon from '@mui/icons-material/PeopleRounded';
+import CloudRoundedIcon from '@mui/icons-material/CloudRounded';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+
+// Imports the Link component from the react-router-dom
 import { Link } from 'react-router-dom';
 
+//a functional component named Navbar -- accept props and return React elements.
 const Navbar = () => {
+  // Apply font-family inline
+  const navbarStyles = {
+    fontFamily: 'Times New Roman, Times, serif',
+  };
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    //Navigation Bar Structure: -- with dark background,  a container fluid to contain the navigation links.
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={navbarStyles}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          Top Stories
+          TOP STORIES
         </Link>
         <button
           className="navbar-toggler"
@@ -23,47 +41,47 @@ const Navbar = () => {
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link" to="/World">
-                World
+                <PublicIcon /> WORLD
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/National">
-                National
+                <NewspaperRoundedIcon /> NATIONAL
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Business">
-                Business
+                <BusinessRoundedIcon /> BUSINESS
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Technology">
-                Technology
+                <SettingsSuggestRoundedIcon /> TECHNOLOGY
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Science">
-                Science
+                <ScienceSharpIcon /> SCIENCE
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Arts & Culture">
-                Arts & Culture
+                <Diversity2SharpIcon /> CULTURE
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Politics">
-                Politics
+                <PeopleRoundedIcon /> POLITICS
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Climate">
-                Climate
+              <Link className="nav-link" to="/Weather">
+                <CloudRoundedIcon /> WEATHER
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Food">
-                Food
+              <Link className="nav-link" to="/Search">
+                <SearchRoundedIcon /> SEARCH
               </Link>
             </li>
           </ul>
