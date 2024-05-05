@@ -27,10 +27,13 @@ public class ApiController {
     //constructor injection bc of early failure detection, fail at startup, not runtime
 
     //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void testing() {
         List<Article> articles = apiService.fetchDataFromExternalApi();
         //assign articles List to list of java objects from api
-        List<Article> savedArticles = articleRepository.saveAll(articles);
+        List<Article> filteredArticles = apiService.filteringArticles(articles);
+        //save filtered articles after filtering them
+        List<Article> savedArticles = articleRepository.saveAll(filteredArticles);
         //saving it, but saving it to savedArticles
     }
 
@@ -43,18 +46,4 @@ public class ApiController {
         return ResponseEntity.ok(savedArticles);
         //return 200 status ok if articles are saved successfully
     }
-    //    //takes in multiple articles
-    //    @PostMapping("/api/posting/multiple")
-    //    public ResponseEntity<List<Article>> savingDataFromApi(@RequestBody List<Article> articles) {
-    //        //@Requestbody uses Jackson library to deserialize the incoming JSON data into a list of Java Article objects.
-    //        List<Article> testArt = articleRepository.saveAll(articles);
-    //        return ResponseEntity.ok(testArt);
-    //    }
-
-    //takes in a single article
-    //    @PostMapping("/api/posting")
-    //    public ResponseEntity<Article> savingDataFromApi(@RequestBody Article article) {
-    //        Article testArt = articleRepository.save(article);
-    //        return ResponseEntity.ok(testArt);
-    //    }
 }
