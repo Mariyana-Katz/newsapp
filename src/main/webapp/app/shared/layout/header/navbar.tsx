@@ -65,7 +65,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Arts & Culture">
+              <Link className="nav-link" to="/culture">
                 <Diversity2SharpIcon /> CULTURE
               </Link>
             </li>
