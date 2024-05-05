@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+
+  .card {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px; // Adjust padding as needed
+
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem; // Adjust the gap between items
+    }
+
+    .flex-auto {
+      flex: 1; // Make each item grow to fill available space
+    }
+
+    .avatar-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .avatar-icon {
+      font-size: 2rem; // Adjust the size of the icon
+      margin-right: 1rem; // Adjust the spacing between icon and text
+      color: purple; // Change the color to purple
+    }
+
+    .avatar-label {
+      font-size: 1.5rem; // Adjust the size of the label
+    }
+  }
+}

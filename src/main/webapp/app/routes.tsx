@@ -9,6 +9,7 @@ import PasswordResetInit from 'app/modules/account/password-reset/init/password-
 import PasswordResetFinish from 'app/modules/account/password-reset/finish/password-reset-finish';
 import Logout from 'app/modules/login/logout';
 import Home from 'app/modules/home/home';
+import Temp from 'app/modules/temp/temp';
 import National from 'app/modules/National.tsx/national';
 import UserProfile from 'app/modules/UserProfile/userProfile';
 import EntitiesRoutes from 'app/entities/routes';
@@ -41,6 +42,7 @@ const AppRoutes: React.FC = () => {
           <Route path="sab" element={<StandardArticleBox />} />
           <Route path="login" element={<Login />} />
           <Route path="national" element={<National />} />
+          <Route path="temp" element={<Temp />} />
           <Route path="userProfile" element={<UserProfile />} />
           <Route path="logout" element={<Logout />} />
           <Route path="test" element={<Test />}></Route>

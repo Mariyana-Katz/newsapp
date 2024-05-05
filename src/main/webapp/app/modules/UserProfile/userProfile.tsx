@@ -1,31 +1,21 @@
-import React from 'react';
-import './userProfile.scss';
-import { Avatar } from 'primereact/avatar';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ListBox } from 'primereact/listbox';
+import { Avatar } from 'primereact/avatar';
 
-export default function TemplateDemo() {
-  const [selectedCountry, setSelectedCountry] = useState(null);
-  const countries = [
-    { name: 'Username', code: 'US' },
-    { name: 'Email', code: 'BR' },
-    { name: 'BookMark', code: 'US' },
-    { name: 'Logout', code: 'LS' },
+interface Country {
+  name: string;
+  icon: string;
+}
+
+const TemplateDemo: React.FC = () => {
+  const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
+
+  const countries: Country[] = [
+    { name: 'Username', icon: 'pi pi-user' },
+    { name: 'Email', icon: 'pi pi-envelope' },
+    { name: 'Bookmark', icon: 'pi pi-bookmark' },
+    { name: 'Logout', icon: 'pi pi-power-off' },
   ];
-
-  const countryTemplate = option => {
-    return (
-      <div className="flex align-items-center">
-        <img
-          alt={option.name}
-          src="https://primefaces.org/cdn/primereact/images/flag/flag_placeholder.png"
-          className={`flag flag-${option.code.toLowerCase()}`}
-          style={{ width: '1.25rem', marginRight: '.5rem' }}
-        />
-        <div>{option.name}</div>
-      </div>
-    );
-  };
 
   return (
     <div className="card flex justify-content-center">
@@ -34,10 +24,17 @@ export default function TemplateDemo() {
         onChange={e => setSelectedCountry(e.value)}
         options={countries}
         optionLabel="name"
-        itemTemplate={countryTemplate}
         className="w-full md:w-14rem"
         listStyle={{ maxHeight: '250px' }}
+        itemTemplate={(option: Country) => (
+          <div className="flex align-items-center">
+            <Avatar icon={option.icon} className="mr-2" size="large" shape="circle" style={{ color: 'green' }} />
+            <div>{option.name}</div>
+          </div>
+        )}
       />
     </div>
   );
-}
+};
+
+export default TemplateDemo;
