@@ -1,31 +1,35 @@
 import React, { useState } from 'react';
-import { Dropdown, DropdownChangeEvent } from 'primereact/dropdown';
+import { Link } from 'react-router-dom';
 
-interface userProfile {
+interface User {
   name: string;
-  code: string;
+  email: string;
 }
-
-export default function ClearIconDemo() {
-  const [profile, setprofile] = useState<userProfile | null>(null);
-  const userdetails: userProfile[] = [
-    { name: 'Username', code: 'pi pi-user' },
-    { name: 'Email', code: 'pi pi-envelope' },
-    { name: 'Bookmark', code: 'pi pi-bookmark' },
-    { name: 'Logout', code: 'pi pi-power-off' },
-  ];
+const Dropdown: React.FC = () => {
+  const user: User = {
+    name: 'Lavanya',
+    email: 'lavanya@gmail.com',
+  };
 
   return (
-    <div className="card flex justify-content-center">
-      <Dropdown
-        value={profile}
-        onChange={(e: DropdownChangeEvent) => setprofile(e.value)}
-        options={userdetails}
-        optionLabel="name"
-        showClear
-        placeholder="Profile"
-        className="w-full md:w-14rem"
-      />
+    <div className="user-login-h">
+      <ul>
+        <li>
+          <a>{user.name}</a>
+        </li>
+        <li>
+          <a>{user.email}</a>
+        </li>
+        <li>
+          <a href="/bookmark">Bookmark</a>
+          {/*<Link to ="/bookmark">{"Bookmark"}</Link>*/}
+        </li>
+        <li>
+          <a href="/Logout">Logout</a>
+          {/*<Link to ="/login">{"Logout"}</Link>*/}
+        </li>
+      </ul>
     </div>
   );
-}
+};
+export default Dropdown;

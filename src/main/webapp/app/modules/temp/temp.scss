@@ -1,45 +1,35 @@
-.container {
-  position: fixed;
-  top: 100px;
-  right: 100px;
-  z-index: 999;
-  width: 1000px; /* Adjust width */
-  height: 1000px; /* Adjust height */
-}
+/* dropdown.scss */
 
-.card {
-  display: flex;
-  justify-content: center;
-}
-
-.dropdown-container {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
+.user-login-h {
   position: absolute;
-  top: calc(100% + 100px); // Position dropdown below the button
-  right: 0;
-  background-color: #fff;
+  top: 100%;
+  right: 50;
+  background-color: #f8f9fa; /* Background color adjusted to match the navbar */
+  color: #fff; /* Text color changed to white */
   border: 1px solid #ccc;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 2;
-}
-
-.dropdown-toggle {
-  cursor: pointer;
-}
-
-.dropdown-toggle:hover + .dropdown-content {
-  display: block;
-}
-
-.dropdown-item {
   padding: 10px;
-  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown-item:hover {
-  background-color: #f5f5f5;
+.user-login-h ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-login-h li {
+  margin-bottom: 5px;
+}
+
+.user-login-h a {
+  //color: white; /* Link color changed to white */
+  // text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 50rem;
+}
+
+.user-login-h a:hover {
+  text-decoration: underline;
 }

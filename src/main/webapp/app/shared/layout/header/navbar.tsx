@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './navbar.scss';
 import PublicIcon from '@mui/icons-material/Public';
 import NewspaperRoundedIcon from '@mui/icons-material/NewspaperRounded';
@@ -9,6 +9,7 @@ import Diversity2SharpIcon from '@mui/icons-material/Diversity2Sharp';
 import PeopleRoundedIcon from '@mui/icons-material/PeopleRounded';
 import CloudRoundedIcon from '@mui/icons-material/CloudRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
+import Dropdown from 'app/modules/temp/temp';
 
 // Imports the Link component from the react-router-dom
 import { Link } from 'react-router-dom';
@@ -16,6 +17,10 @@ import { Link } from 'react-router-dom';
 //a functional component named Navbar -- accept props and return React elements.
 const Navbar = () => {
   // Apply font-family inline
+  const [dropdownOpen, setdropdownOpen] = useState<boolean>(false);
+  const toggleDropdown = () => {
+    setdropdownOpen(!dropdownOpen);
+  };
   const navbarStyles = {
     // fontFamily: 'Times New Roman, Times, serif',
   };
@@ -84,6 +89,12 @@ const Navbar = () => {
                 <SearchRoundedIcon /> SEARCH
               </Link>
             </li>
+            <div className="Profile">
+              <a className="user" href="#" onClick={toggleDropdown}>
+                <img src="src/assests/profile-user.png" alt="Icon" />
+                {dropdownOpen && <Dropdown />}
+              </a>
+            </div>
           </ul>
         </div>
       </div>

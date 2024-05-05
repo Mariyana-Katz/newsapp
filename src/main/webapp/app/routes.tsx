@@ -11,7 +11,6 @@ import Logout from 'app/modules/login/logout';
 import Home from 'app/modules/home/home';
 import National, { World } from 'app/modules/National.tsx/national';
 import Temp from 'app/modules/temp/temp';
-import National from 'app/modules/National.tsx/national';
 import UserProfile from 'app/modules/UserProfile/userProfile';
 import EntitiesRoutes from 'app/entities/routes';
 import PrivateRoute from 'app/shared/auth/private-route';
