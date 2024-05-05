@@ -4,7 +4,7 @@
   flex-direction: column; /* Stack items vertically */
   justify-content: flex-start; /* Align items at the start of the container */
   // align-items: center;
-  width: 1200px;
+  width: 1000px;
   height: 250px;
   border-color: rgb(197, 197, 197);
   border-width: 1px;
@@ -18,7 +18,7 @@
   right: 0;
   width: 30%;
   border-radius: 5px;
-  margin-top: 15px;
+  margin-top: 40px;
   margin-right: 15px;
 }
 img:hover {
@@ -30,12 +30,9 @@ img:hover {
   display: block;
   width: 65%;
   float: left;
-  padding-top: 15px;
+  margin-top: 40px;
+  margin-bottom: 0px;
   margin-left: 15px;
-}
-
-.article-short-text {
-  padding-top: 20px;
 }
 
 @media screen and (max-width: 1200px) {
