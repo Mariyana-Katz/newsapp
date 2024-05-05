@@ -8,3 +8,65 @@ Main page styles
   background: url('/content/images/jhipster_family_member_2.svg') no-repeat center top;
   background-size: contain;
 }
+
+.headline-story {
+  display: flex; /* Use flexbox */
+  align-items: flex-start; /* Align items vertically */
+  padding-top: 50px;
+}
+
+.headline-image {
+  width: 57%;
+  float: inline-end;
+  margin-right: 3%; /* Add margin for spacing */
+}
+
+.headline-text {
+  width: 45%;
+  padding-right: 5%;
+  font-weight: bold;
+}
+
+.headline-story-text {
+  position: absolute;
+  bottom: 100px;
+  width: 45%;
+  padding-right: 7%;
+  line-height: 30px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .headline-story {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    padding-top: 20px; /* Adjust padding as needed */
+  }
+
+  .headline-image {
+    width: 100%; /* Full width */
+    float: none; /* Remove float */
+    margin-right: 0; /* Remove margin */
+  }
+
+  .headline-text {
+    width: 100%; /* Full width */
+    padding-right: 0; /* Remove padding */
+    text-align: center; /* Center text */
+  }
+
+  .headline-story-text {
+    position: static; /* Reset position */
+    width: 100%; /* Full width */
+    padding-right: 0; /* Remove padding */
+    text-align: center; /* Center text */
+    margin-top: 20px; /* Add margin */
+  }
+}
+
+/* Media query for larger screens */
+@media (min-width: 1200px) {
+  .headline-story {
+    padding-top: 70px; /* Adjust padding as needed */
+  }
+}
