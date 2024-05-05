@@ -1,18 +1,18 @@
+/* Import Roboto font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-.navbar {
-  background-color: #007bff;
-  padding: 15px 25px;
-  border-radius: 0;
-}
 
-.navbar-nav .nav-link {
-  color: #fff;
-  margin-right: 40px;
+/* Navbar styles */
+.navbar {
+  background-color: #333a42;
+  padding: 5px 25px;
+  border-radius: 0;
+  font-family: 'Times New Roman', Times, serif; // Apply Times New Roman font
 }
 
 .navbar-brand {
-  color: #c03c3c;
+  color: #fff;
   font-weight: bold;
+  font-size: 0.9rem; /* Increased font size for emphasis */
 }
 
 .navbar-toggler {
@@ -21,8 +21,11 @@
 
 .navbar-nav .nav-link {
   color: #fff;
+  margin-right: 15px; /* Increased margin for better spacing */
+  font-size: 1rem; /* Adjusted font size */
 }
 
+/* Dropdown styles */
 .navbar-dropdown {
   background-color: #f8f9fa;
 }
@@ -31,36 +34,15 @@
   color: #000;
 }
 
+/* Additional styles */
 .navbar-text {
   color: #0f0808;
 }
 
-.form-inline {
-  margin-right: 100px; /* Adjust the right padding for the search bar */
-}
-
-.form-control {
-  margin-right: 10px; /* Adjust the right padding for the input field */
+.form-inline .form-control {
+  margin-right: 15px; /* Adjusted padding for better alignment */
 }
 
 .btn {
-  margin-right: 10px; /* Adjust the right padding for the button */
-}
-/* Apply the font to the desired elements */
-.navbar,
-.navbar-brand,
-.navbar-nav .nav-link {
-  font-family: 'Roboto', sans-serif;
-  /* You can also specify fallback fonts after the preferred font */
-  /* font-family: 'Roboto', Arial, sans-serif; */
-}
-
-/* You can also apply different font styles to specific elements */
-.navbar-brand {
-  font-weight: bold;
-  font-size: 1.5rem; /* Adjust font size as needed */
-}
-
-.navbar-nav .nav-link {
-  font-size: 1.2rem; /* Adjust font size as needed */
+  margin-right: 15px; /* Adjusted padding for better alignment */
 }

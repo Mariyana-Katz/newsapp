@@ -14,8 +14,12 @@ import { Link } from 'react-router-dom';
 
 //a functional component named Navbar -- accept props and return React elements.
 const Navbar = () => {
+  // Apply font-family inline
+  const navbarStyles = {
+    fontFamily: 'Times New Roman, Times, serif',
+  };
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={navbarStyles}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           Top Stories
