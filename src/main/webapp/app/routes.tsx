@@ -9,6 +9,7 @@ import PasswordResetInit from 'app/modules/account/password-reset/init/password-
 import PasswordResetFinish from 'app/modules/account/password-reset/finish/password-reset-finish';
 import Logout from 'app/modules/login/logout';
 import Home from 'app/modules/home/home';
+import National, { World } from 'app/modules/National.tsx/national';
 import Temp from 'app/modules/temp/temp';
 import National from 'app/modules/National.tsx/national';
 import UserProfile from 'app/modules/UserProfile/userProfile';
@@ -20,6 +21,11 @@ import { AUTHORITIES } from 'app/config/constants';
 import Test from './test';
 import StandardArticleBox from 'app/modules/articlecomponents/standardarticlebox';
 import Search from './modules/search/search';
+import Business from './modules/search/categories/business';
+import Technology from './modules/search/categories/technology';
+import Science from './modules/search/categories/science';
+import Culture from './modules/search/categories/culture';
+import Politics from './modules/search/categories/politics';
 
 const loading = <div>loading ...</div>;
 
@@ -46,6 +52,12 @@ const AppRoutes = () => {
           <Route path="national" element={<National />} />
           <Route path="temp" element={<Temp />} />
           <Route path="userProfile" element={<UserProfile />} />
+          <Route path="world" element={<World />} />
+          <Route path="business" element={<Business />} />
+          <Route path="technology" element={<Technology />} />
+          <Route path="science" element={<Science />} />
+          <Route path="culture" element={<Culture />} />
+          <Route path="politics" element={<Politics />} />
           <Route path="logout" element={<Logout />} />
           <Route path="search" element={<Search />} />
           <Route path="test" element={<Test />}></Route>
