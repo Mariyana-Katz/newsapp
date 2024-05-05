@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import './standardarticlebox.scss';
 const StandardArticleBox = () => {
   const [articleImage, setArticleImage] = useState('');
   const [articleHeadline, setArticleHeadline] = useState('');
