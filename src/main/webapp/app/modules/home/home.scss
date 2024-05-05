@@ -64,9 +64,27 @@ Main page styles
   }
 }
 
-/* Media query for larger screens */
-@media (min-width: 1200px) {
+@media (max-width: 768px) {
   .headline-story {
-    padding-top: 70px; /* Adjust padding as needed */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    padding-top: 20px; /* Adjust padding as needed */
+  }
+
+  .headline-image {
+    width: 100%; /* Full width */
+    float: none; /* Remove float */
+    margin-right: 0; /* Remove margin */
+  }
+
+  .headline-text {
+    width: 100%; /* Full width */
+    padding: 0 20px; /* Add padding to sides */
+    font-size: 14px; /* Reduce font size */
+    text-align: center; /* Center text */
+  }
+
+  .headline-story-text {
+    display: none; /* Hide text at smaller screen sizes */
   }
 }
