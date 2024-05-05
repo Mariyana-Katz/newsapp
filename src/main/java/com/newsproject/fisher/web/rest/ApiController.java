@@ -28,8 +28,11 @@ public class ApiController {
     @PostMapping("/api/posting/multiple")
     public ResponseEntity<List<Article>> fetchAndSaveArticles() {
         List<Article> articles = apiService.fetchDataFromExternalApi();
+        //assign articles List to list of java objects from api
         List<Article> savedArticles = articleRepository.saveAll(articles);
+        //saving it, but saving it to savedArticles
         return ResponseEntity.ok(savedArticles);
+        //return 200 status ok if articles are saved successfully
     }
     //    //takes in multiple articles
     //    @PostMapping("/api/posting/multiple")
