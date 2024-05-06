@@ -22,7 +22,11 @@ public class ApiService {
 
     private String apiKey = "5215fce8e3f94b78bf5148ac12c3f3e1";
 
-    private String apiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=";
+    private String headlineApiURL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=";
+
+    private String categoryApiURL = "https://newsapi.org/v2/everything?q=";
+
+    private String catPT2URL = "&apiKey=";
 
     private RestTemplate restTemplate;
     //makes http req and handles responses
@@ -40,12 +44,12 @@ public class ApiService {
     //constructor injection bc of early failure detection, fail at startup, not runtime
 
     public List<Article> fetchDataFromExternalApi() {
-        String resourceUrl = apiURL + apiKey;
+        String resourceUrl = headlineApiURL + apiKey;
         try {
             ResponseEntity<String> response = restTemplate.getForEntity(resourceUrl, String.class);
             //gets http response body, expect it to be a string
             JsonNode root = objectMapper.readTree(response.getBody());
-            //get the entire json, including what is not need in fron of []
+            //get the entire json, including what is not need in from of []
             JsonNode articlesNode = root.path("articles");
             //only get the data that is in articles:[]
             if (!articlesNode.isMissingNode()) {
@@ -75,25 +79,28 @@ public class ApiService {
         }
         return newFiteredArticles;
     }
-    //    public String fetchDataFromExternalApi() {
-    //        RestTemplate restTemplate = new RestTemplate();
-    //        String resourceUrl = apiURL + apiKey; // Replace with your API URL
-    //        ResponseEntity<String> response = restTemplate.getForEntity(resourceUrl, String.class);
-    //        return response.getBody();
-    //    }
 
-    //    public List<Article> getArticlesInList() {
-    //        String url = apiURL + apiKey;
-    //
-    //        ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
-    //        if (responseEntity.getStatusCode().is2xxSuccessful()) {
-    //            return responseEntity.getBody();
-    //        } else {
-    //            // Request to News API failed
-    //            System.err.println("Failed to fetch articles from the News API. Status code: " + responseEntity.getStatusCodeValue());
-    //            return null;
-    //        }
-    //
-    //    }
-
+    public List<Article> fetchingCategoryData(String category) {
+        String resourceUrl = categoryApiURL + category + catPT2URL + apiKey;
+        try {
+            ResponseEntity<String> response = restTemplate.getForEntity(resourceUrl, String.class);
+            //gets http response body, expect it to be a string
+            JsonNode root = objectMapper.readTree(response.getBody());
+            //get the entire json, including what is not need in fron of []
+            JsonNode articlesNode = root.path("articles");
+            //only get the data that is in articles:[]
+            if (!articlesNode.isMissingNode()) {
+                //if articles exists
+                return objectMapper.convertValue(articlesNode, new TypeReference<List<Article>>() {});
+                //converts json array to list of article objects
+            }
+            return List.of();
+            //return an empty list if "articles" is missing
+        } catch (Exception e) {
+            // Log the exception and handle it as needed
+            System.err.println("Failed to fetch data from newsAPI: " + e.getMessage());
+            return List.of();
+            //return an empty list in case of an exception
+        }
+    }
 }
