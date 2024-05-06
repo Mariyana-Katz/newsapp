@@ -9,23 +9,39 @@ const App: React.FC = () => {
         <div className="row">
           <div className="col-md-12">
             <div className="ml-4">
-              <p>
+              <p className="link-text">
                 {/* Links to navbar items */}
-                <Link to="/">Top Stories</Link>
+                <Link to="/" className="link-text">
+                  Top Stories
+                </Link>
                 <span className="footer-space"></span>
-                <Link to="/World">World</Link>
+                <Link to="/World" className="link-text">
+                  World
+                </Link>
                 <span className="footer-space"></span>
-                <Link to="/National">National</Link>
+                <Link to="/National" className="link-text">
+                  National
+                </Link>
                 <span className="footer-space"></span>
-                <Link to="/Technology">Technology</Link>
+                <Link to="/Technology" className="link-text">
+                  Technology
+                </Link>
                 <span className="footer-space"></span>
-                <Link to="/Science">Science</Link>
+                <Link to="/Science" className="link-text">
+                  Science
+                </Link>
                 <span className="footer-space"></span>
-                <Link to="/Science">Culture</Link>
+                <Link to="/Science" className="link-text">
+                  Culture
+                </Link>
                 <span className="footer-space"></span>
-                <Link to="/Science">Politics</Link>
+                <Link to="/Science" className="link-text">
+                  Politics
+                </Link>
                 <span className="footer-space"></span>
-                <Link to="/Science">Weather</Link>
+                <Link to="/Science" className="link-text">
+                  Weather
+                </Link>
                 {/* Add more links for other navbar items */}
               </p>
             </div>
