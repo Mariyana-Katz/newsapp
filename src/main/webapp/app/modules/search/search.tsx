@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import SearchBar from './searchBar/searchBar';
-import SearchResult from './searchResult/searchResult';
+import SearchResults from './searchResults/searchResults';
 
 const Search = () => {
+  const [results, setResults] = useState([]);
   return (
     <div>
-      <SearchBar />
-      <SearchResult />
+      <SearchBar setResults={setResults} />
+      <SearchResults results={results} />
     </div>
   );
 };
