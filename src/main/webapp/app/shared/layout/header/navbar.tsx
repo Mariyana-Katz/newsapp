@@ -10,7 +10,7 @@ import PeopleRoundedIcon from '@mui/icons-material/PeopleRounded';
 import CloudRoundedIcon from '@mui/icons-material/CloudRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Dropdown from 'app/modules/userProfile/userprofile';
+// import Dropdown from 'app/modules/userProfile/userprofile';
 
 // Imports the Link component from the react-router-dom
 import { Link } from 'react-router-dom';
@@ -90,12 +90,12 @@ const Navbar = () => {
                 <SearchRoundedIcon /> SEARCH
               </Link>
             </li>
-            <div className="Profile">
+            {/* <div className="Profile">
               <a className="user" href="#" onClick={toggleDropdown}>
                 <AccountCircleIcon /> PROFILE
                 {dropdownOpen && <Dropdown />}
               </a>
-            </div>
+            </div> */}
           </ul>
         </div>
       </div>

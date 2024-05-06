@@ -7,7 +7,7 @@ const SearchBar = ({ setResults }) => {
   const [articleData, setArticleData] = useState([]);
 
   useEffect(() => {
-    FetchArticles()
+    FetchArticles() //fetch the data from the API, update the component's state with the fetched data and logs errors if any during the fetching
       .then(data => {
         setArticleData(data);
         console.log(data);
