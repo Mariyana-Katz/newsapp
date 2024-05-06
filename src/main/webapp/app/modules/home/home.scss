@@ -27,12 +27,19 @@ Main page styles
   font-weight: bold;
 }
 
-.headline-story-text {
+.headline-story-div {
+  display: flex; /* Use flexbox */
+  align-items: flex-start; /* Align items vertically */
   position: absolute;
-  bottom: 100px;
-  width: 45%;
-  padding-right: 7%;
+  padding: 200px 0px 20px 0px;
+  width: 35%;
+}
+.headline-story-text {
   line-height: 30px;
+}
+
+.headline-bottom-div {
+  padding-top: 60px;
 }
 
 /* Media query for smaller screens */
