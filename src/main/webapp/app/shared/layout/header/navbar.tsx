@@ -9,7 +9,8 @@ import Diversity2SharpIcon from '@mui/icons-material/Diversity2Sharp';
 import PeopleRoundedIcon from '@mui/icons-material/PeopleRounded';
 import CloudRoundedIcon from '@mui/icons-material/CloudRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import Dropdown from 'app/modules/temp/temp';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Dropdown from 'app/modules/userProfile/userprofile';
 
 // Imports the Link component from the react-router-dom
 import { Link } from 'react-router-dom';
@@ -91,7 +92,7 @@ const Navbar = () => {
             </li>
             <div className="Profile">
               <a className="user" href="#" onClick={toggleDropdown}>
-                <img src="src/assests/profile-user.png" alt="Icon" />
+                <AccountCircleIcon /> PROFILE
                 {dropdownOpen && <Dropdown />}
               </a>
             </div>
