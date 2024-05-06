@@ -2,7 +2,7 @@ const FetchArticles = async () => {
   const url = 'http://localhost:8080/api/articles';
   //INSERT TOKEN HERE BUT DONT FORGET TO REMOVE IT BEFORE MERGING
   const token =
-    'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcxNTAwNjMzMiwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzE0OTE5OTMyfQ.cGCqeFCC2CKcfVnnM0NL970mIagf9Ozm2qOm8mZ3213eUWNWMjEfV29Vz0CcpgIgnNphwbrU94oPBYgnzNgQUQ';
+    'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcxNTAzNDI4NCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzE0OTQ3ODg0fQ.N-v-uNHreIICCL5Ho5HMZUn9uqetkHvG_Um4vkuQQnEweN4OFci_iVug9wHbMFdMtZa2koO3qSzOp0oUhZbePg';
 
   try {
     const response = await fetch(url, {

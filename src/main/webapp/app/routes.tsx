@@ -24,6 +24,7 @@ import Technology from './modules/categories/technology';
 import Science from './modules/categories/science';
 import Culture from './modules/categories/culture';
 import Politics from './modules/categories/politics';
+import ArticlePage from './modules/articlepages/standardarticlepage';
 
 const loading = <div>loading ...</div>;
 
