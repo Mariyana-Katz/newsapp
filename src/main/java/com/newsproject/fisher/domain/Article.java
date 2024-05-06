@@ -51,7 +51,7 @@ public class Article implements Serializable {
     @Column(name = "published")
     private Instant published;
 
-    @Column(name = "content")
+    @Column(name = "content", columnDefinition = "LONGTEXT")
     private String content;
 
     @Column(name = "likes")
