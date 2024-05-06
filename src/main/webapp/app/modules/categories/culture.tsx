@@ -1,10 +1,13 @@
 import FetchArticles from 'app/modules/articleapi/fetcharticles';
 import React, { useEffect, useState } from 'react';
 import ArticlePage from '../articlepages/standardarticlepage';
+import { useNavigate } from 'react-router';
+import AppRoutes from 'app/routes';
 
 const Culture = () => {
   const [articleData, setArticleData] = useState([]);
   const [articleIndex, setArticleIndex] = useState(Number);
+  const navigate = useNavigate();
 
   useEffect(() => {
     FetchArticles()

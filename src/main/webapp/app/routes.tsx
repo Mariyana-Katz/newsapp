@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import Navbar from 'app/shared/layout/header/navbar';
@@ -38,6 +38,9 @@ const Admin = Loadable({
 });
 
 const AppRoutes = () => {
+  const [articleData, setArticleData] = useState();
+  const [articleIndex, setArticleIndex] = useState();
+
   return (
     <div className="view-routes">
       <Navbar />
@@ -54,6 +57,7 @@ const AppRoutes = () => {
           <Route path="science" element={<Science />} />
           <Route path="culture" element={<Culture />} />
           <Route path="politics" element={<Politics />} />
+          <Route path="/article/:id" element={<ArticlePage articleData={null} articleIndex={null} />} />
           <Route path="logout" element={<Logout />} />
           <Route path="search" element={<Search />} />
           <Route path="test" element={<Test />}></Route>

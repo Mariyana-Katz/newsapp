@@ -18,11 +18,11 @@ const ArticlePage = ({ articleData, articleIndex }) => {
     <div className="article-page">
       <div className="article-box">
         {article ? (
-          <>
-            <h3 className="article-headline">{article.title}</h3>
-            <img src={article.urlToImage} alt="" className="article-image" />
-            <p className="article-fulltext">{article.content}</p>
-          </>
+          <div>
+            <h3 className="articlepage-headline">{article.title}</h3>
+            <img src={article.urlToImage} alt="" className="articlepage-image" />
+            <p className="articlepage-fulltext">{article.content}</p>
+          </div>
         ) : (
           <p className="no-article">No Article Available</p>
         )}

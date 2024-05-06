@@ -13,8 +13,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 // Imports the Link component from the react-router-dom
 import { Link } from 'react-router-dom';
-import Dropdown from 'app/modules/UserProfile/userProfile';
-import DropMenu from 'app/modules/UserProfile/userProfile';
+// import Dropdown from 'app/modules/UserProfile/userProfile';
 
 //a functional component named Navbar -- accept props and return React elements.
 const Navbar = () => {
@@ -93,8 +92,8 @@ const Navbar = () => {
             </li>
             <div className="nav-item">
               <a className="user" href="#" onClick={toggleDropdown}>
-                <AccountCircleIcon /> PROFILE
-                {dropdownOpen && <DropMenu />}
+                {/* <AccountCircleIcon /> PROFILE
+                {dropdownOpen && <DropMenu />} */}
               </a>
             </div>
           </ul>
