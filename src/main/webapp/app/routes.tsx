@@ -10,7 +10,6 @@ import PasswordResetFinish from 'app/modules/account/password-reset/finish/passw
 import Logout from 'app/modules/login/logout';
 import Home from 'app/modules/home/home';
 import National, { World } from 'app/modules/National.tsx/national';
-import UserProfile from 'app/modules/userProfile/userprofile';
 import EntitiesRoutes from 'app/entities/routes';
 import PrivateRoute from 'app/shared/auth/private-route';
 import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
@@ -49,7 +48,6 @@ const AppRoutes = () => {
           <Route path="sab" element={<StandardArticleBox />} />
           <Route path="login" element={<Login />} />
           <Route path="national" element={<National />} />
-          <Route path="userProfile" element={<UserProfile />} />
           <Route path="world" element={<World />} />
           <Route path="business" element={<Business />} />
           <Route path="technology" element={<Technology />} />
