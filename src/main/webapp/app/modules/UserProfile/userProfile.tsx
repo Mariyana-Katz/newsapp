@@ -5,7 +5,7 @@ interface User {
   name: string;
   email: string;
 }
-const Dropdown: React.FC = () => {
+const DropMenu: React.FC = () => {
   const user: User = {
     name: 'Lavanya',
     email: 'lavanya@gmail.com',
@@ -32,4 +32,4 @@ const Dropdown: React.FC = () => {
     </div>
   );
 };
-export default Dropdown;
+export default DropMenu;
