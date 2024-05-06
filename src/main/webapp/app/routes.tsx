@@ -19,11 +19,12 @@ import { AUTHORITIES } from 'app/config/constants';
 import Test from './test';
 import StandardArticleBox from 'app/modules/articlecomponents/standardarticlebox';
 import Search from './modules/search/search';
-import Business from './modules/search/categories/business';
-import Technology from './modules/search/categories/technology';
-import Science from './modules/search/categories/science';
-import Culture from './modules/search/categories/culture';
-import Politics from './modules/search/categories/politics';
+import Business from './modules/categories/business';
+import Technology from './modules/categories/technology';
+import Science from './modules/categories/science';
+import Culture from './modules/categories/culture';
+import Politics from './modules/categories/politics';
+import ArticlePage from './modules/articlepages/standardarticlepage';
 
 const loading = <div>loading ...</div>;
 

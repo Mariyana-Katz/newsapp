@@ -14,6 +14,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 // Imports the Link component from the react-router-dom
 import { Link } from 'react-router-dom';
+import Dropdown from 'app/modules/UserProfile/userProfile';
 
 //a functional component named Navbar -- accept props and return React elements.
 const Navbar = () => {
