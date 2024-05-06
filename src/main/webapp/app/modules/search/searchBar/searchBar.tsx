@@ -1,23 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './searchBar.scss';
+import FetchArticles from 'app/modules/articleapi/fetcharticles';
 
-const SearchBar = (/*{placeholder, data}*/) => {
+const SearchBar = ({ setResults }) => {
   const [input, setInput] = useState(''); //we use useState to figured out what the user input is
-  const fetchData = value => {
-    //to be able to fetch data from external API
-    fetch('http://localhost:9000/api/articles?eagerload=true') //get all articles from API
-      .then(response => response.json())
-      .then(json => {
-        // const results = json.filter((article) => {
-        //     return (value && article && article.toLowerCase().includes(value));
-        console.log(json);
-        //});
-        // console.log(results)
+  const [articleData, setArticleData] = useState([]);
+
+  useEffect(() => {
+    FetchArticles()
+      .then(data => {
+        setArticleData(data);
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error fetching articles:', error);
       });
-  };
+  }, []);
+
+  //console.log(articleData);
   const handleChange = value => {
     setInput(value);
-    fetchData(value);
+    const valueLowerCase = value.toLowerCase();
+    const results = articleData.filter(article => {
+      return valueLowerCase && article && article.title && article.title.toLowerCase().includes(valueLowerCase);
+    });
+    setResults(results);
   };
   return (
     <div className="contentheader">
