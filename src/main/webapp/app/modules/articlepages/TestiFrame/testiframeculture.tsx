@@ -1,10 +1,10 @@
+import FetchArticles from 'app/modules/articleapi/fetcharticles';
 import React, { useEffect, useState } from 'react';
-import ArticleModal from '../articlepages/standardarticlepage';
-import FetchArticles from '../articleapi/fetcharticles';
+import TestArticlePage from 'src/main/webapp/app/modules/articlepages/TestiFrame/testiframearticlepage';
 
-const Culture = () => {
+const TestCulture = () => {
   const [articleData, setArticleData] = useState([]);
-  const [selectedArticleIndex, setSelectedArticleIndex] = useState(null);
+  const [selectedArticleUrl, setSelectedArticleUrl] = useState(null);
 
   useEffect(() => {
     FetchArticles()
@@ -16,12 +16,13 @@ const Culture = () => {
       });
   }, []);
 
-  const handleClick = index => {
-    console.log('Article clicked:', index); // Check if the handleClick function is being invoked
-    setSelectedArticleIndex(index);
+  const handleClick = (index: number) => {
+    setSelectedArticleUrl(articleData[index].url);
   };
 
-  console.log('Selected Article Index:', selectedArticleIndex); // Check the selected article index
+  const handleClose = () => {
+    setSelectedArticleUrl(null); // Set selectedArticleUrl back to null to close the iframe
+  };
 
   return (
     <div>
@@ -34,11 +35,9 @@ const Culture = () => {
           </div>
         ) : null,
       )}
-      {selectedArticleIndex !== null && (
-        <ArticleModal article={articleData[selectedArticleIndex]} onClose={() => setSelectedArticleIndex(null)} />
-      )}
+      {selectedArticleUrl && <TestArticlePage articleUrl={selectedArticleUrl} onClose={handleClose} />}
     </div>
   );
 };
 
-export default Culture;
+export default TestCulture;
