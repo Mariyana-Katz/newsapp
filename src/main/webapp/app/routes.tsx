@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import Navbar from 'app/shared/layout/header/navbar';
@@ -24,7 +24,6 @@ import Technology from './modules/categories/technology';
 import Science from './modules/categories/science';
 import Culture from './modules/categories/culture';
 import Politics from './modules/categories/politics';
-import ArticlePage from './modules/articlepages/standardarticlepage';
 
 const loading = <div>loading ...</div>;
 
@@ -39,6 +38,9 @@ const Admin = Loadable({
 });
 
 const AppRoutes = () => {
+  const [articleData, setArticleData] = useState();
+  const [articleIndex, setArticleIndex] = useState();
+
   return (
     <div className="view-routes">
       <Navbar />
