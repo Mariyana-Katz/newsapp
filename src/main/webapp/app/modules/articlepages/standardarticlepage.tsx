@@ -1,34 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-const ArticlePage = ({ articleData, articleIndex }) => {
-  const [article, setArticle] = useState(null);
-
-  useEffect(() => {
-    if (articleData && articleData.length > 0 && articleIndex >= 0 && articleIndex < articleData.length) {
-      setArticle(articleData[articleIndex]);
-    } else {
-      setArticle(null);
-    }
-  }, [articleData, articleIndex]);
-
-  console.log(articleData);
-  console.log(articleIndex);
-
+const ArticleModal = ({ article, onClose }) => {
   return (
-    <div className="article-page">
-      <div className="article-box">
-        {article ? (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal" onClick={e => e.stopPropagation()}>
+        <button className="modal-close" onClick={onClose}>
+          Close
+        </button>
+        {article && (
           <div>
-            <h3 className="articlepage-headline">{article.title}</h3>
-            <img src={article.urlToImage} alt="" className="articlepage-image" />
-            <p className="articlepage-fulltext">{article.content}</p>
+            <h3 className="modal-article-title">{article.title}</h3>
+            <img src={article.urlToImage} alt="" className="modal-article-image" />
+            <p className="modal-article-content">{article.content}</p>
           </div>
-        ) : (
-          <p className="no-article">No Article Available</p>
         )}
       </div>
     </div>
   );
 };
 
-export default ArticlePage;
+export default ArticleModal;
