@@ -1,0 +1,45 @@
+.article-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.article-box {
+  width: 300px; /* Adjust as needed */
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.article-headline {
+  display: flex; /* Use flexbox */
+  align-items: flex-start; /* Align items vertically */
+  padding-top: 50px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.article-image {
+  width: 57%;
+  float: inline-end;
+  margin-right: 3%; /* Add margin for spacing */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.article-short-text {
+  font-size: 30px;
+}
+
+.headline-text {
+  width: 100%; /* Full width */
+  padding-right: 0; /* Remove padding */
+  text-align: center; /* Center text */
+}
+
+.headline-story-text {
+  position: static; /* Reset position */
+  width: 100%; /* Full width */
+  padding-right: 0; /* Remove padding */
+  text-align: center; /* Center text */
+  margin-top: 20px; /* Add margin */
+}
