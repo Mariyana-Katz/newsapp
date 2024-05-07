@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
-
 import Navbar from 'app/shared/layout/header/navbar';
 import Login from 'app/modules/login/login';
 import Register from 'app/modules/account/register/register';
@@ -10,7 +9,8 @@ import PasswordResetInit from 'app/modules/account/password-reset/init/password-
 import PasswordResetFinish from 'app/modules/account/password-reset/finish/password-reset-finish';
 import Logout from 'app/modules/login/logout';
 import Home from 'app/modules/home/home';
-import National, { World } from 'app/modules/National.tsx/national';
+import National from 'app/modules/National.tsx/national';
+import World from './modules/categories/world';
 import EntitiesRoutes from 'app/entities/routes';
 import PrivateRoute from 'app/shared/auth/private-route';
 import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
@@ -19,11 +19,11 @@ import { AUTHORITIES } from 'app/config/constants';
 import Test from './test';
 import StandardArticleBox from 'app/modules/articlecomponents/standardarticlebox';
 import Search from './modules/search/search';
-import Business from './modules/search/categories/business';
-import Technology from './modules/search/categories/technology';
-import Science from './modules/search/categories/science';
-import Culture from './modules/search/categories/culture';
-import Politics from './modules/search/categories/politics';
+import Business from './modules/categories/business';
+import Technology from './modules/categories/technology';
+import Science from './modules/categories/science';
+import Culture from './modules/categories/culture';
+import Politics from './modules/categories/politics';
 
 const loading = <div>loading ...</div>;
 
@@ -38,6 +38,9 @@ const Admin = Loadable({
 });
 
 const AppRoutes = () => {
+  const [articleData, setArticleData] = useState();
+  const [articleIndex, setArticleIndex] = useState();
+
   return (
     <div className="view-routes">
       <Navbar />

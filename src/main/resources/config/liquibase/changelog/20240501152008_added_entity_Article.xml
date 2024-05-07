@@ -115,4 +115,8 @@
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>
+
+    <changeSet id="20240506175800-1-alter" author="nick">
+        <modifyDataType tableName="article" columnName="content" newDataType="java.sql.Types.CLOB" />
+    </changeSet>
 </databaseChangeLog>
