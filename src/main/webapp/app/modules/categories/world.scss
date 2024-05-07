@@ -1,0 +1,32 @@
+.business-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-box {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px; /* Add margin for spacing between articles */
+}
+
+.headline-image {
+  width: 100px; /* Adjust image width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 20px; /* Add margin between image and text */
+}
+
+.textbody {
+  float: right;
+  width: 57%;
+  margin-right: 3%; /* Add margin for spacing */
+}
+
+.headline-text {
+  font-weight: bold; /* Make headline bold */
+  margin-bottom: 10px; /* Add space below headline */
+}
+
+.headline-story-text {
+  font-size: inherit; /* Use the font size of the parent */
+}
