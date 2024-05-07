@@ -91,7 +91,12 @@ public class ApiService {
             //only get the data that is in articles:[]
             if (!articlesNode.isMissingNode()) {
                 //if articles exists
-                return objectMapper.convertValue(articlesNode, new TypeReference<List<Article>>() {});
+                List<Article> holder = objectMapper.convertValue(articlesNode, new TypeReference<List<Article>>() {});
+                //                for (int i = 0; i < 20; i++){
+                //                    list.add(holder.get(i));
+                //                }
+
+                //return objectMapper.convertValue(articlesNode, new TypeReference<List<Article>>() {});
                 //converts json array to list of article objects
             }
             return List.of();

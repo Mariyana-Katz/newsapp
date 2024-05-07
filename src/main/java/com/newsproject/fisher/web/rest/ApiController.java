@@ -27,12 +27,12 @@ public class ApiController {
 
     //constructor injection bc of early failure detection, fail at startup, not runtime
 
-    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
     public void deleteAllArticles() {
         articleRepository.deleteAll();
     }
 
-    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void headlineArticles() {
         List<Article> articles = apiService.fetchDataFromExternalApi();
