@@ -25,6 +25,7 @@ import Science from './modules/categories/science';
 import Culture from './modules/categories/culture';
 import Politics from './modules/categories/politics';
 import UserProfile from './modules/bookmarkpage/bookmarkslogic';
+import BookmarkPage from './modules/bookmarkpage/bookmarkpage';
 import BookMarkArticle from './modules/bookmarkpage/bookmarkpost';
 
 const loading = <div>loading ...</div>;

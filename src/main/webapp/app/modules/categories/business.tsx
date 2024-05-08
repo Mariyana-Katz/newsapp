@@ -1,5 +1,6 @@
-import FetchArticles from 'app/modules/articleapi/fetcharticles';
 import React, { useEffect, useState } from 'react';
+import FetchArticles from 'app/modules/articleapi/fetcharticles';
+import StandardArticleBox from '../articlecomponents/standardarticlebox';
 
 const Business = () => {
   const [articleData, setArticleData] = useState([]);
@@ -15,8 +16,6 @@ const Business = () => {
       });
   }, []);
 
-  console.log(articleData);
-
   return (
     <div>
       {articleData.map((article, index) =>
@@ -28,6 +27,7 @@ const Business = () => {
           </div>
         ) : null,
       )}
+      <StandardArticleBox />
     </div>
   );
 };
