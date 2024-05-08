@@ -26,6 +26,8 @@ import Culture from './modules/categories/culture';
 import Politics from './modules/categories/politics';
 import UserProfile from './modules/bookmarkpage/bookmarkslogic';
 import BookmarkPage from './modules/bookmarkpage/bookmarkpage';
+import BookmarkPage from './modules/bookmarkpage/bookmarkpage';
+import BookMarkArticle from './modules/bookmarkpage/bookmarkpost';
 
 const loading = <div>loading ...</div>;
 
@@ -60,6 +62,7 @@ const AppRoutes = () => {
           <Route path="culture" element={<Culture />} />
           <Route path="politics" element={<Politics />} />
           <Route path="logout" element={<Logout />} />
+          <Route path="bookmark" element={<UserProfile />} />
           <Route path="search" element={<Search />} />
           <Route path="test" element={<Test />}></Route>
           <Route path="account">
