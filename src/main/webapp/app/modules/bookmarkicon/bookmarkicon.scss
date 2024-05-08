@@ -1,0 +1,13 @@
+.bookmark-icon {
+  color: grey; /* Default grey color */
+  transition: transform 0.2s ease-in-out;
+  padding-left: 0%;
+}
+
+.bookmark-icon.bookmarked {
+  color: rgb(238, 136, 34); /* Color when bookmarked */
+}
+
+.bookmark-icon.animate {
+  transform: scale(1.2); /* Scale up the icon */
+}

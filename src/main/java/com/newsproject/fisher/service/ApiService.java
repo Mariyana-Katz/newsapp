@@ -69,6 +69,7 @@ public class ApiService {
 
     public List<Article> filteringArticles(List<Article> articles) {
         List<Article> newFiteredArticles = new ArrayList<>();
+        List<Article> newNewFiteredArticles = new ArrayList<>();
 
         for (Article article : articles) {
             if (article.getUrl() != null && !article.getUrl().equals("https://removed.com")) {
@@ -77,7 +78,12 @@ public class ApiService {
                 newFiteredArticles.add(article);
             }
         }
-        return newFiteredArticles;
+
+        for (int i = 0; i < 20; i++) {
+            newNewFiteredArticles.add(newFiteredArticles.get(i));
+        }
+        //taking the first 20 articles and adding them into newNewFiteredArticles
+        return newNewFiteredArticles;
     }
 
     public List<Article> fetchingCategoryData(String category) {
@@ -86,7 +92,7 @@ public class ApiService {
             ResponseEntity<String> response = restTemplate.getForEntity(resourceUrl, String.class);
             //gets http response body, expect it to be a string
             JsonNode root = objectMapper.readTree(response.getBody());
-            //get the entire json, including what is not need in fron of []
+            //get the entire json, including what is not need in front of []
             JsonNode articlesNode = root.path("articles");
             //only get the data that is in articles:[]
             if (!articlesNode.isMissingNode()) {
