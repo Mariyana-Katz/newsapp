@@ -27,19 +27,19 @@
   margin: 0;
 }
 
-.container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #f0f1f3;
-}
+// .container {
+//   width: 100vw;
+//   height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   background-color: #f0f1f3;
+// }
 
 .btn-container {
   display: flex;
-  flex-direction: row; /* Removed quotes */
+  flex-direction: row;
   align-items: center;
   background-color: #fff;
   padding: 5px 5px;
@@ -50,12 +50,11 @@
   border: none;
   color: #fff;
   font-size: 0.8rem;
-  display: flex;
-  align-items: center;
+  display: block;
   background-color: #bdc0c5;
-  border-radius: 66px;
-  padding: 6px 15px;
-  margin: 0 10px;
+  border-radius: 44px;
+  padding: 2px 3px;
+  margin: 5px 0;
 }
 
 .like-active {
@@ -66,4 +65,8 @@
 .disLike-active {
   color: #0b1119;
   background-color: #d31f1f;
+}
+
+.material-icons {
+  padding: 7px;
 }

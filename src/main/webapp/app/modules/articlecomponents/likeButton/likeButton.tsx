@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './likeButton.scss';
+import './lButton';
 
 function LikeButton() {
   const [likeCount, setLikeCount] = useState(50);
@@ -47,12 +48,12 @@ function LikeButton() {
           {/* Button for liking */}
           <button className={`btn ${activeBtn === 'like' ? 'like-active' : ''}`} onClick={() => handleReactionClick('like')}>
             <span className="material-icons">thumb_up</span>
-            Like {likeCount}
+            {likeCount}
           </button>
           {/* Button for Dislike */}
           <button className={`btn ${activeBtn === 'disLike' ? 'disLike-active' : ''}`} onClick={() => handleReactionClick('disLike')}>
             <span className="material-icons">thumb_down</span>
-            Dislike {dislikeCount}
+            {dislikeCount}
           </button>
         </div>
       </div>

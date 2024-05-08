@@ -24,6 +24,7 @@ import Technology from './modules/categories/technology';
 import Science from './modules/categories/science';
 import Culture from './modules/categories/culture';
 import Politics from './modules/categories/politics';
+import BookmarkPage from './modules/bookmarkpage/bookmarkpage';
 import LikeButton from './modules/articlecomponents/likeButton/likeButton';
 
 const loading = <div>loading ...</div>;
@@ -58,10 +59,12 @@ const AppRoutes = () => {
           <Route path="science" element={<Science />} />
           <Route path="culture" element={<Culture />} />
           <Route path="politics" element={<Politics />} />
-          <Route path="likebuttontestpage" element={<LikeButton />} />
+          <Route path="BookmarkPage" element={<BookmarkPage />} />
           <Route path="logout" element={<Logout />} />
           <Route path="search" element={<Search />} />
           <Route path="test" element={<Test />}></Route>
+          <Route path="LikeButtonpage" element={<LikeButton />}></Route>
+
           <Route path="account">
             <Route
               path="*"

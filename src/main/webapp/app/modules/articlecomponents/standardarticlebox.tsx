@@ -24,6 +24,8 @@ const StandardArticleBox = () => {
         article.category === 'HEADLINES' ? (
           <div key={index} className="article-box">
             <h3 className="article-headline">{article.title}</h3>
+            <LikeButton />
+
             <img src={article.urlToImage} alt="" className="article-image" />
             <p className="article-short-text">{article.shortDescription}</p>
           </div>
