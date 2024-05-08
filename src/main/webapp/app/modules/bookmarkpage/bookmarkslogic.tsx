@@ -52,7 +52,7 @@ const UserProfile = () => {
 
   const BookMarkArticle = async () => {
     try {
-      await PostBookmarks(articleId, 1);
+      await PostBookmarks(articleId, userId);
       console.log('Bookmark posted successfully');
     } catch (error) {
       console.error('Failed to post bookmark', error);
