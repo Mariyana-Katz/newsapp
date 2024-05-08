@@ -1,6 +1,7 @@
 .bookmark-icon {
   color: grey; /* Default grey color */
-  transition: transform 0.2s ease-in-out; /* Add transition for smooth animation */
+  transition: transform 0.2s ease-in-out;
+  padding-left: 0%;
 }
 
 .bookmark-icon.bookmarked {
