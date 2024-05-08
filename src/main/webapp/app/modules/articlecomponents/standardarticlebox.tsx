@@ -1,8 +1,11 @@
+// StandardArticleBox.tsx
 import React, { useEffect, useState } from 'react';
 import FetchArticles from '../articleapi/fetcharticles';
+import BookmarkIcon from '../bookmarkicon/bookmarkicon'; // Import the BookmarkIcon component
 
-const StandardArticleBox = () => {
+const StandardArticleBox: React.FC = () => {
   const [articleData, setArticleData] = useState([]);
+  const [isBookmarked, setIsBookmarked] = useState(false);
 
   useEffect(() => {
     FetchArticles()
@@ -15,7 +18,9 @@ const StandardArticleBox = () => {
       });
   }, []);
 
-  console.log(articleData);
+  const handleBookmarkClick = () => {
+    setIsBookmarked(!isBookmarked);
+  };
 
   return (
     <div>
@@ -23,6 +28,8 @@ const StandardArticleBox = () => {
         article.category === 'HEADLINES' ? (
           <div key={index} className="article-box">
             <h3 className="article-headline">{article.title}</h3>
+            {/*the BookmarkIcon component */}
+            <BookmarkIcon isBookmarked={isBookmarked} onClick={handleBookmarkClick} />
             <img src={article.urlToImage} alt="" className="article-image" />
             <p className="article-short-text">{article.shortDescription}</p>
           </div>
