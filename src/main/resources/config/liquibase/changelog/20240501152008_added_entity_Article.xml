@@ -116,7 +116,9 @@
         </loadData>
     </changeSet>
 
-    <changeSet id="20240506175800-1-alter" author="nick">
-        <modifyDataType tableName="article" columnName="content" newDataType="java.sql.Types.CLOB" />
+    <changeSet id="20240507190100-1-alter" author="nick">
+        <modifyDataType tableName="article" columnName="url_to_image" newDataType="java.sql.Types.CLOB" />
     </changeSet>
+
+<!--    csid format: YYYYMMDDHHMMSS-?-text(optional)-->
 </databaseChangeLog>
