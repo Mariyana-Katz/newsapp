@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentBox from './commentBox';
+import CommentList from './postedComments';
 
 const ArticleModal = ({ article, onClose }) => {
   return (
@@ -14,6 +15,7 @@ const ArticleModal = ({ article, onClose }) => {
             <img src={article.urlToImage} alt="" className="modal-article-image" />
             <p className="modal-article-content">{article.content}</p>
             <CommentBox />
+            <CommentList />
           </div>
         )}
       </div>
