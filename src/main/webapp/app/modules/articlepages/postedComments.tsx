@@ -4,7 +4,7 @@ const CommentList: React.FC = () => {
   const comments = [
     { id: 1, text: 'This is an example comment.' },
     { id: 2, text: 'Another example comment.' },
-    { id: 3, text: 'yeeeeeeee will this shit even work.' },
+    { id: 3, text: 'yeeeeeeee will this even work.' },
   ];
 
   return (
