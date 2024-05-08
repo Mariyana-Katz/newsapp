@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import 'app/modules/bookmarkicon/bookmarkicon.scss'; // Import the CSS file for styles
+import PostBookmarks from '../bookmarkpage/bookmarkpostapi';
+import { useSelector } from 'react-redux';
 
 interface BookmarkIconProps {
   isBookmarked: boolean;
@@ -11,9 +13,21 @@ interface BookmarkIconProps {
 
 const BookmarkIcon: React.FC<BookmarkIconProps> = ({ isBookmarked, onClick, size = '24px' }) => {
   const [clicked, setClicked] = useState(false);
+  const [articleId, setArticleId] = useState(Number);
+  const userId = useSelector((state: any) => state.authentication.account.id);
+
+  const BookMarkArticle = async () => {
+    try {
+      await PostBookmarks(520, userId);
+      console.log('Bookmark posted successfully');
+    } catch (error) {
+      console.error('Failed to post bookmark', error);
+    }
+  };
 
   const handleIconClick = () => {
     onClick();
+    BookMarkArticle();
     setClicked(true);
     setTimeout(() => setClicked(false), 1000); // Reset the animation after 1 second
   };
