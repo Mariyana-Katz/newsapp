@@ -1,5 +1,6 @@
 import React from 'react';
 import LikeButton from '../articlecomponents/likeButton/likeButton';
+import CommentBox from './commentBox';
 
 const ArticleModal = ({ article, onClose }) => {
   return (
@@ -13,6 +14,7 @@ const ArticleModal = ({ article, onClose }) => {
             <h3 className="modal-article-title">{article.title}</h3>
             <img src={article.urlToImage} alt="" className="modal-article-image" />
             <p className="modal-article-content">{article.content}</p>
+            <CommentBox />
           </div>
         )}
       </div>
