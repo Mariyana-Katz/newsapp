@@ -3,21 +3,26 @@
 .bookmark-page {
   margin: 20px;
 
-  h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-weight: bold; // Making the header bold
-    font-size: inherit; // Making the font inherit
-    margin-bottom: 10px; /* Add space between headline and body of text */
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
+  .header {
+    width: 100%; // Ensure the header spans the entire width
     display: flex;
-    align-items: flex-start;
-    position: absolute;
-    padding: 200px 0px 20px 0px;
-    width: 35%;
+    justify-content: center; // Center the header horizontally
+    align-items: flex-start; // Align items at the top vertically
+    margin-bottom: 20px; // Add margin below the header
+  }
+
+  h1 {
+    font-size: 25px; // Set font size to 40px
+    font-weight: bold; // Making the header bold
+    font-family: inherit; // Making the font inherit
+    margin-bottom: 10px; // Add space between headline and body of text
+    padding: 20px 0; // Adjust padding as needed
+    width: 35%; // Set the width to 35%
+    text-align: center; // Center align the text
+  }
+
+  .bookmark-icon {
+    margin-right: 10px;
   }
 
   input[type='text'] {
@@ -56,6 +61,7 @@
   .headline-text {
     font-weight: bold;
     margin-bottom: 10px;
+    font-size: 25px; // Set font size to 25px
   }
 
   .headline-story-text {

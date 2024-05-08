@@ -23,13 +23,13 @@ const BookmarkPage = () => {
 
   return (
     <div className="bookmark-page">
+      <input type="text" placeholder="Search bookmarks..." value={searchQuery} onChange={handleSearchChange} />
       <div className="header">
         <h1>
-          Bookmarks &nbsp;
           <FontAwesomeIcon icon={faBookmark} className="bookmark-icon" />
+          Bookmark Page
         </h1>
       </div>
-      <input type="text" placeholder="Search bookmarks..." value={searchQuery} onChange={handleSearchChange} />
       <div className="business-container">
         {filteredBookmarks.map((bookmark, index) => (
           <div className="article-box" key={index}>
