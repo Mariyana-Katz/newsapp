@@ -26,3 +26,51 @@
 //   console.log('Article clicked:', index); // Check if the handleClick function is being invoked
 //   setSelectedArticleIndex(index);
 // };
+
+import { useAppSelector } from 'app/config/store';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import FetchBookmarks from './bookmarkapi';
+import PostBookmarks from './bookmarkpostapi';
+
+const UserProfile = () => {
+  const [user, setUser] = useState(null);
+  const currentUser = useSelector((state: any) => state.authentication.account);
+  const [bookmarkData, setBookmarkData] = useState([]);
+  const articleId = 5000;
+  const userId = useSelector((state: any) => state.authentication.account.id);
+
+  useEffect(() => {
+    FetchBookmarks()
+      .then(data => {
+        setBookmarkData(data);
+      })
+      .catch(error => {
+        console.error('Error fetching articles:', error);
+      });
+  }, []);
+
+  const BookMarkArticle = async () => {
+    try {
+      await PostBookmarks(articleId, 1);
+      console.log('Bookmark posted successfully');
+    } catch (error) {
+      console.error('Failed to post bookmark', error);
+    }
+    return <div className="bookmark-article-container"></div>;
+  };
+
+  const handleClick = () => {
+    console.log(currentUser);
+    console.log(bookmarkData);
+    BookMarkArticle();
+  };
+
+  return (
+    <div>
+      <button onClick={() => handleClick()}></button>
+    </div>
+  );
+};
+
+export default UserProfile;
