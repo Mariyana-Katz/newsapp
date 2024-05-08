@@ -1,32 +1,50 @@
-.business-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.article-box {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px; /* Add margin for spacing between articles */
-}
-
-.headline-image {
-  width: 100px; /* Adjust image width as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin-left: 20px; /* Add margin between image and text */
-}
+/* Your existing CSS code with added styles */
 
 .textbody {
-  float: right;
+  float: inline-end;
+  vertical-align: middle;
   width: 57%;
+  height: 497px;
+  background-size: contain;
   margin-right: 3%; /* Add margin for spacing */
 }
 
-.headline-text {
-  font-weight: bold; /* Make headline bold */
-  margin-bottom: 10px; /* Add space below headline */
+.national-headline {
+  margin-bottom: 10px; /* Add space between headline and body of text */
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  display: flex;
+  align-items: flex-start;
+  position: absolute;
+  padding: 200px 0px 20px 0px;
+  width: 35%;
 }
 
 .headline-story-text {
-  font-size: inherit; /* Use the font size of the parent */
+  font: inline-end;
+}
+
+.national-body {
+  line-height: 30px;
+  font: inherit;
+}
+
+/* Media query for screens smaller than 768px */
+@media screen and (max-width: 768px) {
+  .textbody {
+    float: none; /* Remove float on smaller screens */
+    width: 100%; /* Take full width on smaller screens */
+    margin-right: 0; /* Remove right margin on smaller screens */
+  }
+
+  .headline-story-text {
+    font-size: 16px; /* Adjust headline story text font size for smaller screens */
+  }
+
+  .national-headline {
+    width: 100%; /* Take full width on smaller screens */
+    padding: 100px 0px 10px 0px; /* Adjust padding for smaller screens */
+  }
 }
