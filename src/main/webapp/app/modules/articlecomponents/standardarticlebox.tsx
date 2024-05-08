@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import FetchArticles from '../articleapi/fetcharticles';
+import LikeButton from './likeButton/likeButton';
 
 const StandardArticleBox = () => {
   const [articleData, setArticleData] = useState([]);

@@ -3,7 +3,7 @@ import './likeButton.scss';
 
 function LikeButton() {
   const [likeCount, setLikeCount] = useState(50);
-  const [disLikeCount, setDisLikeCount] = useState(10);
+  const [dislikeCount, setDisLikeCount] = useState(10);
   const [activeBtn, setActiveButton] = useState('none');
   // Handle the button click
   const handleReactionClick = reaction => {
@@ -13,7 +13,7 @@ function LikeButton() {
         setLikeCount(likeCount + 1);
         setActiveButton('like');
       } else if (reaction === 'disLike') {
-        setDisLikeCount(disLikeCount + 1);
+        setDisLikeCount(dislikeCount + 1);
         setActiveButton('disLike');
       }
     }
@@ -22,7 +22,7 @@ function LikeButton() {
       if (reaction === 'like') {
         setLikeCount(likeCount - 1);
       } else if (reaction === 'disLike') {
-        setDisLikeCount(disLikeCount - 1);
+        setDisLikeCount(dislikeCount - 1);
       }
       setActiveButton('none');
     }
@@ -30,10 +30,10 @@ function LikeButton() {
     else if (activeBtn !== reaction) {
       if (reaction === 'like') {
         setLikeCount(likeCount + 1);
-        setDisLikeCount(disLikeCount - 1);
+        setDisLikeCount(dislikeCount - 1);
         setActiveButton('like');
       } else if (reaction === 'disLike') {
-        setDisLikeCount(disLikeCount + 1);
+        setDisLikeCount(dislikeCount + 1);
         setLikeCount(likeCount - 1);
         setActiveButton('disLike');
       }
@@ -46,13 +46,13 @@ function LikeButton() {
         <div className="btn-container">
           {/* Button for liking */}
           <button className={`btn ${activeBtn === 'like' ? 'like-active' : ''}`} onClick={() => handleReactionClick('like')}>
-            <span className="material-symbols-rounded">thumb_up</span>
+            <span className="material-icons">thumb_up</span>
             Like {likeCount}
           </button>
           {/* Button for Dislike */}
-          <button className={`btn ${activeBtn === 'dislike' ? 'dislike-active' : ''}`} onClick={() => handleReactionClick('disLike')}>
-            <span className="material-symbols-rounded">thumb_down</span>
-            Dislike {disLikeCount}
+          <button className={`btn ${activeBtn === 'disLike' ? 'disLike-active' : ''}`} onClick={() => handleReactionClick('disLike')}>
+            <span className="material-icons">thumb_down</span>
+            Dislike {dislikeCount}
           </button>
         </div>
       </div>

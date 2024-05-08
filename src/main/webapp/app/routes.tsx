@@ -18,13 +18,13 @@ import PageNotFound from 'app/shared/error/page-not-found';
 import { AUTHORITIES } from 'app/config/constants';
 import Test from './test';
 import StandardArticleBox from 'app/modules/articlecomponents/standardarticlebox';
-import LikeButton from './modules/articlecomponents/likeButton/likeButton';
 import Search from './modules/search/search';
 import Business from './modules/categories/business';
 import Technology from './modules/categories/technology';
 import Science from './modules/categories/science';
 import Culture from './modules/categories/culture';
 import Politics from './modules/categories/politics';
+import LikeButton from './modules/articlecomponents/likeButton/likeButton';
 
 const loading = <div>loading ...</div>;
 
@@ -58,6 +58,7 @@ const AppRoutes = () => {
           <Route path="science" element={<Science />} />
           <Route path="culture" element={<Culture />} />
           <Route path="politics" element={<Politics />} />
+          <Route path="likebuttontestpage" element={<LikeButton />} />
           <Route path="logout" element={<Logout />} />
           <Route path="search" element={<Search />} />
           <Route path="test" element={<Test />}></Route>
