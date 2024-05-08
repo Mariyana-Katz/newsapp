@@ -1,12 +1,12 @@
 .bookmark-icon {
-  color: #ff9800;
-  font-size: 20px;
-  cursor: pointer;
-}
-.bookmark-icon {
   color: grey; /* Default grey color */
+  transition: transform 0.2s ease-in-out; /* Add transition for smooth animation */
 }
 
 .bookmark-icon.bookmarked {
   color: rgb(198, 22, 13); /* Color when bookmarked */
+}
+
+.bookmark-icon.animate {
+  transform: scale(1.2); /* Scale up the icon */
 }

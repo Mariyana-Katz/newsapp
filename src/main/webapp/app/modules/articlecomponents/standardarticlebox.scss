@@ -84,3 +84,26 @@ img:hover {
   height: 100%;
   border: none; /* Remove iframe border */
 }
+.bookmark-icon {
+  color: grey; /* Default grey color */
+}
+
+.bookmark-icon.bookmarked {
+  color: rgb(198, 22, 13); /* Color when bookmarked */
+}
+
+.bookmark-icon.animate {
+  animation: pulse 1s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
