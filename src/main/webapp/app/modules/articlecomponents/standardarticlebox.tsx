@@ -29,7 +29,7 @@ const StandardArticleBox: React.FC = () => {
           <div key={index} className="article-box">
             <h3 className="article-headline">{article.title}</h3>
             {/*the BookmarkIcon component */}
-            <BookmarkIcon isBookmarked={isBookmarked} onClick={handleBookmarkClick} size="20px" />
+            <BookmarkIcon articleId={article.id} isBookmarked={isBookmarked} onClick={handleBookmarkClick} size="20px" />
             <img src={article.urlToImage} alt="" className="article-image" />
             <p className="article-short-text">{article.shortDescription}</p>
           </div>
