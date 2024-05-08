@@ -59,10 +59,8 @@ const AppRoutes = () => {
           <Route path="science" element={<Science />} />
           <Route path="culture" element={<Culture />} />
           <Route path="politics" element={<Politics />} />
-          <Route path="BookmarkPage" element={<BookmarkPage />} />
           <Route path="logout" element={<Logout />} />
           <Route path="search" element={<Search />} />
-          <Route path="bookmark" element={<UserProfile />} />
           <Route path="test" element={<Test />}></Route>
           <Route path="account">
             <Route
