@@ -9,16 +9,16 @@ interface BookmarkIconProps {
   isBookmarked: boolean;
   onClick: () => void;
   size?: string; // Add a size prop
+  articleId: number;
 }
 
-const BookmarkIcon: React.FC<BookmarkIconProps> = ({ isBookmarked, onClick, size = '24px' }) => {
+const BookmarkIcon: React.FC<BookmarkIconProps> = ({ isBookmarked, onClick, size = '24px', articleId }) => {
   const [clicked, setClicked] = useState(false);
-  const [articleId, setArticleId] = useState(Number);
   const userId = useSelector((state: any) => state.authentication.account.id);
 
   const BookMarkArticle = async () => {
     try {
-      await PostBookmarks(520, userId);
+      await PostBookmarks(articleId, userId);
       console.log('Bookmark posted successfully');
     } catch (error) {
       console.error('Failed to post bookmark', error);
