@@ -1,0 +1,70 @@
+// bookmarkPage.scss
+
+.bookmark-page {
+  margin: 20px;
+
+  .header {
+    width: 100%; // Ensure the header spans the entire width
+    display: flex;
+    justify-content: center; // Center the header horizontally
+    align-items: flex-start; // Align items at the top vertically
+    margin-bottom: 20px; // Add margin below the header
+  }
+
+  h1 {
+    font-size: 25px; // Set font size to 40px
+    font-weight: bold; // Making the header bold
+    font-family: inherit; // Making the font inherit
+    margin-bottom: 10px; // Add space between headline and body of text
+    padding: 20px 0; // Adjust padding as needed
+    width: 35%; // Set the width to 35%
+    text-align: center; // Center align the text
+  }
+
+  .bookmark-icon {
+    margin-right: 10px;
+  }
+
+  input[type='text'] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .business-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .article-box {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .textbody {
+    float: right;
+    width: 57%;
+    margin-right: 3%;
+  }
+
+  .headline-image {
+    width: 100px;
+    height: auto;
+    margin-left: 20px;
+  }
+
+  .headline-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 25px; // Set font size to 25px
+  }
+
+  .headline-story-text {
+    font-size: inherit;
+  }
+}
