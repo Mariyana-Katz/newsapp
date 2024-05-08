@@ -37,7 +37,7 @@ const UserProfile = () => {
   const [user, setUser] = useState(null);
   const currentUser = useSelector((state: any) => state.authentication.account);
   const [bookmarkData, setBookmarkData] = useState([]);
-  const articleId = 5000;
+  const articleId = 1200;
   const userId = useSelector((state: any) => state.authentication.account.id);
 
   useEffect(() => {
@@ -57,6 +57,7 @@ const UserProfile = () => {
     } catch (error) {
       console.error('Failed to post bookmark', error);
     }
+
     return <div className="bookmark-article-container"></div>;
   };
 

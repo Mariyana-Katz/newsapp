@@ -1,9 +1,11 @@
+// StandardArticleBox.tsx
 import React, { useEffect, useState } from 'react';
 import FetchArticles from '../articleapi/fetcharticles';
 import LikeButton from './likeButton/likeButton';
 
-const StandardArticleBox = () => {
+const StandardArticleBox: React.FC = () => {
   const [articleData, setArticleData] = useState([]);
+  const [isBookmarked, setIsBookmarked] = useState(false);
 
   useEffect(() => {
     FetchArticles()
@@ -16,7 +18,9 @@ const StandardArticleBox = () => {
       });
   }, []);
 
-  console.log(articleData);
+  const handleBookmarkClick = () => {
+    setIsBookmarked(!isBookmarked);
+  };
 
   return (
     <div>
