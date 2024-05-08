@@ -2,7 +2,7 @@ const PostBookmarks = async (articleID: number, userID: number) => {
   const url = 'http://localhost:8080/api/bookmarks';
   //INSERT TOKEN HERE BUT DONT FORGET TO REMOVE IT BEFORE MERGING
   const token =
-    'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcxNTE5ODIwMSwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzE1MTExODAxfQ.RHiUBcbIkIl6D3yMjRYXxt44c8JnzkvSK_2NnjveJwmyXosK_w3ek2DfiHvporh5FAROJehfAusWa8Jg5poDwg';
+    'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcxNTI4Njk4MCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzE1MjAwNTgwfQ.ut_iUaGPOYWn-UIQKvkb5JgZNqpIhOPkhQZCph5yKWJi3gi0VJXrxhMranhbg3q5_beZZOjRrnEWUnE6KdrECw';
 
   const requestBody = JSON.stringify({
     articleId: articleID,
