@@ -5,11 +5,11 @@ import './bookmarkPage.scss'; // Import SCSS file
 
 const BookmarkPage = () => {
   const initialBookmarks = [
-    { title: 'Google', text: 'Search engine' },
-    { title: 'GitHub', text: 'Code hosting platform' },
-    { title: 'React', text: 'JavaScript library for building UIs' },
-    { title: 'MDN Web Docs', text: 'Web development documentation' },
-    { title: 'Stack Overflow', text: 'Question and answer site for programmers' },
+    { title: 'Google', text: 'A multinational technology company specializing in Internet-related services and products.' },
+    { title: 'GitHub', text: 'A web-based platform for version control using Git.' },
+    { title: 'React', text: 'A JavaScript library for building user interfaces, developed by Facebook.' },
+    { title: 'MDN Web Docs', text: 'A web platform for developers with documentation on web technologies.' },
+    { title: 'Stack Overflow', text: 'A question and answer website for professional and enthusiast programmers.' },
   ];
 
   const [bookmarks, setBookmarks] = useState(initialBookmarks);
@@ -27,7 +27,7 @@ const BookmarkPage = () => {
       <div className="header">
         <h1>
           <FontAwesomeIcon icon={faBookmark} className="bookmark-icon" />
-          Bookmark Page
+          Bookmark
         </h1>
       </div>
       <div className="business-container">
