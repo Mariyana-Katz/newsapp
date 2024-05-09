@@ -4,7 +4,7 @@ import PostComments from './commentBoxApi';
 import { useSelector } from 'react-redux';
 
 interface CommentInterface {
-  articleId: number; // Remove onClick since it's unused
+  articleId: number;
 }
 
 const CommentBox: React.FC<CommentInterface> = ({ articleId }) => {
@@ -17,7 +17,7 @@ const CommentBox: React.FC<CommentInterface> = ({ articleId }) => {
       try {
         await PostComments(articleId, userId, comment);
         console.log('Comment posted successfully');
-        setComment(''); // Clear the textarea after posting
+        setComment('');
       } catch (error) {
         console.error('Failed to post comment', error);
       }
