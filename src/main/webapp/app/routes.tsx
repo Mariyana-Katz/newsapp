@@ -24,7 +24,6 @@ import Technology from './modules/categories/technology';
 import Science from './modules/categories/science';
 import Culture from './modules/categories/culture';
 import Politics from './modules/categories/politics';
-import BookmarkPage from './modules/bookmarkpage/bookmarkpage';
 import LikeButton from './modules/articlecomponents/likeButton/likeButton';
 import UserProfile from './modules/bookmarkpage/bookmarkslogic';
 import BookmarkPage from './modules/bookmarkpage/bookmarkpage';
