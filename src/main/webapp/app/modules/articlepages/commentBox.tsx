@@ -16,7 +16,7 @@ const CommentBox: React.FC = () => {
   };
 
   return (
-    <div style={{ position: 'relative', width: '100%' }}>
+    <div style={{ position: 'relative', width: '100%' }} className="comment-container">
       <form onSubmit={handleSubmit} style={{ position: 'relative', width: '100%' }}>
         <textarea
           value={comment}

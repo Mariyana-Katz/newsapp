@@ -5,11 +5,14 @@ import FetchArticles from '../articleapi/fetcharticles';
 const Culture = () => {
   const [articleData, setArticleData] = useState([]);
   const [selectedArticleIndex, setSelectedArticleIndex] = useState(null);
+  const [firstHeadlineArticle, setFirstHeadlineArticle] = useState(null);
 
   useEffect(() => {
     FetchArticles()
       .then(data => {
         setArticleData(data);
+        const firstHeadline = data.find(article => article.category === 'ARTSANDCULTURE');
+        setFirstHeadlineArticle(firstHeadline);
       })
       .catch(error => {
         console.error('Error fetching articles:', error);
@@ -25,6 +28,16 @@ const Culture = () => {
 
   return (
     <div>
+      {firstHeadlineArticle && (
+        <div className="headline-story">
+          <h2 className="headline-text">{firstHeadlineArticle.title}</h2>
+          <img src={firstHeadlineArticle.urlToImage} className="headline-image"></img>
+          <div className="headline-story-div">
+            <p className="headline-story-text">{firstHeadlineArticle.shortDescription}</p>
+          </div>
+        </div>
+      )}
+
       {articleData.map((article, index) =>
         article.category === 'ARTSANDCULTURE' ? (
           <div key={index} className="article-box" onClick={() => handleClick(index)}>
