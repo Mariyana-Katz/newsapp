@@ -1,9 +1,28 @@
 import React, { useState } from 'react';
 import './commentBox.scss';
+import PostComments from './commentBoxApi';
+import { useSelector } from 'react-redux';
 
-const CommentBox: React.FC = () => {
+interface CommentInterface {
+  articleId: number; // Remove onClick since it's unused
+}
+
+const CommentBox: React.FC<CommentInterface> = ({ articleId }) => {
   const [comment, setComment] = useState('');
   const maxLength = 255;
+  const userId = useSelector((state: any) => state.authentication.account.id);
+
+  const postComment = async () => {
+    if (comment.trim()) {
+      try {
+        await PostComments(articleId, userId, comment);
+        console.log('Comment posted successfully');
+        setComment(''); // Clear the textarea after posting
+      } catch (error) {
+        console.error('Failed to post comment', error);
+      }
+    }
+  };
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setComment(event.target.value);
@@ -11,13 +30,18 @@ const CommentBox: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log('Comment Submitted:', comment);
-    setComment('');
+    postComment();
   };
 
+  const comments = [
+    { id: 1, text: 'This is an example comment.' },
+    { id: 2, text: 'Another example comment.' },
+    { id: 3, text: 'yeeeeeeee will this even work.' },
+  ];
+
   return (
-    <div style={{ position: 'relative', width: '100%' }}>
-      <form onSubmit={handleSubmit} style={{ position: 'relative', width: '100%' }}>
+    <div className="commentSection">
+      <form onSubmit={handleSubmit} className="submit">
         <textarea
           value={comment}
           onChange={handleChange}
@@ -31,6 +55,13 @@ const CommentBox: React.FC = () => {
         </div>
         <button className="submitButton">Submit</button>
       </form>
+      <div className="postedComments">
+        {comments.map(comment => (
+          <div key={comment.id} className="postedCommentTextBox">
+            {comment.text}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

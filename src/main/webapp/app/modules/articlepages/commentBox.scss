@@ -22,3 +22,24 @@
   padding: 5px 10px;
   border-radius: 30px;
 }
+
+.commentSection {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 70px 10px;
+}
+
+.submit {
+  position: relative;
+  width: 100%;
+}
+
+.postedComments {
+  margintop: 20px;
+  width: 100%;
+}
+
+.postedCommentTextBox {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CommentBox from './commentBox';
-import CommentList from './postedComments';
+import BookmarkIcon from '../bookmarkicon/bookmarkicon';
 
 const ArticleModal = ({ article, onClose }) => {
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -21,8 +21,7 @@ const ArticleModal = ({ article, onClose }) => {
             <img src={article.urlToImage} alt="" className="modal-article-image" />
             <p className="modal-article-content">{article.content}</p>
             <BookmarkIcon isBookmarked={isBookmarked} onClick={handleBookmarkClick} articleId={article.id} />
-            <CommentBox />
-            <CommentList />
+            <CommentBox articleId={article.id} />
           </div>
         )}
       </div>
