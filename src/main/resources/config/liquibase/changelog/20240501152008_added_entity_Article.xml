@@ -117,10 +117,8 @@
     </changeSet>
 
 
-    <changeSet id="20240507175500-1-alter" author="Andy">
-
-
-        <modifyDataType tableName="article" columnName="url_to_image" newDataType="java.sql.Types.CLOB" />
+    <changeSet id="20240510105800-1-alter" author="Angelina">
+        <modifyDataType tableName="article" columnName="url" newDataType="java.sql.Types.CLOB" />
     </changeSet>
 
 <!--    csid format: YYYYMMDDHHMMSS-?-text(optional)-->
