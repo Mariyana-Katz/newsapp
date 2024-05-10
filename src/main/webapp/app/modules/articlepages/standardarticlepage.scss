@@ -14,25 +14,31 @@
   display: flex;
   background-color: white;
   width: 80%;
-  max-width: 600px;
-  padding: 20px;
+  max-width: 1000px;
+  padding: 20px 30px 100px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: fixed;
   left: 50%;
-  top: 50%;
+  top: 55%;
   transform: translate(-50%, -50%);
-  z-index: 5000;
+  z-index: 2000;
 }
 
 .modal-close {
   position: absolute;
   top: 10px;
   right: 10px;
+  padding: 10px;
+  border: none;
+  background: none;
+  color: rgb(182, 181, 181);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
 }
 
 .modal-article-title {
-  padding-top: 100px;
+  padding-top: 30px;
   text-align: center; /* Center-align the title */
   font-size: 24px; /* Example font size */
   margin-bottom: 20px; /* Add some spacing below the title */
@@ -49,4 +55,18 @@
   text-align: justify; /* Justify-align the text */
   font-size: 16px; /* Example font size */
   line-height: 1.6; /* Example line height */
+}
+
+.header {
+  height: 100px;
+  border-bottom: 1px solid rgb(194, 125, 8);
+  color: black;
+}
+
+.article-container {
+  padding-bottom: 600px;
+}
+
+.buttons {
+  padding-top: 20px;
 }
