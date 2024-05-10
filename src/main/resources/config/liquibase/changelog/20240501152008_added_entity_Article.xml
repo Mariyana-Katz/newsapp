@@ -117,7 +117,11 @@
     </changeSet>
 
 
+<<<<<<< HEAD
     <changeSet id="202405105700-1-alter" author="Mariyana">
+=======
+    <changeSet id="20240510105800-1-alter" author="Nick">
+>>>>>>> 9b405e3ed804354302648e81e302db8fdf602813
         <modifyDataType tableName="article" columnName="url" newDataType="java.sql.Types.CLOB" />
     </changeSet>
 

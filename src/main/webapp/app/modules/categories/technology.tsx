@@ -26,6 +26,10 @@ const Technology = () => {
 
   console.log('Selected Article Index:', selectedArticleIndex); // Check the selected article index
 
+  const filteredArticleData = articleData.filter(article => article.category === 'TECHNOLOGY');
+  console.log(filteredArticleData);
+  filteredArticleData.shift();
+
   return (
     <div>
       {firstHeadlineArticle && (
@@ -38,17 +42,15 @@ const Technology = () => {
         </div>
       )}
 
-      {articleData.map((article, index) =>
-        article.category === 'TECHNOLOGY' ? (
-          <div key={index} className="article-box" onClick={() => handleClick(index)}>
-            <h3 className="article-headline">{article.title}</h3>
-            <img src={article.urlToImage} alt="" className="article-image" />
-            <p className="article-short-text">{article.shortDescription}</p>
-          </div>
-        ) : null,
-      )}
+      {filteredArticleData.map((article, index) => (
+        <div key={index} className="article-box" onClick={() => handleClick(index)}>
+          <h3 className="article-headline">{article.title}</h3>
+          <img src={article.urlToImage} alt="" className="article-image" />
+          <p className="article-short-text">{article.shortDescription}</p>
+        </div>
+      ))}
       {selectedArticleIndex !== null && (
-        <ArticleModal article={articleData[selectedArticleIndex]} onClose={() => setSelectedArticleIndex(null)} />
+        <ArticleModal article={filteredArticleData[selectedArticleIndex]} onClose={() => setSelectedArticleIndex(null)} />
       )}
     </div>
   );
