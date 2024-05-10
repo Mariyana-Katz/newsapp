@@ -24,7 +24,7 @@ import Technology from './modules/categories/technology';
 import Science from './modules/categories/science';
 import Culture from './modules/categories/culture';
 import Politics from './modules/categories/politics';
-
+import LikeButton from './modules/articlecomponents/likeButton/likeButton';
 import UserProfile from './modules/bookmarkpage/bookmarkslogic';
 import BookmarkPage from './modules/bookmarkpage/bookmarkpage';
 import BookMarkArticle from './modules/bookmarkpage/bookmarkpost';
@@ -67,6 +67,8 @@ const AppRoutes = () => {
           <Route path="search" element={<Search />} />
           <Route path="bookmark" element={<UserProfile />} />
           <Route path="test" element={<Test />}></Route>
+          <Route path="LikeButtonpage" element={<LikeButton />}></Route>
+
           <Route path="account">
             <Route
               path="*"
