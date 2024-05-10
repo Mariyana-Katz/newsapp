@@ -14,14 +14,19 @@ const ArticleModal = ({ article, onClose }) => {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal" onClick={e => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose}>
-          Close
+          X
         </button>
         {article && (
-          <div>
+          <div className="article-container">
+            <div className="header">
+              <div className="buttons">
+                <BookmarkIcon isBookmarked={isBookmarked} onClick={handleBookmarkClick} articleId={article.id} />
+              </div>
+            </div>
             <h3 className="modal-article-title">{article.title}</h3>
+            <LikeButton />
             <img src={article.urlToImage} alt="" className="modal-article-image" />
             <p className="modal-article-content">{article.content}</p>
-            <LikeButton />
             <BookmarkIcon isBookmarked={isBookmarked} onClick={handleBookmarkClick} articleId={article.id} />
             <CommentBox />
           </div>

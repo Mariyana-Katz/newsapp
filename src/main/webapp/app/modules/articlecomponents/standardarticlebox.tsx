@@ -5,7 +5,6 @@ import LikeButton from './likeButton/likeButton';
 
 const StandardArticleBox: React.FC = () => {
   const [articleData, setArticleData] = useState([]);
-  const [isBookmarked, setIsBookmarked] = useState(false);
 
   useEffect(() => {
     FetchArticles()
@@ -17,10 +16,6 @@ const StandardArticleBox: React.FC = () => {
         console.error('Error fetching articles:', error);
       });
   }, []);
-
-  const handleBookmarkClick = () => {
-    setIsBookmarked(!isBookmarked);
-  };
 
   return (
     <div>
