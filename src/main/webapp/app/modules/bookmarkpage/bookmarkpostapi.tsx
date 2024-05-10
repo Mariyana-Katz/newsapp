@@ -33,5 +33,4 @@ const PostBookmarks = async (articleID: number, userID: number) => {
     throw error;
   }
 };
-
 export default PostBookmarks;
