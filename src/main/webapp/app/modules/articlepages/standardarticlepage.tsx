@@ -28,7 +28,7 @@ const ArticleModal = ({ article, onClose }) => {
             <img src={article.urlToImage} alt="" className="modal-article-image" />
             <p className="modal-article-content">{article.content}</p>
             <BookmarkIcon isBookmarked={isBookmarked} onClick={handleBookmarkClick} articleId={article.id} />
-            <CommentBox />
+            <CommentBox articleId={article.id} />
           </div>
         )}
       </div>
