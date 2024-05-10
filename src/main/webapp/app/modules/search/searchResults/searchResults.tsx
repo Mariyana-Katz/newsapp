@@ -5,9 +5,13 @@ const SearchResults = ({ results }) => {
   console.log(results);
   return (
     <div>
-      {results.map((result, id) => {
-        return <SearchResult result={result} key={id} />;
-      })}
+      {results && results.length > 0 ? (
+        results.map((result, id) => {
+          return <SearchResult result={result} key={id} />;
+        })
+      ) : (
+        <div>Please enter search criterie above.</div>
+      )}
     </div>
   );
 };
