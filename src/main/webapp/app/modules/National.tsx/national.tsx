@@ -26,6 +26,10 @@ const National = () => {
 
   console.log('Selected Article Index:', selectedArticleIndex); // Check the selected article index
 
+  const filteredArticleData = articleData.filter(article => article.category === 'NATIONAL');
+  console.log(filteredArticleData);
+  filteredArticleData.shift();
+
   return (
     <div>
       {firstHeadlineArticle && (
@@ -38,7 +42,7 @@ const National = () => {
         </div>
       )}
 
-      {articleData.map((article, index) =>
+      {filteredArticleData.map((article, index) =>
         article.category === 'NATIONAL' ? (
           <div key={index} className="article-box" onClick={() => handleClick(index)}>
             <h3 className="article-headline">{article.title}</h3>
@@ -48,7 +52,7 @@ const National = () => {
         ) : null,
       )}
       {selectedArticleIndex !== null && (
-        <ArticleModal article={articleData[selectedArticleIndex]} onClose={() => setSelectedArticleIndex(null)} />
+        <ArticleModal article={filteredArticleData[selectedArticleIndex]} onClose={() => setSelectedArticleIndex(null)} />
       )}
     </div>
   );
