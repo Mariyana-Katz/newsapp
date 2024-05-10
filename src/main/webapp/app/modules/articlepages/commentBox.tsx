@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './commentBox.scss';
 import PostComments from './commentBoxApi';
+import GetComments from './commentBoxApi2';
 import { useSelector } from 'react-redux';
 
 interface CommentInterface {
@@ -8,9 +9,25 @@ interface CommentInterface {
 }
 
 const CommentBox: React.FC<CommentInterface> = ({ articleId }) => {
+  const [comments, setComments] = useState([]);
   const [comment, setComment] = useState('');
   const maxLength = 255;
   const userId = useSelector((state: any) => state.authentication.account.id);
+
+  // Define fetchComments outside useEffect so it can be reused
+  const fetchComments = async () => {
+    try {
+      const fetchedComments = await GetComments(articleId);
+      console.log('Fetched Comments:', fetchedComments);
+      setComments(fetchedComments); // Store fetched comments in state
+    } catch (error) {
+      console.error('Failed to fetch comments:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchComments();
+  }, [articleId]);
 
   const postComment = async () => {
     if (comment.trim()) {
@@ -18,6 +35,7 @@ const CommentBox: React.FC<CommentInterface> = ({ articleId }) => {
         await PostComments(articleId, userId, comment);
         console.log('Comment posted successfully');
         setComment('');
+        await fetchComments(); // Refetch comments to update the list
       } catch (error) {
         console.error('Failed to post comment', error);
       }
@@ -32,14 +50,6 @@ const CommentBox: React.FC<CommentInterface> = ({ articleId }) => {
     event.preventDefault();
     postComment();
   };
-
-  console.log(userId);
-
-  const comments = [
-    { id: 1, text: 'This is an example comment.' },
-    { id: 2, text: 'Another example comment.' },
-    { id: 3, text: 'yeeeeeeee will this even work.' },
-  ];
 
   return (
     <div className="commentSection">
@@ -60,7 +70,7 @@ const CommentBox: React.FC<CommentInterface> = ({ articleId }) => {
       <div className="postedComments">
         {comments.map(comment => (
           <div key={comment.id} className="postedCommentTextBox">
-            {comment.text}
+            {comment.commentText}
           </div>
         ))}
       </div>

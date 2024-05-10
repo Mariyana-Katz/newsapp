@@ -192,8 +192,8 @@ public class CommentResource {
     }
 
     @GetMapping("/getComments")
-    public ResponseEntity<List<Comment>> getCommentsByLikesButItsViaArticlesId(@RequestParam Integer likes) {
-        List<Comment> comments = commentRepository.findByLikesButItsArticleID(likes);
+    public ResponseEntity<List<Comment>> getCommentsByArticleId(@RequestParam Integer articleId) {
+        List<Comment> comments = commentRepository.findByArticleId(articleId);
         if (comments.isEmpty()) {
             return ResponseEntity.noContent().build();
         }

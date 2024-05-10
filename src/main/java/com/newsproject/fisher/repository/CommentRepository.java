@@ -15,6 +15,6 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
     @Query("select comment from Comment comment where comment.user.login = ?#{authentication.name}")
     List<Comment> findByUserIsCurrentUser();
 
-    @Query("select comment from Comment comment where comment.likes = :likes")
-    List<Comment> findByLikesButItsArticleID(@Param("likes") Integer likes);
+    @Query("select comment from Comment comment where comment.likes = :articleId")
+    List<Comment> findByArticleId(@Param("articleId") Integer articleId);
 }
