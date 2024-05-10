@@ -1,7 +1,11 @@
 package com.newsproject.fisher.web.rest;
 
+import com.newsproject.fisher.domain.Article;
 import com.newsproject.fisher.domain.Comment;
+import com.newsproject.fisher.domain.User;
+import com.newsproject.fisher.repository.ArticleRepository;
 import com.newsproject.fisher.repository.CommentRepository;
+import com.newsproject.fisher.repository.UserRepository;
 import com.newsproject.fisher.web.rest.errors.BadRequestAlertException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -10,6 +14,7 @@ import java.util.Objects;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,6 +33,12 @@ public class CommentResource {
     private final Logger log = LoggerFactory.getLogger(CommentResource.class);
 
     private static final String ENTITY_NAME = "comment";
+
+    @Autowired
+    private ArticleRepository articleRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
@@ -51,7 +62,9 @@ public class CommentResource {
         if (comment.getId() != null) {
             throw new BadRequestAlertException("A new comment cannot already have an ID", ENTITY_NAME, "idexists");
         }
+
         comment = commentRepository.save(comment);
+
         return ResponseEntity.created(new URI("/api/comments/" + comment.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, false, ENTITY_NAME, comment.getId().toString()))
             .body(comment);
@@ -176,5 +189,14 @@ public class CommentResource {
         return ResponseEntity.noContent()
             .headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString()))
             .build();
+    }
+
+    @GetMapping("/getComments")
+    public ResponseEntity<List<Comment>> getCommentsByLikesButItsViaArticlesId(@RequestParam Integer likes) {
+        List<Comment> comments = commentRepository.findByLikesButItsArticleID(likes);
+        if (comments.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(comments);
     }
 }

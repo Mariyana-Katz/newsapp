@@ -33,6 +33,8 @@ const CommentBox: React.FC<CommentInterface> = ({ articleId }) => {
     postComment();
   };
 
+  console.log(userId);
+
   const comments = [
     { id: 1, text: 'This is an example comment.' },
     { id: 2, text: 'Another example comment.' },
