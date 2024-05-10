@@ -2,24 +2,60 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import './bookmarkPage.scss'; // Import SCSS file
+import { useSelector } from 'react-redux';
+import FetchArticles from '../articleapi/fetcharticles';
+import FetchBookmarks from './bookmarkapi';
 
 const BookmarkPage = () => {
-  const initialBookmarks = [
-    { title: 'Google', text: 'A multinational technology company specializing in Internet-related services and products.' },
-    { title: 'GitHub', text: 'A web-based platform for version control using Git.' },
-    { title: 'React', text: 'A JavaScript library for building user interfaces, developed by Facebook.' },
-    { title: 'MDN Web Docs', text: 'A web platform for developers with documentation on web technologies.' },
-    { title: 'Stack Overflow', text: 'A question and answer website for professional and enthusiast programmers.' },
-  ];
-
-  const [bookmarks, setBookmarks] = useState(initialBookmarks);
+  const [bookmarks, setBookmarks] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const userId = useSelector((state: any) => state.authentication.account.id);
+  const [articleData, setArticleData] = useState([]);
+  const [userBookMarks, setUserBookmarks] = useState([]);
+  const [userArticles, setUserArticles] = useState([]);
+
+  useEffect(() => {
+    FetchArticles()
+      .then(data => {
+        setArticleData(data);
+      })
+      .catch(error => {
+        console.error('Error fetching articles:', error);
+      });
+  }, []);
+
+  useEffect(() => {
+    FetchBookmarks()
+      .then(data => {
+        setBookmarks(data);
+      })
+      .catch(error => {
+        console.error('Error fetching articles', error);
+      });
+  }, []);
+
+  bookmarks.map((bookmark, index) => {
+    if (bookmark.userId == userId) {
+      userBookMarks.push(bookmark.articleId);
+    }
+  });
+
+  articleData.map((article, index) => {
+    if (userBookMarks.includes(article.id)) {
+      userArticles.push(article);
+    }
+  });
+
+  console.log(userArticles);
+
+  //find all bookmarked articles where userId = userId
+  //filter articleData where aricleId = bookmarkedArticleId
 
   const handleSearchChange = event => {
     setSearchQuery(event.target.value);
   };
 
-  const filteredBookmarks = bookmarks.filter(bookmark => bookmark.title.toLowerCase().includes(searchQuery.toLowerCase()));
+  const filteredArticleData = userArticles.filter(article => article.title.toLowerCase().includes(searchQuery.toLowerCase()));
 
   return (
     <div className="bookmark-page">
@@ -31,7 +67,7 @@ const BookmarkPage = () => {
         </h1>
       </div>
       <div className="business-container">
-        {filteredBookmarks.map((bookmark, index) => (
+        {filteredArticleData.map((bookmark, index) => (
           <div className="article-box" key={index}>
             <div className="textbody">
               <p className="headline-text">{bookmark.title}</p>

@@ -1,46 +1,55 @@
-import FetchArticles from 'app/modules/articleapi/fetcharticles';
 import React, { useEffect, useState } from 'react';
-import { CardHeader } from 'reactstrap';
-import ArticlePage from '../articlepages/standardarticlepage';
-import { set } from 'lodash';
-import { Link, Route, Routes, useNavigate } from 'react-router-dom';
+import ArticleModal from '../articlepages/standardarticlepage';
+import FetchArticles from '../articleapi/fetcharticles';
 
 const Technology = () => {
   const [articleData, setArticleData] = useState([]);
-  const [articleIndex, setArticleIndex] = useState(Number);
-  const navigate = useNavigate();
+  const [selectedArticleIndex, setSelectedArticleIndex] = useState(null);
+  const [firstHeadlineArticle, setFirstHeadlineArticle] = useState(null);
 
   useEffect(() => {
     FetchArticles()
       .then(data => {
         setArticleData(data);
-        console.log(data);
+        const firstHeadline = data.find(article => article.category === 'TECHNOLOGY');
+        setFirstHeadlineArticle(firstHeadline);
       })
       .catch(error => {
         console.error('Error fetching articles:', error);
       });
   }, []);
 
-  console.log(articleData);
-
-  const handleClick = (url: string | number | boolean) => {
-    if (url) {
-      navigate(`/article/${encodeURIComponent(url)}`);
-    }
+  const handleClick = index => {
+    console.log('Article clicked:', index); // Check if the handleClick function is being invoked
+    setSelectedArticleIndex(index);
   };
+
+  console.log('Selected Article Index:', selectedArticleIndex); // Check the selected article index
 
   return (
     <div>
+      {firstHeadlineArticle && (
+        <div className="headline-story">
+          <h2 className="headline-text">{firstHeadlineArticle.title}</h2>
+          <img src={firstHeadlineArticle.urlToImage} className="headline-image"></img>
+          <div className="headline-story-div">
+            <p className="headline-story-text">{firstHeadlineArticle.shortDescription}</p>
+          </div>
+        </div>
+      )}
+
       {articleData.map((article, index) =>
         article.category === 'TECHNOLOGY' ? (
-          <div key={index} className="article-box" onClick={() => handleClick(article.url)}>
+          <div key={index} className="article-box" onClick={() => handleClick(index)}>
             <h3 className="article-headline">{article.title}</h3>
             <img src={article.urlToImage} alt="" className="article-image" />
             <p className="article-short-text">{article.shortDescription}</p>
           </div>
         ) : null,
       )}
-      <div className="article-props"></div>
+      {selectedArticleIndex !== null && (
+        <ArticleModal article={articleData[selectedArticleIndex]} onClose={() => setSelectedArticleIndex(null)} />
+      )}
     </div>
   );
 };
