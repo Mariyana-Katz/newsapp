@@ -1,30 +1,60 @@
-import React from 'react';
-import './national.scss';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Container, Row, Col, CardImg, CardBody, Card, CardText, CardHeader } from 'reactstrap';
-import StandardArticleBox from '../articlecomponents/standardarticlebox';
+import React, { useEffect, useState } from 'react';
+import ArticleModal from '../articlepages/standardarticlepage';
+import FetchArticles from '../articleapi/fetcharticles';
 
-const World: React.FC = () => {
+const National = () => {
+  const [articleData, setArticleData] = useState([]);
+  const [selectedArticleIndex, setSelectedArticleIndex] = useState(null);
+  const [firstHeadlineArticle, setFirstHeadlineArticle] = useState(null);
+
+  useEffect(() => {
+    FetchArticles()
+      .then(data => {
+        setArticleData(data);
+        const firstHeadline = data.find(article => article.category === 'NATIONAL');
+        setFirstHeadlineArticle(firstHeadline);
+      })
+      .catch(error => {
+        console.error('Error fetching articles:', error);
+      });
+  }, []);
+
+  const handleClick = index => {
+    console.log('Article clicked:', index); // Check if the handleClick function is being invoked
+    setSelectedArticleIndex(index);
+  };
+
+  console.log('Selected Article Index:', selectedArticleIndex); // Check the selected article index
+
   return (
-    <div className="headline-story">
-      <h2 className="headline-text">Government Announces Comprehensive New Policy to Tackle National Challenges.</h2>
+    <div>
+      {firstHeadlineArticle && (
+        <div className="headline-story">
+          <h2 className="headline-text">{firstHeadlineArticle.title}</h2>
+          <img src={firstHeadlineArticle.urlToImage} className="headline-image"></img>
+          <div className="headline-story-div">
+            <p className="headline-story-text">{firstHeadlineArticle.shortDescription}</p>
+          </div>
+        </div>
+      )}
 
-      <img
-        src="https://cdn.pixabay.com/photo/2017/05/19/22/36/statue-of-liberty-2327760_1280.jpg"
-        className="headline-image"
-        alt="Government Policy Announcement"
-      />
-      <div className="headline-story-div">
-        <p className="headline-story-text">
-          The government has unveiled a new policy aimed at addressing key issues facing the nation. This policy is expected to have a
-          significant impact on various sectors and communities, promising to bring about positive change and...
-        </p>
-      </div>
+      {articleData.map((article, index) =>
+        article.category === 'NATIONAL' ? (
+          <div key={index} className="article-box" onClick={() => handleClick(index)}>
+            <h3 className="article-headline">{article.title}</h3>
+            <img src={article.urlToImage} alt="" className="article-image" />
+            <p className="article-short-text">{article.shortDescription}</p>
+          </div>
+        ) : null,
+      )}
+      {selectedArticleIndex !== null && (
+        <ArticleModal article={articleData[selectedArticleIndex]} onClose={() => setSelectedArticleIndex(null)} />
+      )}
     </div>
   );
 };
 
-export default World;
+export default National;
 
 //Container encapsulating the WHOLE THING
 //Card is a formatt(Structure)
