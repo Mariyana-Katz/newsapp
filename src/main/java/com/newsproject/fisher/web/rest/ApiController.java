@@ -27,7 +27,7 @@ public class ApiController {
 
     //constructor injection bc of early failure detection, fail at startup, not runtime
 
-    //@Scheduled(initialDelay = 30000, fixedRate = Long.MAX_VALUE)
+    @Scheduled(initialDelay = 30000, fixedRate = Long.MAX_VALUE)
     public void deleteAllArticles() {
         articleRepository.deleteAll();
     }
