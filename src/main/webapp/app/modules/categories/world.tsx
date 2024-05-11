@@ -20,20 +20,15 @@ const World = () => {
   }, []);
 
   const handleClick = index => {
-    console.log('Article clicked:', index); // Check if the handleClick function is being invoked
     setSelectedArticleIndex(index);
   };
 
-  console.log('Selected Article Index:', selectedArticleIndex); // Check the selected article index
-
   const filteredArticleData = articleData.filter(article => article.category === 'WORLD');
-  console.log(filteredArticleData);
-  filteredArticleData.shift();
 
   return (
     <div>
       {firstHeadlineArticle && (
-        <div className="headline-story">
+        <div className="headline-story" onClick={() => handleClick(0)}>
           <h2 className="headline-text">{firstHeadlineArticle.title}</h2>
           <img src={firstHeadlineArticle.urlToImage} className="headline-image"></img>
           <div className="headline-story-div">
@@ -42,13 +37,15 @@ const World = () => {
         </div>
       )}
 
-      {filteredArticleData.map((article, index) => (
-        <div key={index} className="article-box" onClick={() => handleClick(index)}>
-          <h3 className="article-headline">{article.title}</h3>
-          <img src={article.urlToImage} alt="" className="article-image" />
-          <p className="article-short-text">{article.shortDescription}</p>
-        </div>
-      ))}
+      {filteredArticleData.map((article, index) =>
+        index === 0 ? null : (
+          <div key={index} className="article-box" onClick={() => handleClick(index)}>
+            <h3 className="article-headline">{article.title}</h3>
+            <img src={article.urlToImage} alt="" className="article-image" />
+            <p className="article-short-text">{article.shortDescription}</p>
+          </div>
+        ),
+      )}
       {selectedArticleIndex !== null && (
         <ArticleModal article={filteredArticleData[selectedArticleIndex]} onClose={() => setSelectedArticleIndex(null)} />
       )}

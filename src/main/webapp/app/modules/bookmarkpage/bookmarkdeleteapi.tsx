@@ -1,21 +1,17 @@
-import { useSelector } from 'react-redux';
-
-const PostBookmarks = async (articleID: number, userID: number) => {
+const DeleteBookmarks = async (articleID: number, userID: number) => {
   const url = 'http://localhost:8080/api/bookmarks';
   //INSERT TOKEN HERE BUT DONT FORGET TO REMOVE IT BEFORE MERGING
+  const token =
+    'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcxNTI4Njk4MCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzE1MjAwNTgwfQ.ut_iUaGPOYWn-UIQKvkb5JgZNqpIhOPkhQZCph5yKWJi3gi0VJXrxhMranhbg3q5_beZZOjRrnEWUnE6KdrECw';
 
   const requestBody = JSON.stringify({
     articleId: articleID,
     userId: userID,
   });
 
-  const token =
-    'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcxNTUyOTY0MCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzE1NDQzMjQwfQ.isR4u3ZyuXfbNj7GGHmBFfSMJAcx6CHp-Y_MUDbQVbchoKLEDFxR2YVkf8Ag_bya7PY4j2vi8nFvi1BL0aYkZw';
-  console.log(token);
-
   try {
     const response = await fetch(url, {
-      method: 'POST',
+      method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',
@@ -37,4 +33,5 @@ const PostBookmarks = async (articleID: number, userID: number) => {
     throw error;
   }
 };
-export default PostBookmarks;
+
+export default DeleteBookmarks;

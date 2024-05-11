@@ -1,9 +1,6 @@
 const PostComments = async (articleID: number, userID: number, commentTEXT: String) => {
   const url = 'http://localhost:8080/api/comments';
 
-  const token =
-    'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcxNTM3OTA2NCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzE1MjkyNjY0fQ.-w86FAcW_chUq4tqsEj1ZjQAAFGRcU2N015EvkJ8R0L4ndd75yky0XLq32j9e-CEWM6_nuBAjvH0Kqy7NzsTpg';
-
   const requestBody = JSON.stringify({
     commentText: commentTEXT,
     likes: articleID,
@@ -11,6 +8,8 @@ const PostComments = async (articleID: number, userID: number, commentTEXT: Stri
   });
 
   try {
+    const token = localStorage.getItem('token');
+
     const response = await fetch(url, {
       method: 'POST',
       headers: {
