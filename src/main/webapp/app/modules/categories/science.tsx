@@ -20,38 +20,52 @@ const Science = () => {
   }, []);
 
   const handleClick = index => {
-    console.log('Article clicked:', index); // Check if the handleClick function is being invoked
     setSelectedArticleIndex(index);
   };
 
-  console.log('Selected Article Index:', selectedArticleIndex); // Check the selected article index
-
   const filteredArticleData = articleData.filter(article => article.category === 'SCIENCE');
-  console.log(filteredArticleData);
-  filteredArticleData.shift();
+
+  const formatText = text => {
+    if (!text) return ''; // Return empty string if text is null or undefined
+    const sentences = text.split('. '); // Split text into sentences
+    const formattedSentences = sentences.map((sentence, index) => {
+      if ((index + 1) % 5 === 0 && index !== sentences.length - 1) {
+        // Add space after every 5th sentence
+        return `${sentence}. `;
+      } else {
+        // Add tab at the beginning of each sentence after the break
+        return `\t${sentence}. `;
+      }
+    });
+    return formattedSentences.join(''); // Join sentences back into a single string
+  };
 
   return (
     <div>
-      {firstHeadlineArticle && (
-        <div className="headline-story">
-          <h2 className="headline-text">{firstHeadlineArticle.title}</h2>
-          <img src={firstHeadlineArticle.urlToImage} className="headline-image"></img>
-          <div className="headline-story-div">
-            <p className="headline-story-text">{firstHeadlineArticle.shortDescription}</p>
+      <div>
+        {firstHeadlineArticle && (
+          <div className="headline-story" onClick={() => handleClick(0)}>
+            <h2 className="headline-text">{firstHeadlineArticle.title}</h2>
+            <img src={firstHeadlineArticle.urlToImage} className="headline-image"></img>
+            <div className="headline-story-div">
+              <p className="headline-story-text">{formatText(firstHeadlineArticle.shortDescription)}</p>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {filteredArticleData.map((article, index) => (
-        <div key={index} className="article-box" onClick={() => handleClick(index)}>
-          <h3 className="article-headline">{article.title}</h3>
-          <img src={article.urlToImage} alt="" className="article-image" />
-          <p className="article-short-text">{article.shortDescription}</p>
-        </div>
-      ))}
-      {selectedArticleIndex !== null && (
-        <ArticleModal article={filteredArticleData[selectedArticleIndex]} onClose={() => setSelectedArticleIndex(null)} />
-      )}
+        {filteredArticleData.map((article, index) =>
+          index === 0 ? null : (
+            <div key={index} className="article-box" onClick={() => handleClick(index)}>
+              <h3 className="article-headline">{article.title}</h3>
+              <img src={article.urlToImage} alt="" className="article-image" />
+              <p className="article-short-text">{formatText(article.shortDescription)}</p>
+            </div>
+          ),
+        )}
+        {selectedArticleIndex !== null && (
+          <ArticleModal article={filteredArticleData[selectedArticleIndex]} onClose={() => setSelectedArticleIndex(null)} />
+        )}
+      </div>
     </div>
   );
 };
