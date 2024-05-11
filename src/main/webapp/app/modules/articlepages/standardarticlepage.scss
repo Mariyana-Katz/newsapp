@@ -22,7 +22,7 @@
   left: 50%;
   top: 55%;
   transform: translate(-50%, -50%);
-  z-index: 2000;
+  z-index: 0;
 }
 
 .modal-close {
@@ -39,22 +39,23 @@
 
 .modal-article-title {
   padding-top: 30px;
-  text-align: center; /* Center-align the title */
-  font-size: 24px; /* Example font size */
-  margin-bottom: 20px; /* Add some spacing below the title */
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .modal-article-image {
-  display: block; /* Ensure the image is displayed as a block element */
-  margin: 0 auto; /* Center the image horizontally */
-  max-width: 100%; /* Ensure the image does not exceed its container's width */
-  border-radius: 8px; /* Add rounded corners to the image */
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  border-radius: 8px;
 }
 
 .modal-article-text {
-  text-align: justify; /* Justify-align the text */
-  font-size: 16px; /* Example font size */
-  line-height: 1.6; /* Example line height */
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 30px 20px 10px 20px;
 }
 
 .header {
@@ -69,4 +70,8 @@
 
 .buttons {
   padding-top: 20px;
+}
+
+.comment-section-container {
+  padding-bottom: 100px;
 }

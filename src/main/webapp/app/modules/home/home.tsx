@@ -9,10 +9,12 @@ import { useAppSelector } from 'app/config/store';
 import StandardArticleBox from '../articlecomponents/standardarticlebox';
 import FetchArticles from '../articleapi/fetcharticles';
 import { head } from 'lodash';
+import ArticleModal from '../articlepages/standardarticlepage';
 
 const Home = () => {
   const account = useAppSelector(state => state.authentication.account);
   const [articleData, setArticleData] = useState([]);
+  const [selectedArticleIndex, setSelectedArticleIndex] = useState(null);
   const [firstHeadlineArticle, setFirstHeadlineArticle] = useState(null);
 
   useEffect(() => {
@@ -27,7 +29,11 @@ const Home = () => {
       });
   }, []);
 
-  console.log(firstHeadlineArticle);
+  const handleClick = index => {
+    setSelectedArticleIndex(index);
+  };
+
+  const filteredArticleData = articleData.filter(article => article.category === 'HEADLINES');
 
   return (
     <Row>
@@ -39,25 +45,30 @@ const Home = () => {
         []
       )}
 
-      {firstHeadlineArticle && (
-        <div className="headline-story">
-          <h2 className="headline-text">{firstHeadlineArticle.title}</h2>
-          <img src={firstHeadlineArticle.urlToImage} className="headline-image"></img>
-          <div className="headline-story-div">
-            <p className="headline-story-text">{firstHeadlineArticle.shortDescription}</p>
+      <div>
+        {firstHeadlineArticle && (
+          <div className="headline-story" onClick={() => handleClick(0)}>
+            <h2 className="headline-text">{firstHeadlineArticle.title}</h2>
+            <img src={firstHeadlineArticle.urlToImage} className="headline-image"></img>
+            <div className="headline-story-div">
+              <p className="headline-story-text">{firstHeadlineArticle.shortDescription}</p>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {articleData.map((article, index) =>
-        article.category === 'HEADLINES' ? (
-          <div key={index} className="article-box">
-            <h3 className="article-headline">{article.title}</h3>
-            <img src={article.urlToImage} alt="" className="article-image" />
-            <p className="article-short-text">{article.shortDescription}</p>
-          </div>
-        ) : null,
-      )}
+        {filteredArticleData.map((article, index) =>
+          index === 0 ? null : (
+            <div key={index} className="article-box" onClick={() => handleClick(index)}>
+              <h3 className="article-headline">{article.title}</h3>
+              <img src={article.urlToImage} alt="" className="article-image" />
+              <p className="article-short-text">{article.shortDescription}</p>
+            </div>
+          ),
+        )}
+        {selectedArticleIndex !== null && (
+          <ArticleModal article={filteredArticleData[selectedArticleIndex]} onClose={() => setSelectedArticleIndex(null)} />
+        )}
+      </div>
 
       <div className="headline-bottom-div"></div>
       <div className="topstories"></div>
