@@ -27,7 +27,7 @@ const SearchBar = ({ setResults }) => {
     setResults(results);
   };
 
-  //This is for handeling the day dropmenu
+  //This is for handling the day dropmenu
   const handleDateChange = value => {
     console.log(value);
     if (value === 'all') {
@@ -58,7 +58,7 @@ const SearchBar = ({ setResults }) => {
       setResults(results);
     }
   };
-
+  //this is for handling the categories dropmenu narrowing search
   const handleCatChange = value => {
     console.log(value);
     if (value) {
