@@ -9,7 +9,8 @@ const PostBookmarks = async (articleID: number, userID: number) => {
   });
 
   try {
-    const token = sessionStorage.getItem('jhi-authenticationToken');
+    const token =
+      sessionStorage.getItem('jhi-authenticationToken')?.substring(1, sessionStorage.getItem('jhi-authenticationToken').length - 1) || '';
     const response = await fetch(url, {
       method: 'POST',
       headers: {
