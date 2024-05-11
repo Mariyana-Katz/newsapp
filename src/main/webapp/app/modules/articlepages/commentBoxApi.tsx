@@ -8,7 +8,7 @@ const PostComments = async (articleID: number, userID: number, commentTEXT: Stri
   });
 
   try {
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
 
     const response = await fetch(url, {
       method: 'POST',
