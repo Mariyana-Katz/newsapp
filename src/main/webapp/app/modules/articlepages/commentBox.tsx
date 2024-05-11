@@ -67,6 +67,7 @@ const CommentBox: React.FC<CommentInterface> = ({ articleId }) => {
         </div>
         <button className="submitButton">Submit</button>
       </form>
+
       <div className="postedComments">
         {comments.map(comment => (
           <div key={comment.id} className="postedCommentTextBox">
