@@ -8,7 +8,8 @@ const PostComments = async (articleID: number, userID: number, commentTEXT: Stri
   });
 
   try {
-    const token = sessionStorage.getItem('token');
+    const token =
+      sessionStorage.getItem('jhi-authenticationToken')?.substring(1, sessionStorage.getItem('jhi-authenticationToken').length - 1) || '';
 
     const response = await fetch(url, {
       method: 'POST',
