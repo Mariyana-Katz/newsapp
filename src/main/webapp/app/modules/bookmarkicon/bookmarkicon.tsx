@@ -24,7 +24,7 @@ const BookmarkIcon: React.FC<BookmarkIconProps> = ({ isBookmarked, onClick, size
         console.log('Bookmark deleted successfully');
       } else {
         // If not bookmarked, post bookmark
-        await postBookmark(articleId, userId);
+        await PostBookmarks(articleId, userId);
         console.log('Bookmark posted successfully');
       }
       // Toggle the bookmark state after successful operation
@@ -51,7 +51,7 @@ const BookmarkIcon: React.FC<BookmarkIconProps> = ({ isBookmarked, onClick, size
 };
 
 const postBookmark = async (articleID: number, userID: number) => {
-  // Your postBookmark function implementation
+  PostBookmarks(articleID, userID);
 };
 
 const deleteBookmark = async (articleID: number, userID: number) => {

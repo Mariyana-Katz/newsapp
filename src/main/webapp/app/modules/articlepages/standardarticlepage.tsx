@@ -35,8 +35,8 @@ const ArticleModal = ({ article, onClose }) => {
   console.log(displayedArticleText);
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal" onClick={e => e.stopPropagation()}>
+    <div className="article-modal-overlay" onClick={onClose}>
+      <div className="article-modal" onClick={e => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose}>
           X
         </button>
