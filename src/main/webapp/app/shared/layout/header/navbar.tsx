@@ -10,26 +10,23 @@ import PeopleRoundedIcon from '@mui/icons-material/PeopleRounded';
 import CloudRoundedIcon from '@mui/icons-material/CloudRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-
-// Imports the Link component from the react-router-dom
 import { Link } from 'react-router-dom';
-// import Dropdown from 'app/modules/UserProfile/userProfile';
 
-//a functional component named Navbar -- accept props and return React elements.
 const Navbar = () => {
-  // Apply font-family inline
-  const [dropdownOpen, setdropdownOpen] = useState<boolean>(false);
+  const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
+
   const toggleDropdown = () => {
-    setdropdownOpen(!dropdownOpen);
+    setDropdownOpen(!dropdownOpen);
   };
-  const navbarStyles = {
-    // fontFamily: 'Times New Roman, Times, serif',
+
+  const closeDropdown = () => {
+    setDropdownOpen(false); // Function to close the dropdown
   };
+
   return (
-    //Navigation Bar Structure: -- with dark background,  a container fluid to contain the navigation links.
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/" onClick={closeDropdown}>
           TOP STORIES
         </Link>
         <button
@@ -40,62 +37,57 @@ const Navbar = () => {
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          onClick={toggleDropdown} // Added onClick event
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className={`collapse navbar-collapse ${dropdownOpen ? 'show' : ''}`} id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/World">
+              <Link className="nav-link" to="/World" onClick={closeDropdown}>
                 <PublicIcon /> WORLD
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/National">
+              <Link className="nav-link" to="/National" onClick={closeDropdown}>
                 <NewspaperRoundedIcon /> NATIONAL
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Business">
+              <Link className="nav-link" to="/Business" onClick={closeDropdown}>
                 <BusinessRoundedIcon /> BUSINESS
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Technology">
+              <Link className="nav-link" to="/Technology" onClick={closeDropdown}>
                 <SettingsSuggestRoundedIcon /> TECHNOLOGY
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Science">
+              <Link className="nav-link" to="/Science" onClick={closeDropdown}>
                 <ScienceSharpIcon /> SCIENCE
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/culture">
+              <Link className="nav-link" to="/culture" onClick={closeDropdown}>
                 <Diversity2SharpIcon /> CULTURE
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Politics">
+              <Link className="nav-link" to="/Politics" onClick={closeDropdown}>
                 <PeopleRoundedIcon /> POLITICS
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Weather">
+              <Link className="nav-link" to="/Weather" onClick={closeDropdown}>
                 <CloudRoundedIcon /> WEATHER
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Search">
+              <Link className="nav-link" to="/Search" onClick={closeDropdown}>
                 <SearchRoundedIcon /> SEARCH
               </Link>
             </li>
-            <div className="nav-item">
-              <a className="user" href="#" onClick={toggleDropdown}>
-                {/* <AccountCircleIcon /> PROFILE
-                {dropdownOpen && <DropMenu />} */}
-              </a>
-            </div>
           </ul>
         </div>
       </div>

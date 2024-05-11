@@ -1,12 +1,9 @@
-/* Import Roboto font */
-// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 /* Navbar styles */
 .navbar {
   background-color: #333a42;
   padding: 5px 10px;
   border-radius: 0;
-  // font-family: 'Times New Roman', Times, serif; // Apply Times New Roman font
+  /* font-family: 'Times New Roman', Times, serif; */ /* Apply Times New Roman font */
 }
 
 .navbar-brand {
@@ -18,22 +15,6 @@
 .navbar-toggler {
   border-color: #fff;
 }
-
-.Profile {
-  position: fixed;
-  color: #fff;
-  font-weight: bold;
-  right: 200px;
-  left: 1250px;
-  top: 115px;
-  color: #f8f9fa;
-}
-
-// .navbar-nav .nav-link {
-//   color: #fff;
-//   margin-right: 15px; /* Increased margin for better spacing */
-//   font-size: 1rem; /* Adjusted font size */
-// }
 
 /* Dropdown styles */
 .navbar-dropdown {
@@ -55,4 +36,9 @@
 
 .btn {
   margin-right: 15px; /* Adjusted padding for better alignment */
+}
+
+/* Ensure navbar-toggler icon color */
+.navbar-toggler-icon {
+  color: #fff;
 }
