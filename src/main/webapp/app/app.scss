@@ -1,23 +1,35 @@
-// Override Bootstrap variables
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap'); // Override Bootstrap variables
 @import 'bootstrap-variables';
 @import 'bootswatch/dist/simplex/variables';
 // Import Bootstrap source files from node_modules
 @import 'bootstrap/scss/bootstrap';
 @import 'bootswatch/dist/simplex/bootswatch';
-@import 'src/main/webapp/app/modules/National.tsx/national.scss';
 @import 'src/main/webapp/app/modules/articlecomponents/standardarticlebox.scss';
 @import 'src/main/webapp/app/modules/articlepages/standardarticlepage.scss';
 @import 'src/main/webapp/app/modules/articlecomponents/likeButton/likeButton.scss';
-
 @import 'src/main/webapp/app/modules/articlepages/commentBox.scss';
+
 body {
   margin: 0;
-  font-family: monospace;
 }
 
 a {
   color: #060505;
   font-weight: bold;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Comfortaa';
+}
+
+h2 {
+  font-size: 210% !important;
+}
+p {
+  font-family: 'Quicksand';
+  font-size: 120% !important;
 }
 
 * {
