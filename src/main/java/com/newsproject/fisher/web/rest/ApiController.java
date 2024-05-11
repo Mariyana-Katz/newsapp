@@ -102,7 +102,7 @@ public class ApiController {
         List<Article> savedArticles = articleRepository.saveAll(filteredArticles);
     }
 
-    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    // @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void cultureArticles() {
         List<Article> articles = apiService.fetchingCategoryData("culture");
