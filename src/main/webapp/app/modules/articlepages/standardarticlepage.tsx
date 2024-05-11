@@ -27,7 +27,6 @@ const ArticleModal = ({ article, onClose }) => {
             <LikeButton />
             <img src={article.urlToImage} alt="" className="modal-article-image" />
             <p className="modal-article-content">{article.content}</p>
-            <BookmarkIcon isBookmarked={isBookmarked} onClick={handleBookmarkClick} articleId={article.id} />
             <CommentBox articleId={article.id} />
           </div>
         )}
