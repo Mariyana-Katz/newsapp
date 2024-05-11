@@ -2,18 +2,15 @@ import { useSelector } from 'react-redux';
 
 const PostBookmarks = async (articleID: number, userID: number) => {
   const url = 'http://localhost:8080/api/bookmarks';
-  //INSERT TOKEN HERE BUT DONT FORGET TO REMOVE IT BEFORE MERGING
 
   const requestBody = JSON.stringify({
     articleId: articleID,
     userId: userID,
   });
 
-  const token =
-    'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcxNTUyOTY0MCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzE1NDQzMjQwfQ.isR4u3ZyuXfbNj7GGHmBFfSMJAcx6CHp-Y_MUDbQVbchoKLEDFxR2YVkf8Ag_bya7PY4j2vi8nFvi1BL0aYkZw';
-  console.log(token);
-
   try {
+    const token =
+      sessionStorage.getItem('jhi-authenticationToken')?.substring(1, sessionStorage.getItem('jhi-authenticationToken').length - 1) || '';
     const response = await fetch(url, {
       method: 'POST',
       headers: {
@@ -24,6 +21,9 @@ const PostBookmarks = async (articleID: number, userID: number) => {
     });
 
     if (!response.ok) {
+      console.log(token);
+      console.log(articleID);
+      console.log(userID);
       throw new Error('Network response was not ok');
     }
 

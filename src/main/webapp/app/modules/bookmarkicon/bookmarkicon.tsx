@@ -51,7 +51,7 @@ const BookmarkIcon: React.FC<BookmarkIconProps> = ({ isBookmarked, onClick, size
 };
 
 const postBookmark = async (articleID: number, userID: number) => {
-  PostBookmarks(articleID, userID);
+  // Your postBookmark function implementation
 };
 
 const deleteBookmark = async (articleID: number, userID: number) => {
