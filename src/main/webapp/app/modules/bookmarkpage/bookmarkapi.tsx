@@ -1,9 +1,9 @@
 const FetchBookmarks = async () => {
   const url = 'http://localhost:8080/api/bookmarks';
-  //INSERT TOKEN HERE BUT DONT FORGET TO REMOVE IT BEFORE MERGING
 
   try {
-    const token = localStorage.getItem('token');
+    const token =
+      sessionStorage.getItem('jhi-authenticationToken')?.substring(1, sessionStorage.getItem('jhi-authenticationToken').length - 1) || '';
 
     const response = await fetch(url, {
       method: 'GET',
