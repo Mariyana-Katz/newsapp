@@ -69,14 +69,17 @@ Navbar styles
 }
 
 .brand-title {
-  font-size: 1.25rem;
-  margin-left: 0.5rem;
+  font-size: xx-large;
+  margin-left: 90rem; /* Adjust margin-left as needed */
+  margin-top: 100 rem; /* Add margin-top to lower the position */
   color: black;
+  font-family: cursive;
   &:hover {
-    color: $header-color-hover;
+    color: $header-color-hover; /* Assuming $header-color-hover is defined elsewhere */
     text-decoration: none;
   }
 }
+
 /* Update your global CSS file (e.g., header.scss) */
 // .navbar,
 // .navbar-brand,
@@ -109,4 +112,23 @@ Navbar styles
   right: 0;
   bottom: 0;
   margin: auto;
+}
+.brand-title {
+  font-size: x-large;
+  margin-left: 59rem; /* Default position */
+  margin-top: 1rem; /* Default position */
+  color: black;
+  font-family: cursive;
+  &:hover {
+    color: $header-color-hover; /* Assuming $header-color-hover is defined elsewhere */
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-title {
+    margin-left: 0; /* Adjust position for smaller screens */
+    margin-top: 0.5rem; /* Adjust position for smaller screens */
+    text-align: center; /* Optional: Center align on smaller screens */
+  }
 }
