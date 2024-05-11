@@ -9,7 +9,8 @@ import Diversity2SharpIcon from '@mui/icons-material/Diversity2Sharp';
 import PeopleRoundedIcon from '@mui/icons-material/PeopleRounded';
 import CloudRoundedIcon from '@mui/icons-material/CloudRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import PodcastsIcon from '@mui/icons-material/Podcasts';
+
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -80,7 +81,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Weather" onClick={closeDropdown}>
-                <CloudRoundedIcon /> WEATHER
+                <PodcastsIcon /> PODCAST
               </Link>
             </li>
             <li className="nav-item">
