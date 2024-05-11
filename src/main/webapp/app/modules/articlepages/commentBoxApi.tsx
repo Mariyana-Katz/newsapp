@@ -1,8 +1,6 @@
 const PostComments = async (articleID: number, userID: number, commentTEXT: String) => {
   const url = 'http://localhost:8080/api/comments';
 
-  const token = '';
-
   const requestBody = JSON.stringify({
     commentText: commentTEXT,
     likes: articleID,
@@ -10,6 +8,9 @@ const PostComments = async (articleID: number, userID: number, commentTEXT: Stri
   });
 
   try {
+    const token =
+      sessionStorage.getItem('jhi-authenticationToken')?.substring(1, sessionStorage.getItem('jhi-authenticationToken').length - 1) || '';
+
     const response = await fetch(url, {
       method: 'POST',
       headers: {
