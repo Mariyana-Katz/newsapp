@@ -8,7 +8,7 @@ import PostBookmarks from '../bookmarkpage/bookmarkpostapi';
 interface BookmarkIconProps {
   isBookmarked: boolean;
   onClick: () => void;
-  size?: string; // Make the size prop optional
+  size?: string; // Maåke the size prop optional
   articleId: number;
 }
 

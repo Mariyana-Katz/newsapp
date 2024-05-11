@@ -80,7 +80,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Weather" onClick={closeDropdown}>
+              <Link className="nav-link" to="/Podcast" onClick={closeDropdown}>
                 <PodcastsIcon /> PODCAST
               </Link>
             </li>
