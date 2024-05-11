@@ -1,12 +1,64 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './likeButton.scss';
 import './lButton';
+import PostLikes from './likeButtonPostApi';
+import FetchArticleLikes from './fetchArticleLikes';
+import { useSelector } from 'react-redux';
+import UpdateLikes from './updateLikes';
 
-function LikeButton() {
-  const [likeCount, setLikeCount] = useState(50);
+interface LikeInterface {
+  article_ID: number;
+}
+
+const LikeButton: React.FC<LikeInterface> = ({ article_ID }) => {
+  const [likeCount, setLikeCount] = useState<number>(0);
+  //const [likeCount, setLikeCount] = useState(50);
   const [dislikeCount, setDisLikeCount] = useState(10);
   const [activeBtn, setActiveButton] = useState('none');
+  const userId = useSelector((state: any) => state.authentication.account.id);
+  const [likesData, setLikesData] = useState([]);
+
+  useEffect(() => {
+    FetchArticleLikes() //fetch the data from the API, update the component's state with the fetched data and logs errors if any during the fetching
+      .then(data => {
+        const likesForArticle = data.filter(likeRecord => {
+          return likeRecord.articleId === article_ID;
+        });
+        setLikesData(likesForArticle);
+        setLikeCount(likesForArticle.length > 0 ? likesForArticle[0].likeCount : 0);
+        console.log(likesForArticle);
+      })
+      .catch(error => {
+        console.error('Error fetching articles:', error);
+      });
+  }, []);
+
+  // useEffect(() => {
+  //   if(likesData.length > 0){
+  //     UpdateLikes(likesData[0].id, likeCount)
+  //       .then(data => {
+  //         console.log(data);
+  //         console.log('Article Like updated successfully');
+  //       })
+  //       .catch(error => {
+  //         console.error('Fail to update likes:', error);
+  //       });
+  //     }
+  //     else{
+  //       PostLikes(article_ID, userId, likeCount)
+  //       .then(data => {
+  //         console.log(data);
+  //         console.log('Article Like posted successfully');
+  //       })
+  //       .catch(error => {
+  //         console.error('Fail to post likes:', error);
+  //       });
+  //       console.log('Article Like posted successfully');
+  //     }
+  //   }, [likeCount]);
+
   // Handle the button click
+
   const handleReactionClick = reaction => {
     //if no button active, toggle the cliked button and update counts
     if (activeBtn === 'none') {
@@ -41,12 +93,32 @@ function LikeButton() {
     }
   };
 
+  const postLikes = async () => {
+    try {
+      if (likesData.length > 0) {
+        await UpdateLikes(likesData[0].id, likeCount);
+        console.log('Article Like updated successfully');
+      } else {
+        await PostLikes(article_ID, userId, likeCount);
+        console.log('Article Like posted successfully');
+      }
+    } catch (error) {
+      console.error('Failed to post like', error);
+    }
+  };
+
+  const handleSubmit = () => {
+    handleReactionClick('like');
+    postLikes();
+    //console.log(article_ID);
+  };
+
   return (
     <div>
       <div className="container">
         <div className="btn-container">
           {/* Button for liking */}
-          <button className={`btn ${activeBtn === 'like' ? 'like-active' : ''}`} onClick={() => handleReactionClick('like')}>
+          <button className={`btn ${activeBtn === 'like' ? 'like-active' : ''}`} onClick={() => handleSubmit()}>
             <span className="material-icons">thumb_up</span>
             {likeCount}
           </button>
@@ -59,24 +131,6 @@ function LikeButton() {
       </div>
     </div>
   );
-}
-export default LikeButton;
+};
 
-// function LikeButton() {
-//   const [likes, setLikes] = useState(0);
-//   const [liked, setLiked] = useState(false);
-//   return (
-//     <div className="like-button-container">
-//     <button
-//       className={`like-button ${liked ? 'liked' : ''}`}
-//       onClick={() => {
-//         setLikes(likes + 1);
-//         setLiked(true);
-//       }}
-//     >
-//       {likes} Likes
-//     </button>
-//     </div>
-//   );
-// }
-// export default LikeButton;
+export default LikeButton;

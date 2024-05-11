@@ -65,7 +65,7 @@ const AppRoutes = () => {
           <Route path="bookmark" element={<UserProfile />} />
           <Route path="search" element={<Search />} />
           <Route path="test" element={<Test />}></Route>
-          <Route path="LikeButtonpage" element={<LikeButton />}></Route>
+          {/* <Route path="LikeButtonpage" element={<LikeButton />}></Route> */}
 
           <Route path="account">
             <Route
