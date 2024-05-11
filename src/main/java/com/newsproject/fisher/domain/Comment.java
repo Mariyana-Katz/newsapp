@@ -32,7 +32,7 @@ public class Comment implements Serializable {
     @Column(name = "likes")
     private Long likes;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

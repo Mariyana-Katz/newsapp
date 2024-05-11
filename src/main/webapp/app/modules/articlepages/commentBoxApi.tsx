@@ -1,15 +1,15 @@
-import { useSelector } from 'react-redux';
-
-const PostBookmarks = async (articleID: number, userID: number) => {
-  const url = 'http://localhost:8080/api/bookmarks';
+const PostComments = async (articleID: number, userID: number, commentTEXT: String) => {
+  const url = 'http://localhost:8080/api/comments';
 
   const requestBody = JSON.stringify({
-    articleId: articleID,
-    userId: userID,
+    commentText: commentTEXT,
+    likes: articleID,
+    user_id: userID,
   });
 
   try {
-    const token = sessionStorage.getItem('jhi-authenticationToken');
+    const token = localStorage.getItem('token');
+
     const response = await fetch(url, {
       method: 'POST',
       headers: {
@@ -20,14 +20,12 @@ const PostBookmarks = async (articleID: number, userID: number) => {
     });
 
     if (!response.ok) {
-      console.log(token);
-      console.log(articleID);
-      console.log(userID);
       throw new Error('Network response was not ok');
     }
 
     console.log(articleID);
     console.log(userID);
+    console.log(commentTEXT);
 
     const data = await response.json();
     return data;
@@ -36,4 +34,5 @@ const PostBookmarks = async (articleID: number, userID: number) => {
     throw error;
   }
 };
-export default PostBookmarks;
+
+export default PostComments;

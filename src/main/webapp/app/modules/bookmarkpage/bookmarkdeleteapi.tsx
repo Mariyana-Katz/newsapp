@@ -1,7 +1,8 @@
-import { useSelector } from 'react-redux';
-
-const PostBookmarks = async (articleID: number, userID: number) => {
+const DeleteBookmarks = async (articleID: number, userID: number) => {
   const url = 'http://localhost:8080/api/bookmarks';
+  //INSERT TOKEN HERE BUT DONT FORGET TO REMOVE IT BEFORE MERGING
+  const token =
+    'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcxNTI4Njk4MCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzE1MjAwNTgwfQ.ut_iUaGPOYWn-UIQKvkb5JgZNqpIhOPkhQZCph5yKWJi3gi0VJXrxhMranhbg3q5_beZZOjRrnEWUnE6KdrECw';
 
   const requestBody = JSON.stringify({
     articleId: articleID,
@@ -9,9 +10,8 @@ const PostBookmarks = async (articleID: number, userID: number) => {
   });
 
   try {
-    const token = sessionStorage.getItem('jhi-authenticationToken');
     const response = await fetch(url, {
-      method: 'POST',
+      method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',
@@ -20,9 +20,6 @@ const PostBookmarks = async (articleID: number, userID: number) => {
     });
 
     if (!response.ok) {
-      console.log(token);
-      console.log(articleID);
-      console.log(userID);
       throw new Error('Network response was not ok');
     }
 
@@ -36,4 +33,5 @@ const PostBookmarks = async (articleID: number, userID: number) => {
     throw error;
   }
 };
-export default PostBookmarks;
+
+export default DeleteBookmarks;
