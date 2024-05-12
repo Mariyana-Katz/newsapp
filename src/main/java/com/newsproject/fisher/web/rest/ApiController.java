@@ -32,7 +32,10 @@ public class ApiController {
         articleRepository.deleteAll();
     }
 
+    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
     //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void headlineArticles() {
         List<Article> articles = apiService.fetchingCategoryData("headlines");
@@ -47,7 +50,10 @@ public class ApiController {
         //saving it, but saving it to savedArticles
     }
 
+    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
     //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void worldArticles() {
         List<Article> articles = apiService.fetchingCategoryData("world");
@@ -58,7 +64,10 @@ public class ApiController {
         List<Article> savedArticles = articleRepository.saveAll(filteredArticles);
     }
 
+    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
     //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void nationalArticles() {
         List<Article> articles = apiService.fetchingCategoryData("national");
@@ -69,7 +78,10 @@ public class ApiController {
         List<Article> savedArticles = articleRepository.saveAll(filteredArticles);
     }
 
+    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
     //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void businessArticles() {
         List<Article> articles = apiService.fetchingCategoryData("business");
@@ -80,7 +92,10 @@ public class ApiController {
         List<Article> savedArticles = articleRepository.saveAll(filteredArticles);
     }
 
+    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
     //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void technologyArticles() {
         List<Article> articles = apiService.fetchingCategoryData("technology");
@@ -91,7 +106,10 @@ public class ApiController {
         List<Article> savedArticles = articleRepository.saveAll(filteredArticles);
     }
 
+    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
     //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void scienceArticles() {
         List<Article> articles = apiService.fetchingCategoryData("science");
@@ -103,6 +121,9 @@ public class ApiController {
     }
 
     // @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
+    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void cultureArticles() {
         List<Article> articles = apiService.fetchingCategoryData("culture");
@@ -113,7 +134,10 @@ public class ApiController {
         List<Article> savedArticles = articleRepository.saveAll(filteredArticles);
     }
 
+    // @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
     //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void politicsArticles() {
         List<Article> articles = apiService.fetchingCategoryData("politics");
@@ -124,7 +148,10 @@ public class ApiController {
         List<Article> savedArticles = articleRepository.saveAll(filteredArticles);
     }
 
+    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
     //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void climateArticles() {
         List<Article> articles = apiService.fetchingCategoryData("climate");
