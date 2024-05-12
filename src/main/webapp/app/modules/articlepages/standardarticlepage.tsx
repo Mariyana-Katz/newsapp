@@ -45,10 +45,10 @@ const ArticleModal = ({ article, onClose }) => {
             <div className="header">
               <div className="buttons">
                 <BookmarkIcon isBookmarked={isBookmarked} onClick={handleBookmarkClick} articleId={article.id} />
-                <LikeButton />
               </div>
             </div>
             <h3 className="modal-article-title">{article.title}</h3>
+            <LikeButton article_ID={article.id} />
             <img src={article.urlToImage} alt="" className="modal-article-image" />
             <p className="modal-article-text">{formatText(displayedArticleText)}</p>
             <div className="comment-section-container">

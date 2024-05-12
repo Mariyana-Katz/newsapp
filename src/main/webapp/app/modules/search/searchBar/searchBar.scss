@@ -112,6 +112,15 @@
     margin-top: 0;
     max-height: auto;
   }
+  .filterLabel {
+    //this is for the narrow results
+    font-family: 'NPRSans', sans-serif;
+    font-size: 16px;
+    color: #333;
+  }
+  // .searchdd {
+  //   color: #fa8b40; /* color for the dropdown  menu */
+  // }
 
   .contentheader .search label[for='searchlayout-searchinput'] {
     margin-top: 2px;
