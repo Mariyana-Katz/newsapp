@@ -8,7 +8,7 @@ import PostBookmarks from '../bookmarkpage/bookmarkpostapi';
 interface BookmarkIconProps {
   isBookmarked: boolean;
   onClick: () => void;
-  size?: string; // Maåke the size prop optional
+  size?: string; // Make the size prop optional
   articleId: number;
 }
 
@@ -51,7 +51,7 @@ const BookmarkIcon: React.FC<BookmarkIconProps> = ({ isBookmarked, onClick, size
 };
 
 const postBookmark = async (articleID: number, userID: number) => {
-  // Your postBookmark function implementation
+  PostBookmarks(articleID, userID);
 };
 
 const deleteBookmark = async (articleID: number, userID: number) => {
