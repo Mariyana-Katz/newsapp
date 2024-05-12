@@ -1,7 +1,6 @@
 // StandardArticleBox.tsx
 import React, { useEffect, useState } from 'react';
 import FetchArticles from '../articleapi/fetcharticles';
-import LikeButton from './likeButton/likeButton';
 
 const StandardArticleBox: React.FC = () => {
   const [articleData, setArticleData] = useState([]);
@@ -23,7 +22,6 @@ const StandardArticleBox: React.FC = () => {
         article.category === 'HEADLINES' ? (
           <div key={index} className="article-box">
             <h3 className="article-headline">{article.title}</h3>
-            <LikeButton />
 
             <img src={article.urlToImage} alt="" className="article-image" />
             <p className="article-short-text">{article.shortDescription}</p>

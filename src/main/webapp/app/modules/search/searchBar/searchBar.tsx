@@ -26,6 +26,52 @@ const SearchBar = ({ setResults }) => {
     });
     setResults(results);
   };
+
+  //This is for handling the day dropmenu
+  const handleDateChange = value => {
+    console.log(value);
+    if (value === 'all') {
+      setResults(articleData);
+    } else {
+      let date = new Date(new Date().setHours(0, 0, 0, 0));
+      switch (value) {
+        case 'today':
+          //date.setDate(date.getDate());
+          break;
+        case 'past 7 days':
+          date.setDate(date.getDate() - 7);
+          break;
+        case 'past 30 days':
+          date.setDate(date.getDate() - 30);
+          break;
+        case 'past 90 days':
+          date.setDate(date.getDate() - 90);
+          break;
+        case 'past year':
+          date.setFullYear(date.getFullYear() - 1);
+          break;
+      }
+      console.log(date);
+      const results = articleData.filter(article => {
+        return article && article.published && new Date(article.published) >= date;
+      });
+      setResults(results);
+    }
+  };
+  //this is for handling the categories dropmenu narrowing search
+  const handleCatChange = value => {
+    console.log(value);
+    if (value) {
+      const valueUpperCase = value.toUpperCase();
+      const results = articleData.filter(article => {
+        return article && article.category && article.category.toUpperCase() === valueUpperCase;
+      });
+      setResults(results);
+    } else {
+      setResults(articleData);
+    }
+  };
+
   return (
     <div className="contentheader">
       <div className="search">
@@ -55,7 +101,7 @@ const SearchBar = ({ setResults }) => {
             <label>Narrow results:</label>
           </div>
           <div className="filterDate">
-            <select className="searchdd">
+            <select className="searchdd" onChange={e => handleDateChange(e.target.value)}>
               <option value="all">All dates</option>
               <option value="today">Today</option>
               <option value="past 7 days">Past 7 Days</option>
@@ -65,7 +111,7 @@ const SearchBar = ({ setResults }) => {
             </select>
           </div>
           <div className="filterProg">
-            <select className="searchdd">
+            <select className="searchdd" onChange={e => handleCatChange(e.target.value)}>
               <option value="">All Categories</option>
               <option value="All Things Considered">All Things Considered</option>
               <option value="World">World </option>
