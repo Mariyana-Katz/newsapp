@@ -3,7 +3,7 @@
   box-shadow: 0.5px 0.5px 5px 0.5px grey;
   padding: 10px 10px 40px;
   box-sizing: border-box;
-  border-radius: 30px;
+  border-radius: 10px;
   resize: none;
 }
 
@@ -21,6 +21,8 @@
   right: 10px;
   padding: 5px 10px;
   border-radius: 30px;
+  background-color: rgb(71, 69, 69);
+  color: white;
 }
 
 .commentSection {
