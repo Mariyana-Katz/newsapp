@@ -4,7 +4,7 @@
   flex-direction: column; /* Stack items vertically */
   justify-content: flex-start; /* Align items at the start of the container */
   // align-items: center;
-  width: 1000px;
+  width: 1250px;
   height: 250px;
   border-color: rgb(197, 197, 197);
   border-width: 1px;
@@ -106,5 +106,11 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .article-image {
+    height: 150px;
   }
 }

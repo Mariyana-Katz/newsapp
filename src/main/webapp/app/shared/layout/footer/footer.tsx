@@ -31,16 +31,16 @@ const App: React.FC = () => {
                   Science
                 </Link>
                 <span className="footer-space"></span>
-                <Link to="/Science" className="link-text">
+                <Link to="/Culture" className="link-text">
                   Culture
                 </Link>
                 <span className="footer-space"></span>
-                <Link to="/Science" className="link-text">
+                <Link to="/Politics" className="link-text">
                   Politics
                 </Link>
                 <span className="footer-space"></span>
-                <Link to="/Science" className="link-text">
-                  Weather
+                <Link to="/Podcast" className="link-text">
+                  Podcast
                 </Link>
                 {/* Add more links for other navbar items */}
               </p>
