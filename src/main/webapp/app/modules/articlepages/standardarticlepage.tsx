@@ -48,7 +48,7 @@ const ArticleModal = ({ article, onClose }) => {
               </div>
             </div>
             <h3 className="modal-article-title">{article.title}</h3>
-            <LikeButton />
+            <LikeButton article_ID={article.id} />
             <img src={article.urlToImage} alt="" className="modal-article-image" />
             <p className="modal-article-text">{formatText(displayedArticleText)}</p>
             <div className="comment-section-container">
