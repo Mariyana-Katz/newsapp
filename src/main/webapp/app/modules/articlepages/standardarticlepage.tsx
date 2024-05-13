@@ -43,6 +43,8 @@ const ArticleModal = ({ article, onClose }) => {
     return formattedText;
   };
 
+  const date = article.published;
+
   const formattedArticle = article ? { ...article, content: formatText(article.content) } : null;
 
   const handleBookmarkClick = () => {
@@ -66,6 +68,8 @@ const ArticleModal = ({ article, onClose }) => {
               </div>
             </div>
             <h3 className="modal-article-title">{article.title}</h3>
+            <p className="author">{article.author}</p>
+            <p className="published">{date}</p>
             <LikeButton article_ID={article.id} />
             <img src={article.urlToImage} alt="" className="modal-article-image" />
             <div className="modal-article-text" dangerouslySetInnerHTML={{ __html: displayedArticleText }} />
