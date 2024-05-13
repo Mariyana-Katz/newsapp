@@ -39,8 +39,8 @@ const App: React.FC = () => {
                   Politics
                 </Link>
                 <span className="footer-space"></span>
-                <Link to="/Science" className="link-text">
-                  Weather
+                <Link to="/Podcast" className="link-text">
+                  Podcast
                 </Link>
                 {/* Add more links for other navbar items */}
               </p>
@@ -56,12 +56,8 @@ const App: React.FC = () => {
           </div>
           <div className="col-md-6">
             <div className="ml-4">
-              {/*hyperlinked an email */}
-              <h3>
-                {' '}
-                Contact Us at: <a href="mailto:OStreetMedia@gmail.com">OStreetMedia@gmail.com</a>{' '}
-              </h3>
-              {/* <p>Email: example@example.com</p> */}
+              <h3>Contact Us</h3>
+              <p>Email: example@example.com</p>
               <p>Phone: +1234567890</p>
             </div>
           </div>

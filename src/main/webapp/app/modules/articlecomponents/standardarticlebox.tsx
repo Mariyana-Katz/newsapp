@@ -1,6 +1,7 @@
 // StandardArticleBox.tsx
 import React, { useEffect, useState } from 'react';
 import FetchArticles from '../articleapi/fetcharticles';
+import 'app/modules/articlecomponents/standardarticlebox.scss';
 
 const StandardArticleBox: React.FC = () => {
   const [articleData, setArticleData] = useState([]);
@@ -17,14 +18,18 @@ const StandardArticleBox: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      {articleData.map((article, index) =>
+    <div className="article-container">
+      {articleData.map(article =>
         article.category === 'HEADLINES' ? (
-          <div key={index} className="article-box">
+          <div key={article.id} className="article-box">
             <h3 className="article-headline">{article.title}</h3>
 
-            <img src={article.urlToImage} alt="" className="article-image" />
-            <p className="article-short-text">{article.shortDescription}</p>
+            <div className="article-card">
+              <img src={article.urlToImage} alt="" className="article-image" />
+              <div className="article-content">
+                <p className="article-short-text">{article.shortDescription}</p>
+              </div>
+            </div>
           </div>
         ) : null,
       )}
