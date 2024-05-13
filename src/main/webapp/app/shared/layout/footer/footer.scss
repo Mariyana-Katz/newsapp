@@ -1,20 +1,24 @@
-// // Define styles for the footer
-// .footer {
-//   position: fixed; // Keep the footer fixed at the bottom of the viewport
-//   left: 0;
-//   bottom: 0;
-//   width: 100%; // Occupy full width of the viewport
-//   background-color: #333; // Adjust background color as needed
-//   color: #fff; // Adjust text color as needed
-//   padding: 10px; // Add padding to the footer content
-//   text-align: center; // Center align footer content
-//   z-index: 1000; // Ensure the footer appears above other content
-// }
+// Define styles for the footer
+.footer {
+  position: fixed; // Keep the footer fixed at the bottom of the viewport
+  left: 0;
+  bottom: 0;
+  width: 100%; // Occupy full width of the viewport
+  background-color: #333; // Adjust background color as needed
+  color: #fff; // Adjust text color as needed
+  padding: 10px; // Add padding to the footer content
+  text-align: center; // Center align footer content
+  z-index: 1000; // Ensure the footer appears above other content
+}
 
-// // Adjust styles for larger screens
-// @media screen and (min-width: 768px) {
-//   .footer {
-//     height: 80px; // Set a specific height for the footer on larger screens
-//     line-height: 80px; // Center footer content vertically
-//   }
-// }
+.link-text {
+  margin-right: 20px;
+}
+
+// Adjust styles for larger screens
+@media screen and (min-width: 768px) {
+  .footer {
+    height: 80px; // Set a specific height for the footer on larger screens
+    line-height: 80px; // Center footer content vertically
+  }
+}
