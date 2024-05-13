@@ -45,6 +45,8 @@ const ArticleModal = ({ article, onClose }) => {
 
   const date = article.published;
 
+  //INSERT DATE FORMAT METHOD
+
   const formattedArticle = article ? { ...article, content: formatText(article.content) } : null;
 
   const handleBookmarkClick = () => {
