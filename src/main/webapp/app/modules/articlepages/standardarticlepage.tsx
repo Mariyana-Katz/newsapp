@@ -26,25 +26,26 @@ const ArticleModal = ({ article, onClose }) => {
   // };
 
   const formatText = text => {
-    if (!text) return ''; // Return empty string if text is null or undefined
-    const sentences = text.split('. '); // Split text into sentences
+    if (!text) return '';
+    const sentences = text.split('. ');
     let formattedText = '';
 
     sentences.forEach((sentence, index) => {
       if (index > 0 && index % 5 === 0) {
-        // Add two line breaks after every 5th sentence
         formattedText += '<br><br>';
       }
-      // Add tab on the first sentence after each break
       if (index % 5 === 0) {
         formattedText += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
       }
-      // Add period and space for each sentence
       formattedText += sentence + '. ';
     });
 
     return formattedText;
   };
+
+  const date = article.published;
+
+  //INSERT DATE FORMAT METHOD
 
   const formattedArticle = article ? { ...article, content: formatText(article.content) } : null;
 
@@ -69,6 +70,8 @@ const ArticleModal = ({ article, onClose }) => {
               </div>
             </div>
             <h3 className="modal-article-title">{article.title}</h3>
+            <p className="author">{article.author}</p>
+            <p className="published">{date}</p>
             <LikeButton article_ID={article.id} />
             <img src={article.urlToImage} alt="" className="modal-article-image" />
             <div className="modal-article-text" dangerouslySetInnerHTML={{ __html: displayedArticleText }} />

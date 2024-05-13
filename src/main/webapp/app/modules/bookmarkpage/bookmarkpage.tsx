@@ -5,6 +5,7 @@ import './bookmarkPage.scss'; // Import SCSS file
 import { useSelector } from 'react-redux';
 import FetchArticles from '../articleapi/fetcharticles';
 import FetchBookmarks from './bookmarkapi';
+import ArticleModal from '../articlepages/standardarticlepage';
 
 const BookmarkPage = () => {
   const [bookmarks, setBookmarks] = useState([]);
@@ -13,6 +14,7 @@ const BookmarkPage = () => {
   const [articleData, setArticleData] = useState([]);
   const [userBookMarks, setUserBookmarks] = useState([]);
   const [userArticles, setUserArticles] = useState([]);
+  const [selectedArticleIndex, setSelectedArticleIndex] = useState(null);
 
   useEffect(() => {
     FetchArticles()
@@ -52,6 +54,10 @@ const BookmarkPage = () => {
     setSearchQuery(event.target.value);
   };
 
+  const handleClick = index => {
+    setSelectedArticleIndex(index);
+  };
+
   const filteredArticleData = userArticles.filter(article => article.title.toLowerCase().includes(searchQuery.toLowerCase()));
 
   return (
@@ -65,12 +71,15 @@ const BookmarkPage = () => {
       </div>
       <div className="business-container">
         {filteredArticleData.map((bookmark, index) => (
-          <div key={index} className="article-box">
+          <div key={index} className="article-box" onClick={() => handleClick(index)}>
             <h3 className="article-headline">{bookmark.title}</h3>
             <img src={bookmark.urlToImage} alt="" className="article-image" />
             <p className="article-short-text">{bookmark.shortDescription}</p>
           </div>
         ))}
+        {selectedArticleIndex !== null && (
+          <ArticleModal article={filteredArticleData[selectedArticleIndex]} onClose={() => setSelectedArticleIndex(null)} />
+        )}
       </div>
     </div>
   );
