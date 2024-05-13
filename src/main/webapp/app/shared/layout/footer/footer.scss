@@ -1,63 +1,20 @@
-// Define colors
-$light-gray: #f8f9fa;
-$dark-gray: #333333;
-$light-text: #333333;
-$dark-text: #f8f9fa;
+// // Define styles for the footer
+// .footer {
+//   position: fixed; // Keep the footer fixed at the bottom of the viewport
+//   left: 0;
+//   bottom: 0;
+//   width: 100%; // Occupy full width of the viewport
+//   background-color: #333; // Adjust background color as needed
+//   color: #fff; // Adjust text color as needed
+//   padding: 10px; // Add padding to the footer content
+//   text-align: center; // Center align footer content
+//   z-index: 1000; // Ensure the footer appears above other content
+// }
 
-// Define font styles
-$font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-// Footer styles
-footer {
-  background-color: $light-gray;
-  color: $light-text;
-  font-family: $font-family;
-  padding: 10px 5px; // Adjust padding as needed
-}
-
-// Dark mode styles
-.dark-mode {
-  background-color: $dark-gray;
-  color: $dark-text;
-}
-
-// Footer section styles
-.about-us,
-.contact-us,
-.copyright {
-  margin-bottom: 10px; // Adjust margin between sections
-}
-
-// Heading styles
-h3 {
-  font-size: 16px; // Adjust heading size
-  font-weight: bold;
-  margin-bottom: 8px; // Adjust margin below headings
-}
-
-// Paragraph styles
-p {
-  font-size: 12px; // Adjust paragraph size
-  line-height: 1.3; // Adjust line height
-}
-.footer-links {
-  margin-left: 5px; // Adjust margin as needed
-}
-.footer-space {
-  margin-right: 10px; // Adjust margin as needed
-}
-
-// Media queries for responsiveness
-@media screen and (max-width: 768px) {
-  footer {
-    padding: 5px; // Adjust padding for smaller screens
-  }
-
-  h3 {
-    font-size: 14px; // Adjust heading size for smaller screens
-  }
-
-  p {
-    font-size: 10px; // Adjust paragraph size for smaller screens
-  }
-}
+// // Adjust styles for larger screens
+// @media screen and (min-width: 768px) {
+//   .footer {
+//     height: 80px; // Set a specific height for the footer on larger screens
+//     line-height: 80px; // Center footer content vertically
+//   }
+// }

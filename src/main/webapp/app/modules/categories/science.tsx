@@ -42,6 +42,7 @@ const Science = () => {
 
   return (
     <div>
+      <h2>Science</h2> {/* Add this line */}
       <div>
         {firstHeadlineArticle && (
           <div className="headline-story" onClick={() => handleClick(0)}>
@@ -56,6 +57,7 @@ const Science = () => {
         {filteredArticleData.map((article, index) =>
           index === 0 ? null : (
             <div key={index} className="article-box" onClick={() => handleClick(index)}>
+              <p>Science</p> {/* Include "Science" before the headline */}
               <h3 className="article-headline">{article.title}</h3>
               <img src={article.urlToImage} alt="" className="article-image" />
               <p className="article-short-text">{formatText(article.shortDescription)}</p>

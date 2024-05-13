@@ -48,6 +48,7 @@ const Home = () => {
       <div>
         {firstHeadlineArticle && (
           <div className="headline-story" onClick={() => handleClick(0)}>
+            <p>Topstories</p> {/* Include "Topstories" before the headline */}
             <h2 className="headline-text">{firstHeadlineArticle.title}</h2>
             <img src={firstHeadlineArticle.urlToImage} className="headline-image"></img>
             <div className="headline-story-div">

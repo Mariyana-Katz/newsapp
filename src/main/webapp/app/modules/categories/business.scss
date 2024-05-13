@@ -1,4 +1,4 @@
-/* Your existing CSS code with added styles */
+// Your existing SCSS code with added styles
 
 .textbody {
   float: inline-end;
@@ -6,11 +6,11 @@
   width: 57%;
   height: 497px;
   background-size: contain;
-  margin-right: 3%; /* Add margin for spacing */
+  margin-right: 3%; // Add margin for spacing
 }
 
 .national-headline {
-  margin-bottom: 10px; /* Add space between headline and body of text */
+  margin-bottom: 10px; // Add space between headline and body of text
   padding: 0;
   border: 0;
   font-size: 100%;
@@ -31,20 +31,26 @@
   font: inherit;
 }
 
-/* Media query for screens smaller than 768px */
+// Media query for screens smaller than 768px
 @media screen and (max-width: 768px) {
   .textbody {
-    float: none; /* Remove float on smaller screens */
-    width: 100%; /* Take full width on smaller screens */
-    margin-right: 0; /* Remove right margin on smaller screens */
+    float: none; // Remove float on smaller screens
+    width: 100%; // Take full width on smaller screens
+    margin-right: 0; // Remove right margin on smaller screens
   }
 
   .headline-story-text {
-    font-size: 16px; /* Adjust headline story text font size for smaller screens */
+    font-size: 16px; // Adjust headline story text font size for smaller screens
   }
 
   .national-headline {
-    width: 100%; /* Take full width on smaller screens */
-    padding: 100px 0px 10px 0px; /* Adjust padding for smaller screens */
+    width: 100%; // Take full width on smaller screens
+    padding: 100px 0px 10px 0px; // Adjust padding for smaller screens
   }
+}
+
+// Uncommented section for the Business heading
+.business-heading {
+  font-weight: bold;
+  // font-family: inherit; // This line is commented out as it's not needed in SCSS
 }
