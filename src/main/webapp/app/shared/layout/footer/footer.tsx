@@ -31,11 +31,11 @@ const App: React.FC = () => {
                   Science
                 </Link>
                 <span className="footer-space"></span>
-                <Link to="/Culture" className="link-text">
+                <Link to="/Science" className="link-text">
                   Culture
                 </Link>
                 <span className="footer-space"></span>
-                <Link to="/Politics" className="link-text">
+                <Link to="/Science" className="link-text">
                   Politics
                 </Link>
                 <span className="footer-space"></span>
@@ -56,12 +56,8 @@ const App: React.FC = () => {
           </div>
           <div className="col-md-6">
             <div className="ml-4">
-              {/*hyperlinked an email */}
-              <h3>
-                {' '}
-                Contact Us at: <a href="mailto:OStreetMedia@gmail.com">OStreetMedia@gmail.com</a>{' '}
-              </h3>
-              {/* <p>Email: example@example.com</p> */}
+              <h3>Contact Us</h3>
+              <p>Email: example@example.com</p>
               <p>Phone: +1234567890</p>
             </div>
           </div>
@@ -77,14 +73,6 @@ const App: React.FC = () => {
                 Terms of Service
                 <span className="footer-space"></span>
                 Help
-              </p>
-              {/* Important comment: Ensure to update the copyright year */}
-              {/* LinkedIn Profile Link */}
-              <p>
-                Connect with me on LinkedIn:{' '}
-                <a href="https://www.linkedin.com/in/your-profile-url" target="_blank" rel="noopener noreferrer">
-                  Your Name
-                </a>
               </p>
             </div>
           </div>
