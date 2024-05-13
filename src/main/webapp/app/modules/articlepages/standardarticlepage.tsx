@@ -6,22 +6,43 @@ import BookmarkIcon from '../bookmarkicon/bookmarkicon';
 const ArticleModal = ({ article, onClose }) => {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
+  // const formatText = text => {
+  //   if (!text) return ''; // Return empty string if text is null or undefined
+  //   const sentences = text.split('. '); // Split text into sentences
+  //   let formattedText = '';
+  //   sentences.forEach((sentence, index) => {
+  //     if (index > 0 && index % 5 === 0) {
+  //       // Add two line breaks after every 5th sentence
+  //       formattedText += '\n\n';
+  //     }
+  //     // Add tab on the first sentence after each break
+  //     if (index % 5 === 0) {
+  //       formattedText += '\t';
+  //     }
+  //     // Add period and space for each sentence
+  //     formattedText += sentence + '. ';
+  //   });
+  //   return formattedText;
+  // };
+
   const formatText = text => {
     if (!text) return ''; // Return empty string if text is null or undefined
     const sentences = text.split('. '); // Split text into sentences
     let formattedText = '';
+
     sentences.forEach((sentence, index) => {
       if (index > 0 && index % 5 === 0) {
         // Add two line breaks after every 5th sentence
-        formattedText += '\n\n';
+        formattedText += '<br><br>';
       }
       // Add tab on the first sentence after each break
       if (index % 5 === 0) {
-        formattedText += '\t';
+        formattedText += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
       }
       // Add period and space for each sentence
       formattedText += sentence + '. ';
     });
+
     return formattedText;
   };
 
@@ -50,7 +71,8 @@ const ArticleModal = ({ article, onClose }) => {
             <h3 className="modal-article-title">{article.title}</h3>
             <LikeButton article_ID={article.id} />
             <img src={article.urlToImage} alt="" className="modal-article-image" />
-            <p className="modal-article-text">{formatText(displayedArticleText)}</p>
+            <div className="modal-article-text" dangerouslySetInnerHTML={{ __html: displayedArticleText }} />
+            {/* <p className="modal-article-text">{displayedArticleText}</p> */}
             <div className="comment-section-container">
               <CommentBox articleId={article.id} />
             </div>

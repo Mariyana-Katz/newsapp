@@ -3,7 +3,8 @@ import SearchBar from './searchBar/searchBar';
 import SearchResults from './searchResults/searchResults';
 
 const Search = () => {
-  const [results, setResults] = useState([]);
+  //results are taken from SearchBar component via setResults() and passed to SearchResults component
+  const [results, setResults] = useState([]); //use the hook to store the results(searched results)
   return (
     <div>
       <SearchBar setResults={setResults} />

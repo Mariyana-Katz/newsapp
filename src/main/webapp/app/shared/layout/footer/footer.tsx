@@ -56,8 +56,12 @@ const App: React.FC = () => {
           </div>
           <div className="col-md-6">
             <div className="ml-4">
-              <h3>Contact Us</h3>
-              <p>Email: example@example.com</p>
+              {/*hyperlinked an email */}
+              <h3>
+                {' '}
+                Contact Us at: <a href="mailto:OStreetMedia@gmail.com">OStreetMedia@gmail.com</a>{' '}
+              </h3>
+              {/* <p>Email: example@example.com</p> */}
               <p>Phone: +1234567890</p>
             </div>
           </div>
