@@ -38,14 +38,18 @@ Navbar styles
 
 .brand-title {
   font-family: 'Comfortaa';
-  font-size: 1.25rem;
-  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 1.5rem; /* Adjust this value to move it down */
+  left: 45.9rem;
   color: black;
-  &:hover {
-    color: $header-color-hover;
-    text-decoration: none;
-  }
 }
+
+.brand-title:hover {
+  color: $header-color-hover;
+  text-decoration: none;
+}
+
 /* Update your global CSS file (e.g., header.scss) */
 // .navbar,
 // .navbar-brand,
