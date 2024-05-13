@@ -26,20 +26,17 @@ const ArticleModal = ({ article, onClose }) => {
   // };
 
   const formatText = text => {
-    if (!text) return ''; // Return empty string if text is null or undefined
-    const sentences = text.split('. '); // Split text into sentences
+    if (!text) return '';
+    const sentences = text.split('. ');
     let formattedText = '';
 
     sentences.forEach((sentence, index) => {
       if (index > 0 && index % 5 === 0) {
-        // Add two line breaks after every 5th sentence
         formattedText += '<br><br>';
       }
-      // Add tab on the first sentence after each break
       if (index % 5 === 0) {
         formattedText += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
       }
-      // Add period and space for each sentence
       formattedText += sentence + '. ';
     });
 
