@@ -14,14 +14,16 @@ import PodcastsIcon from '@mui/icons-material/Podcasts';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+  // State for managing dropdown open/close
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
 
+  // Function to toggle dropdown open/close state
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
-
+  // Function to close the dropdown
   const closeDropdown = () => {
-    setDropdownOpen(false); // Function to close the dropdown
+    setDropdownOpen(false);
   };
 
   return (
