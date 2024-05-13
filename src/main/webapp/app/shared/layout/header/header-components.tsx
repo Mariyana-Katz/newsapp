@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const Brand = () => (
   <NavbarBrand tag={Link} to="/" className="brand-logo">
-    <span className="brand-title">Orange Street Media</span>
+    <span className="brand-title">range Street Media</span>
     <img
       src="https://png.pngtree.com/png-vector/20220629/ourmid/pngtree-orange-logo-design-fruit-icon-png-image_5517444.png"
       className="orange"

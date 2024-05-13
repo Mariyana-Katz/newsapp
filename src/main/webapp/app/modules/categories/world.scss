@@ -1,32 +1,63 @@
-.business-container {
+// Define styles for larger screens
+.article-box-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.article-box {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px; /* Add margin for spacing between articles */
-}
-
-.headline-image {
-  width: 100px; /* Adjust image width as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin-left: 20px; /* Add margin between image and text */
-}
-
-.textbody {
-  float: right;
-  width: 57%;
-  margin-right: 3%; /* Add margin for spacing */
+.headline-story {
+  margin-bottom: 20px;
 }
 
 .headline-text {
-  font-weight: bold; /* Make headline bold */
-  margin-bottom: 10px; /* Add space below headline */
+  font-size: 24px;
 }
 
-.headline-story-text {
-  font-size: inherit; /* Use the font size of the parent */
+.headline-image {
+  width: 100%;
+  max-width: 200px;
+}
+
+.headline-story-div {
+  margin-top: 10px;
+}
+
+.article-box {
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+}
+
+.article-headline {
+  font-size: 18px;
+}
+
+.article-image {
+  width: 100%;
+}
+
+.article-short-text {
+  font-size: 14px;
+}
+
+// Media query for screens smaller than 768px
+@media screen and (max-width: 768px) {
+  .headline-text {
+    font-size: 20px;
+  }
+
+  .headline-image {
+    max-width: 150px;
+  }
+
+  .article-box {
+    width: calc(100% - 10px);
+  }
+
+  .article-headline {
+    font-size: 16px;
+  }
+
+  .article-short-text {
+    font-size: 12px;
+  }
 }
