@@ -48,6 +48,7 @@ const App: React.FC = () => {
                 <Link to="/Podcast" className="link-text">
                   Podcast
                 </Link>
+
                 {/* Add more links for other navbar items */}
               </p>
             </div>
@@ -56,8 +57,12 @@ const App: React.FC = () => {
         <div className="row">
           <div className="col-md-6">
             <div className="ml-4">
-              <h3>About Us</h3>
-              <p>This is a brief description of the website.</p>
+              <span className="footer-space"></span>
+              <Link to="/Aboutus" className="link-text">
+                {' '}
+                {/* Add Link to About Us page */}
+                About Us
+              </Link>
             </div>
           </div>
           <div className="col-md-6">
