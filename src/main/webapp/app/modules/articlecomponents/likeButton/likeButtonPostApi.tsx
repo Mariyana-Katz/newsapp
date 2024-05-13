@@ -1,16 +1,17 @@
+//function for posting the likes
 const PostLikes = async (articleID: number, userID: number, likeCOUNT: number) => {
   const url = 'http://localhost:8080/api/likes';
 
   const token =
-    'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcxNTUyODg3NywiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzE1NDQyNDc3fQ.0mc7DgbphlXRWC5-ypwGSFPjGn1-d5K4t9vHKPFIFxtiUCc6YzVirjUcu0cRrHTgYDT1OxJNU8RR7_cfjhs5Qw';
-  //'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcxNTQ1NTQzOCwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzE1MzY5MDM4fQ.lf_hGWSbz41XGX1NxWwAJVANuVbyczC3w3scufclM6EmgUNV1qi2GMRkwqE05euHU06KwskuC6nCuJRwU1SmSA';
-
+    'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcxNTY1MTAwNSwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzE1NTY0NjA1fQ.YJZUU1VW275dhPzaicgzRLpaV9y63w24TKxX-PW4-nYex46FW0J2oN_50uie6h_h_v-57UJbHbyDpWHBKgh2JA';
+  //requestbody use stringify method to convert js value to json string
   const requestBody = JSON.stringify({
     articleId: articleID,
     userId: userID,
     likeCount: likeCOUNT,
   });
 
+  //use fetch() to post the request
   try {
     const response = await fetch(url, {
       method: 'POST',
