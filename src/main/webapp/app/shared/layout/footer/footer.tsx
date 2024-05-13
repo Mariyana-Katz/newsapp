@@ -15,25 +15,31 @@ const App: React.FC = () => {
                   Top Stories
                 </Link>
                 <span className="footer-space"></span>
+                <span className="footer-space"></span>
                 <Link to="/World" className="link-text">
                   World
                 </Link>
+                <span className="footer-space"></span>
                 <span className="footer-space"></span>
                 <Link to="/National" className="link-text">
                   National
                 </Link>
                 <span className="footer-space"></span>
+                <span className="footer-space"></span>
                 <Link to="/Technology" className="link-text">
                   Technology
                 </Link>
+                <span className="footer-space"></span>
                 <span className="footer-space"></span>
                 <Link to="/Science" className="link-text">
                   Science
                 </Link>
                 <span className="footer-space"></span>
+                <span className="footer-space"></span>
                 <Link to="/Science" className="link-text">
                   Culture
                 </Link>
+                <span className="footer-space"></span>
                 <span className="footer-space"></span>
                 <Link to="/Science" className="link-text">
                   Politics
