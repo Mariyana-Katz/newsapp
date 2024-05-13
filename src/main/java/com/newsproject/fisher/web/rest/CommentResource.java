@@ -193,10 +193,13 @@ public class CommentResource {
 
     @GetMapping("/getComments")
     public ResponseEntity<List<Comment>> getCommentsByArticleId(@RequestParam Integer articleId) {
+        //@RequestParam, request parameter must be present in the request: '/api/comments/getComments?articleId=123'
         List<Comment> comments = commentRepository.findByArticleId(articleId);
         if (comments.isEmpty()) {
             return ResponseEntity.noContent().build();
+            //if comment list is empty, return 204 No Content, query was executed but no comments
         }
         return ResponseEntity.ok(comments);
+        //return 200 ok
     }
 }

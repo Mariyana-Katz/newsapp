@@ -21,9 +21,10 @@ public class ArticleService {
         return articleRepository.save(article);
     }
 
-    public Article show(Long id) {
-        return articleRepository.findById(id).get();
-    }
+    //    public Article show(Long id) {
+    //
+    //        return articleRepository.findById(id).get();
+    //    }
 
     public boolean delete(Long id) {
         articleRepository.deleteById(id);
