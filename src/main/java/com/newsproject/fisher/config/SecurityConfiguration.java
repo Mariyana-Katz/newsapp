@@ -82,7 +82,11 @@ public class SecurityConfiguration {
                     .requestMatchers(mvc.pattern("/api/account/reset-password/init")).permitAll()
                     .requestMatchers(mvc.pattern("/api/account/reset-password/finish")).permitAll()
                     .requestMatchers(mvc.pattern("/api/admin/**")).hasAuthority(AuthoritiesConstants.ADMIN)
+
                     .requestMatchers(mvc.pattern("/api/comments/getComments/**")).permitAll()
+                    //.permitAll() disables security checks (authentication & authorization) to the endpoint
+                    //** at the end means, match the url followed by whatever is after, apply to any subpath
+
                     .requestMatchers(mvc.pattern("/api/articles/**")).permitAll()
                     .requestMatchers(mvc.pattern("/api/**")).authenticated()
                     .requestMatchers(mvc.pattern("/v3/api-docs/**")).hasAuthority(AuthoritiesConstants.ADMIN)
