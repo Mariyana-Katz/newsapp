@@ -2,7 +2,8 @@ const GetComments = async (articleID: number) => {
   const url = `http://localhost:8080/api/comments/getComments?articleId=${articleID}`;
 
   try {
-    const token = sessionStorage.getItem('token')?.substring(1, sessionStorage.getItem('jhi-authenticationToken').length - 1) || '';
+    const token =
+      sessionStorage.getItem('jhi-authenticationToken')?.substring(1, sessionStorage.getItem('jhi-authenticationToken').length - 1) || '';
 
     const response = await fetch(url, {
       method: 'GET',

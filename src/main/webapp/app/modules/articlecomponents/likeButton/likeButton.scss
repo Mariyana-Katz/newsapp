@@ -1,43 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
-// .like-button-container {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   margin: 20px;
-// }
-// .like-button {
-//   border: none;
-//   outline: none;
-//   background-color: transparent;
-//   font-size: 18px;
-//   font-weight: bold;
-//   transition: all 0.2s ease-in-out;
-//   padding: 10px 20px;
-//   border: 2px solid #333;
-// }
-// .like-button.liked {
-//   color: #ff69b4;
-//   border-color: #ff69b4;
-// }
-
-// .container {
-//   width: 100vw;
-//   height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   background-color: #f0f1f3;
-// }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Remove padding-left */
+}
 
 .btn-container {
+  position: fixed; /* Change positioning to fixed */
+  top: 50px; /* Adjust as needed */
+  right: 50px; /* Adjust as needed */
   display: flex;
   flex-direction: row;
   align-items: center;
   background-color: #fff;
   padding: 5px 5px;
   border-radius: 66px;
+  justify-content: right;
+  width: 300px;
+  margin-top: -12.5px;
 }
 
 .btn {
@@ -48,7 +30,7 @@
   background-color: #bdc0c5;
   border-radius: 44px;
   padding: 2px 3px;
-  margin: 5px 0;
+  margin: 5px 0; //create space around elements. First value applies to the top and bottom margins, and the second value applies to the left and right margins.
 }
 
 .like-active {

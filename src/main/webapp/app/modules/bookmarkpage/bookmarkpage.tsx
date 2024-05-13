@@ -48,9 +48,6 @@ const BookmarkPage = () => {
 
   console.log(userArticles);
 
-  //find all bookmarked articles where userId = userId
-  //filter articleData where aricleId = bookmarkedArticleId
-
   const handleSearchChange = event => {
     setSearchQuery(event.target.value);
   };
@@ -63,16 +60,15 @@ const BookmarkPage = () => {
       <div className="header">
         <h1>
           <FontAwesomeIcon icon={faBookmark} className="bookmark-icon" />
-          Bookmark
+          Bookmarks
         </h1>
       </div>
       <div className="business-container">
         {filteredArticleData.map((bookmark, index) => (
-          <div className="article-box" key={index}>
-            <div className="textbody">
-              <p className="headline-text">{bookmark.title}</p>
-              <p className="headline-story-text">{bookmark.text}</p>
-            </div>
+          <div key={index} className="article-box">
+            <h3 className="article-headline">{bookmark.title}</h3>
+            <img src={bookmark.urlToImage} alt="" className="article-image" />
+            <p className="article-short-text">{bookmark.shortDescription}</p>
           </div>
         ))}
       </div>

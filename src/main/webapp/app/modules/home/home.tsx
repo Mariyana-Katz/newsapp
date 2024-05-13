@@ -46,9 +46,9 @@ const Home = () => {
       )}
 
       <div>
+        <h2>Topstories</h2>
         {firstHeadlineArticle && (
           <div className="headline-story" onClick={() => handleClick(0)}>
-            <p>Topstories</p> {/* Include "Topstories" before the headline */}
             <h2 className="headline-text">{firstHeadlineArticle.title}</h2>
             <img src={firstHeadlineArticle.urlToImage} className="headline-image"></img>
             <div className="headline-story-div">
@@ -60,6 +60,7 @@ const Home = () => {
         {filteredArticleData.map((article, index) =>
           index === 0 ? null : (
             <div key={index} className="article-box" onClick={() => handleClick(index)}>
+              <p>Topstories</p> {/* Include "Topstories" before the headline */}
               <h3 className="article-headline">{article.title}</h3>
               <img src={article.urlToImage} alt="" className="article-image" />
               <p className="article-short-text">{article.shortDescription}</p>
