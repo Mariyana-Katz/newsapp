@@ -31,16 +31,16 @@ const App: React.FC = () => {
                   Science
                 </Link>
                 <span className="footer-space"></span>
-                <Link to="/Science" className="link-text">
+                <Link to="/Culture" className="link-text">
                   Culture
                 </Link>
                 <span className="footer-space"></span>
-                <Link to="/Science" className="link-text">
+                <Link to="/Politics" className="link-text">
                   Politics
                 </Link>
                 <span className="footer-space"></span>
-                <Link to="/Science" className="link-text">
-                  Weather
+                <Link to="/Podcast" className="link-text">
+                  Podcast
                 </Link>
                 {/* Add more links for other navbar items */}
               </p>
@@ -77,6 +77,14 @@ const App: React.FC = () => {
                 Terms of Service
                 <span className="footer-space"></span>
                 Help
+              </p>
+              {/* Important comment: Ensure to update the copyright year */}
+              {/* LinkedIn Profile Link */}
+              <p>
+                Connect with me on LinkedIn:{' '}
+                <a href="https://www.linkedin.com/in/your-profile-url" target="_blank" rel="noopener noreferrer">
+                  Your Name
+                </a>
               </p>
             </div>
           </div>
