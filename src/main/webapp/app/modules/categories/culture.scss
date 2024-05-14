@@ -13,24 +13,24 @@
 .article-box {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 20px; /* Add margin for spacing between articles */
+  margin-bottom: 20px;
 }
 
 .headline-image {
-  width: 100px; /* Adjust image width as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin-left: 20px; /* Add margin between image and text */
+  width: 100px;
+  height: auto;
+  margin-left: 20px;
 }
 
 .textbody {
   float: right;
   width: 57%;
-  margin-right: 3%; /* Add margin for spacing */
+  margin-right: 3%;
 }
 
 .headline-text {
-  font-weight: bold; /* Make headline bold */
-  margin-bottom: 10px; /* Add space below headline */
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .headline-story-text {
