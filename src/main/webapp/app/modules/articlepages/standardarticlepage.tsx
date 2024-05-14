@@ -46,6 +46,15 @@ const ArticleModal = ({ article, onClose }) => {
   const date = article.published;
 
   //INSERT DATE FORMAT METHOD
+  function formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
+    return date.toLocaleDateString('en-US', options);
+  }
 
   const formattedArticle = article ? { ...article, content: formatText(article.content) } : null;
 
