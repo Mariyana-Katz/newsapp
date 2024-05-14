@@ -27,16 +27,16 @@ public class ApiController {
 
     //constructor injection bc of early failure detection, fail at startup, not runtime
 
-    //    @Scheduled(initialDelay = 30000, fixedRate = Long.MAX_VALUE)
+    //        @Scheduled(initialDelay = 30000, fixedRate = Long.MAX_VALUE)
     public void deleteAllArticles() {
         articleRepository.deleteAll();
     }
 
     //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
-    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
-    //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
+    //    @Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void headlineArticles() {
         List<Article> articles = apiService.fetchingCategoryData("headlines");
         //assign articles List to list of java objects from api
@@ -52,7 +52,7 @@ public class ApiController {
 
     //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
-    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void worldArticles() {
@@ -66,7 +66,7 @@ public class ApiController {
 
     //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
-    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void nationalArticles() {
@@ -80,7 +80,7 @@ public class ApiController {
 
     //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
-    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void businessArticles() {
@@ -94,7 +94,7 @@ public class ApiController {
 
     //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
-    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void technologyArticles() {
@@ -108,7 +108,7 @@ public class ApiController {
 
     //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
-    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void scienceArticles() {
@@ -123,7 +123,7 @@ public class ApiController {
     // @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
     //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
-    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void cultureArticles() {
         List<Article> articles = apiService.fetchingCategoryData("culture");
@@ -136,7 +136,7 @@ public class ApiController {
 
     // @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
-    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void politicsArticles() {
@@ -150,7 +150,7 @@ public class ApiController {
 
     //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
-    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void climateArticles() {
