@@ -3,8 +3,7 @@ const UpdateLikes = async (id: number, likeCOUNT: number) => {
   const url = 'http://localhost:8080/api/likes/' + id; //send the id in the url, patchmapping require it
 
   const token =
-    'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcxNTY1MTAwNSwiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzE1NTY0NjA1fQ.YJZUU1VW275dhPzaicgzRLpaV9y63w24TKxX-PW4-nYex46FW0J2oN_50uie6h_h_v-57UJbHbyDpWHBKgh2JA';
-
+    'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNzE1ODU4NzIzLCJhdXRoIjoiUk9MRV9VU0VSIiwiaWF0IjoxNzE1NzcyMzIzfQ.hSDXOWxJW6iFvK_MfZ2eL67zkcPvSSv1h3gyr20eCQbYLEZx9WP7bqe9rKEQdhPHF2xIl0N3xagmu0-vZLCWAg';
   const requestBody = JSON.stringify({
     id: id,
     likeCount: likeCOUNT,
