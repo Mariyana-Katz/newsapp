@@ -10,7 +10,11 @@
   border-width: 1px;
   border-style: solid;
   border-radius: 10px;
-  margin: 20px 10px 10px 10px;
+  margin: 40px 10px 10px 10px;
+}
+
+.article-box:hover {
+  box-shadow: 1px 1px 1px 1px rgb(139, 139, 139, 139);
 }
 
 .article-image {
@@ -23,24 +27,25 @@
   margin-right: 50px;
   object-fit: contain;
 }
-.article-image:hover {
-  box-shadow: 1px 1px 1px 1px rgb(139, 139, 144);
-}
 
 .article-headline {
   padding-top: 40px;
 }
 
 .article-short-text {
-  padding-top: 10px;
+  padding-top: 0px;
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Display ellipsis for overflow text */
+  white-space: nowrap;
 }
+
 .article-headline,
 .article-short-text {
   display: block;
   width: 65%;
   float: left;
   padding-right: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 7px;
   padding-left: 30px;
 }
 

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import FetchArticles from '../articleapi/fetcharticles';
 import 'app/modules/articlecomponents/standardarticlebox.scss';
+import LikeButton from './likeButton/likeButton';
 
 const StandardArticleBox: React.FC = () => {
   const [articleData, setArticleData] = useState([]);
