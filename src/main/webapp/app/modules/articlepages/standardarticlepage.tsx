@@ -15,9 +15,6 @@ const ArticleModal = ({ article, onClose }) => {
       if (index > 0 && index % 5 === 0) {
         formattedText += '<br><br>';
       }
-      if (index % 5 === 0) {
-        formattedText += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-      }
       formattedText += sentence + '. ';
     });
 

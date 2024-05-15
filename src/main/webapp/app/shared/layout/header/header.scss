@@ -40,9 +40,10 @@ Navbar styles
   font-family: 'Comfortaa';
   font-size: 1.5rem;
   position: absolute;
-  top: 1.5rem; /* Adjust this value to move it down */
+  bottom: 0rem; /* Adjust this value to move it down */
   // left: 45.9rem;
   color: black;
+  font-size: xx-large;
 }
 
 .brand-title:hover {

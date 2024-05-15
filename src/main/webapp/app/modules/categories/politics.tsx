@@ -27,7 +27,7 @@ const Politics = () => {
 
   return (
     <div>
-      <h2>Politics</h2> {/* Add this line */}
+      <h1 className="category-header">Politics</h1> {/* Add this line */}
       <div>
         {firstHeadlineArticle && (
           <div className="headline-story" onClick={() => handleClick(0)}>

@@ -32,7 +32,7 @@ public class ApiController {
         articleRepository.deleteAll();
     }
 
-    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
@@ -50,7 +50,7 @@ public class ApiController {
         //saving it, but saving it to savedArticles
     }
 
-    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
@@ -64,7 +64,7 @@ public class ApiController {
         List<Article> savedArticles = articleRepository.saveAll(filteredArticles);
     }
 
-    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
@@ -78,7 +78,7 @@ public class ApiController {
         List<Article> savedArticles = articleRepository.saveAll(filteredArticles);
     }
 
-    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
@@ -92,7 +92,7 @@ public class ApiController {
         List<Article> savedArticles = articleRepository.saveAll(filteredArticles);
     }
 
-    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
@@ -106,7 +106,7 @@ public class ApiController {
         List<Article> savedArticles = articleRepository.saveAll(filteredArticles);
     }
 
-    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
@@ -120,7 +120,7 @@ public class ApiController {
         List<Article> savedArticles = articleRepository.saveAll(filteredArticles);
     }
 
-    // @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //     @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
     //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
@@ -134,7 +134,7 @@ public class ApiController {
         List<Article> savedArticles = articleRepository.saveAll(filteredArticles);
     }
 
-    // @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //     @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
@@ -150,7 +150,7 @@ public class ApiController {
 
     //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
-    //        @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //            @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //@Scheduled(cron = "0 0 6 * * *", zone = "America/New_York")
     public void climateArticles() {

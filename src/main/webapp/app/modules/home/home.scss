@@ -12,13 +12,13 @@ Main page styles
 .headline-story {
   display: flex; /* Use flexbox */
   align-items: flex-start; /* Align items vertically */
-  padding-top: 50px;
+  padding-top: 10px;
 }
 
 .headline-image {
   width: 57%;
   float: inline-end;
-  margin-right: 3%; /* Add margin for spacing */
+  margin-right: 0; /* Add margin for spacing */
 }
 
 .headline-text {
@@ -94,4 +94,9 @@ Main page styles
   .headline-story-text {
     display: none; /* Hide text at smaller screen sizes */
   }
+}
+
+.category-header {
+  padding: 20px 0px 20px;
+  font-weight: bolder;
 }
