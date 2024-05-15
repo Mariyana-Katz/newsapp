@@ -27,7 +27,7 @@ const World = () => {
 
   return (
     <div>
-      <h2>World</h2>
+      <h1 className="category-header">World</h1>
       {firstHeadlineArticle && (
         <div className="headline-story" onClick={() => handleClick(0)}>
           <h2 className="headline-text">{firstHeadlineArticle.title}</h2>

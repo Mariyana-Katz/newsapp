@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap'); // Override Bootstrap variables
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Overpass+Mono:wght@300..700&display=swap'); // Override Bootstrap variables
 @import 'bootstrap-variables';
 @import 'bootswatch/dist/simplex/variables';
 // Import Bootstrap source files from node_modules
@@ -21,9 +21,13 @@ a {
 h1,
 h2,
 h3 {
-  font-family: 'Comfortaa';
+  font-family: 'Overpass Mono';
 }
 
+h1 {
+  font-weight: bolder;
+  font-optical-sizing: auto;
+}
 h2 {
   font-size: 210% !important;
 }
