@@ -143,7 +143,7 @@ const SearchBar = ({ setResults }) => {
               <option value="Science"> Science</option>
               <option value=" Culture"> Culture</option>
               <option value="Politics">Politics</option>
-              <option value="Weather">Climate</option>
+              <option value="Podcast">Podcast</option>
             </select>
           </div>
         </div>
