@@ -13,30 +13,28 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Mariyana Katzarova',
     photoUrl: 'https://drive.google.com/thumbnail?id=1gU1XHrHOnoOoDQW4W2JqJsVQCLxYjQNR&sz=w5000',
-    qrCodeData: 'QR Code Data',
+    qrCodeData: 'https://www.linkedin.com/in/mariyana-katzarova/',
   },
   {
     name: 'Angelina Mathew',
     photoUrl: 'https://drive.google.com/thumbnail?id=1FlHaXE7S5y5e2DiFacs_GMKStKVAs40c&sz=w5000',
-
-    qrCodeData: 'QR Code Data',
+    qrCodeData: 'https://www.linkedin.com/in/angelinamathew/',
   },
   {
     name: 'Nicholas McNamara',
-    photoUrl: 'https://lh3.googleusercontent.com/d/1uBkLZjm6WrkZmQYEqfjY1eyqQH8Ch2C6&sz=w5000',
-    //https://drive.google.com/file/d/1uBkLZjm6WrkZmQYEqfjY1eyqQH8Ch2C6/view?usp=sharing
-    //https://drive.google.com/file/d/1i1bQyqEoTrGTaJXaqyzTTyYcT3DGf7gY/view?usp=sharing
-    qrCodeData: 'QR Code Data',
+    photoUrl: 'https://lh3.googleusercontent.com/d/193iPTzjwh-gusCaW74SONM7pnTMHKWrt',
+    //https://drive.google.com/file/d/193iPTzjwh-gusCaW74SONM7pnTMHKWrt/view?usp=sharing
+    qrCodeData: 'https://www.linkedin.com/in/nicholasmcn/',
   },
   {
     name: 'Lavanya Palanikumar',
     photoUrl: 'https://drive.google.com/thumbnail?id=1TK4OiP9CFXQ0wGyIL76JcXrvw6Tma-UQ&sz=w5000',
-    qrCodeData: 'QR Code Data',
+    qrCodeData: 'www.linkedin.com/in/lavanya-palanikumar',
   },
   {
     name: 'Andy Zheng',
     photoUrl: 'https://lh3.googleusercontent.com/d/17uJ_YQo_bBUIHy6iwX2_BD1lLu4ldPZl',
-    qrCodeData: 'QR Code Data',
+    qrCodeData: 'https://www.linkedin.com/in/andyzheng679/',
   },
 ];
 
