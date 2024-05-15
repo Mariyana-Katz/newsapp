@@ -6,25 +6,6 @@ import BookmarkIcon from '../bookmarkicon/bookmarkicon';
 const ArticleModal = ({ article, onClose }) => {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
-  // const formatText = text => {
-  //   if (!text) return ''; // Return empty string if text is null or undefined
-  //   const sentences = text.split('. '); // Split text into sentences
-  //   let formattedText = '';
-  //   sentences.forEach((sentence, index) => {
-  //     if (index > 0 && index % 5 === 0) {
-  //       // Add two line breaks after every 5th sentence
-  //       formattedText += '\n\n';
-  //     }
-  //     // Add tab on the first sentence after each break
-  //     if (index % 5 === 0) {
-  //       formattedText += '\t';
-  //     }
-  //     // Add period and space for each sentence
-  //     formattedText += sentence + '. ';
-  //   });
-  //   return formattedText;
-  // };
-
   const formatText = text => {
     if (!text) return '';
     const sentences = text.split('. ');
@@ -43,18 +24,17 @@ const ArticleModal = ({ article, onClose }) => {
     return formattedText;
   };
 
-  const date = article.published;
-
-  //INSERT DATE FORMAT METHOD
-  function formatDate(dateString: string): string {
+  const formatDate = dateString => {
     const date = new Date(dateString);
-    const options: Intl.DateTimeFormatOptions = {
+    const options = {
       year: 'numeric',
-      month: 'long',
+      month: 'String',
       day: 'numeric',
     };
-    return date.toLocaleDateString('en-US', options);
-  }
+    return date.toLocaleDateString('en-US');
+  };
+
+  const date = article ? formatDate(article.published) : '';
 
   const formattedArticle = article ? { ...article, content: formatText(article.content) } : null;
 
@@ -63,7 +43,6 @@ const ArticleModal = ({ article, onClose }) => {
   };
 
   const displayedArticleText = formatText(article.content);
-  console.log(displayedArticleText);
 
   return (
     <div className="article-modal-overlay" onClick={onClose}>
@@ -84,7 +63,6 @@ const ArticleModal = ({ article, onClose }) => {
             <LikeButton article_ID={article.id} />
             <img src={article.urlToImage} alt="" className="modal-article-image" />
             <div className="modal-article-text" dangerouslySetInnerHTML={{ __html: displayedArticleText }} />
-            {/* <p className="modal-article-text">{displayedArticleText}</p> */}
             <div className="comment-section-container">
               <CommentBox articleId={article.id} />
             </div>
