@@ -27,11 +27,11 @@ const Culture = () => {
 
   return (
     <div>
-      <h2 className="category-header">Culture</h2> {/* Add this line */}
+      <h1 className="category-header">Culture</h1> {/* Add this line */}
       <div>
         {firstHeadlineArticle && (
           <div className="headline-story" onClick={() => handleClick(0)}>
-            <h2 className="headline-text">{firstHeadlineArticle.title}</h2>
+            <h3 className="headline-text">{firstHeadlineArticle.title}</h3>
             <img src={firstHeadlineArticle.urlToImage} className="headline-image"></img>
             <div className="headline-story-div">
               <p className="headline-story-text">{firstHeadlineArticle.shortDescription}</p>

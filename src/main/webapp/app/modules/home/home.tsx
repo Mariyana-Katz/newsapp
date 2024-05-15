@@ -46,7 +46,7 @@ const Home = () => {
       )}
 
       <div>
-        <h2>Top Stories</h2>
+        <h1 className="category-header">Top Stories</h1>
         {firstHeadlineArticle && (
           <div className="headline-story" onClick={() => handleClick(0)}>
             <h2 className="headline-text">{firstHeadlineArticle.title}</h2>
