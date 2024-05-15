@@ -54,7 +54,7 @@ const ArticleModal = ({ article, onClose }) => {
                 <BookmarkIcon isBookmarked={isBookmarked} onClick={handleBookmarkClick} articleId={article.id} />
               </div>
             </div>
-            <h3 className="modal-article-title">{article.title}</h3>
+            <h2 className="modal-article-title">{article.title}</h2>
             <p className="author">{article.author}</p>
             <p className="published">{date}</p>
             <LikeButton article_ID={article.id} />
