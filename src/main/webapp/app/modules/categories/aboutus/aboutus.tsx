@@ -18,11 +18,14 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Angelina Mathew',
     photoUrl: 'https://drive.google.com/thumbnail?id=1FlHaXE7S5y5e2DiFacs_GMKStKVAs40c&sz=w5000',
+
     qrCodeData: 'QR Code Data',
   },
   {
     name: 'Nicholas McNamara',
-    photoUrl: 'https://drive.google.com/thumbnail?id=1APP29rwgT5Bda1186vdVeBlqjTgtuSJ2&sz=w5000',
+    photoUrl: 'https://lh3.googleusercontent.com/d/1uBkLZjm6WrkZmQYEqfjY1eyqQH8Ch2C6&sz=w5000',
+    //https://drive.google.com/file/d/1uBkLZjm6WrkZmQYEqfjY1eyqQH8Ch2C6/view?usp=sharing
+    //https://drive.google.com/file/d/1i1bQyqEoTrGTaJXaqyzTTyYcT3DGf7gY/view?usp=sharing
     qrCodeData: 'QR Code Data',
   },
   {

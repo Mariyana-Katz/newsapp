@@ -32,7 +32,7 @@ public class ApiController {
         articleRepository.deleteAll();
     }
 
-    //@Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
+    //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 
     //    @Scheduled(initialDelay = 60000, fixedRate = Long.MAX_VALUE)
 

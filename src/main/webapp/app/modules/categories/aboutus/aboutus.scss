@@ -1,6 +1,7 @@
 .team-member {
   display: flex;
   align-items: center;
+  font-size: large;
 }
 
 .member-info {
@@ -21,7 +22,7 @@
 // }
 .team-members {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px; // Adjust the gap between team members as needed
 }
 
@@ -41,6 +42,6 @@
 
 .photo {
   border-radius: 50%;
-  width: 500px; // Adjust the size of the photo as needed
-  height: 500px; // Adjust the size of the photo as needed
+  width: 300px; // Adjust the size of the photo as needed
+  height: 300px; // Adjust the size of the photo as needed
 }
