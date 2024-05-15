@@ -1,0 +1,47 @@
+.team-member {
+  display: flex;
+  align-items: center;
+  font-size: large;
+}
+
+.member-info {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  margin-right: 100px;
+  font-weight: bold; // Adjust spacing between name and image as needed
+}
+
+// .rounded-photo {
+//   border-radius: 50%;
+//   width: 100px; // Adjust size as needed
+//   height: 100px; // Adjust size as needed
+//   margin-right: 20px; // Adjust spacing between name and image as needed
+// }
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; // Adjust the gap between team members as needed
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.member-info {
+  margin-bottom: 10px;
+}
+
+.name {
+  margin-bottom: 80px;
+}
+
+.photo {
+  border-radius: 50%;
+  width: 300px; // Adjust the size of the photo as needed
+  height: 300px; // Adjust the size of the photo as needed
+}

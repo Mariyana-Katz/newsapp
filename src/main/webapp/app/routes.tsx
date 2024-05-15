@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom'; // Import Link from react-router-dom
 import Loadable from 'react-loadable';
 import Navbar from 'app/shared/layout/header/navbar';
 import Login from 'app/modules/login/login';
@@ -28,6 +28,7 @@ import LikeButton from './modules/articlecomponents/likeButton/likeButton';
 import UserProfile from './modules/bookmarkpage/bookmarkslogic';
 import BookmarkPage from './modules/bookmarkpage/bookmarkpage';
 import BookMarkArticle from './modules/bookmarkpage/bookmarkpost';
+import AboutUsPage from './modules/categories/aboutus/aboutus';
 
 const loading = <div>loading ...</div>;
 
@@ -66,6 +67,7 @@ const AppRoutes = () => {
           <Route path="bookmark" element={<UserProfile />} />
           <Route path="search" element={<Search />} />
           <Route path="bookmark" element={<UserProfile />} />
+          <Route path="aboutus" element={<AboutUsPage />} />
           <Route path="test" element={<Test />}></Route>
           {/* <Route path="LikeButtonpage" element={<LikeButton />}></Route> */}
 
