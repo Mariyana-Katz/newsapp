@@ -18,7 +18,8 @@ const SearchBar = ({ setResults }) => {
       });
   }, []);
 
-  //console.log(articleData);
+  //update the input state with the new value if there is,
+  // filters the articledata based on the search query,seting the results in the searchData state.
   const handleChange = value => {
     const dateElement = document.getElementById('select-date') as HTMLInputElement; //this constant is a pointer to the date dropdown
     const catElement = document.getElementById('select-cat') as HTMLInputElement; //this constant is a pointer to the category dropdown
@@ -29,7 +30,8 @@ const SearchBar = ({ setResults }) => {
       catElement.value = '';
     }
     setInput(value);
-    const valueLowerCase = value.toLowerCase();
+    const valueLowerCase = value.toLowerCase(); //perform a case-insensitive search.
+    //filters the articleData array based on the search query, returns only articles whose titles contain the lowercase search query
     const results = articleData.filter(article => {
       return valueLowerCase && article && article.title && article.title.toLowerCase().includes(valueLowerCase);
     });

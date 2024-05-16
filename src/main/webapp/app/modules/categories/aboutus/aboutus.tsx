@@ -1,13 +1,11 @@
 import React from 'react';
 import './aboutus.scss';
 import QRCode from 'react-qr-code';
-
 interface TeamMember {
   name: string;
   photoUrl: string;
   qrCodeData: string;
 }
-
 const teamMembers: TeamMember[] = [
   // https://photos.app.goo.gl/zqxoS11BNRD7Txxr9  https://photos.app.goo.gl/zqxoS11BNRD7Txxr9
   {
@@ -23,7 +21,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Nicholas McNamara',
     photoUrl: 'https://lh3.googleusercontent.com/d/193iPTzjwh-gusCaW74SONM7pnTMHKWrt',
-    //https://drive.google.com/file/d/193iPTzjwh-gusCaW74SONM7pnTMHKWrt/view?usp=sharing
+    //https://drive.google.com/file/d/1vwtgm1U-VBlp1mgny6dD7OJLIng-jkQV/view?usp=sharing
     qrCodeData: 'https://www.linkedin.com/in/nicholasmcn/',
   },
   {
@@ -37,7 +35,6 @@ const teamMembers: TeamMember[] = [
     qrCodeData: 'https://www.linkedin.com/in/andyzheng679/',
   },
 ];
-
 const AboutUsPage: React.FC = () => {
   return (
     <div>
@@ -63,5 +60,4 @@ const AboutUsPage: React.FC = () => {
     </div>
   );
 };
-
 export default AboutUsPage;
