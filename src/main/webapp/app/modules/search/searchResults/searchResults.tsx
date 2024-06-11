@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import ArticleModal from 'app/modules/articlepages/standardarticlepage';
 
+//that component is responsible for rendering the search results returned from the search .
 const SearchResults = ({ results }) => {
   const [selectedArticleIndex, setSelectedArticleIndex] = useState(null);
 
+  //handleClick function is updating the selectedArticleIndex state with the index of the clicked article.
   const handleClick = index => {
     setSelectedArticleIndex(index);
   };

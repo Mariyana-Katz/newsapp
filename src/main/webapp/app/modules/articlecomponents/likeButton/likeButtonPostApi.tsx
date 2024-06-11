@@ -2,6 +2,9 @@
 const PostLikes = async (articleID: number, userID: number, likeCOUNT: number) => {
   const url = 'http://localhost:8080/api/likes';
 
+  //retrieves the authentication token stored in the session storage,
+  //removes the leading and trailing characters(quotes) from the token string,
+  // and assigns the result to a variable.
   const token =
     sessionStorage.getItem('jhi-authenticationToken')?.substring(1, sessionStorage.getItem('jhi-authenticationToken').length - 1) || '';
 
@@ -17,6 +20,7 @@ const PostLikes = async (articleID: number, userID: number, likeCOUNT: number) =
     const response = await fetch(url, {
       method: 'POST',
       headers: {
+        // Bearer  type of access token that grants access to resources when included in an HTTP request.
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',
       },

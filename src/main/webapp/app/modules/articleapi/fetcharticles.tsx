@@ -1,6 +1,6 @@
 const FetchArticles = async () => {
   const url = 'http://localhost:8080/api/articles';
-  //INSERT TOKEN HERE BUT DONT FORGET TO REMOVE IT BEFORE MERGING
+
   const token = '';
 
   try {

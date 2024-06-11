@@ -8,7 +8,7 @@ const Search = () => {
   return (
     <div>
       <SearchBar setResults={setResults} />
-      <SearchResults results={results} />
+      <SearchResults results={results} /> {/*pass the filltered results*/}
     </div>
   );
 };
